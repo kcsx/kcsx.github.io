@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kcsx&#39;s blog</title>
+  
+  <subtitle>welcome to my blog!</subtitle>
+  <link href="https://kcsx.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://kcsx.github.io/"/>
+  <updated>2021-04-22T03:56:02.706Z</updated>
+  <id>https://kcsx.github.io/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Test</title>
+    <link href="https://kcsx.github.io/2021/04/22/test/"/>
+    <id>https://kcsx.github.io/2021/04/22/test/</id>
+    <published>2021-04-22T03:56:02.000Z</published>
+    <updated>2021-04-22T03:56:02.706Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>first post</title>
+    <link href="https://kcsx.github.io/2021/04/22/first-post/"/>
+    <id>https://kcsx.github.io/2021/04/22/first-post/</id>
+    <published>2021-04-22T03:31:26.000Z</published>
+    <updated>2021-04-22T03:31:26.137Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://kcsx.github.io/2021/04/22/hello-world/"/>
+    <id>https://kcsx.github.io/2021/04/22/hello-world/</id>
+    <published>2021-04-22T03:27:21.329Z</published>
+    <updated>2021-04-22T03:27:21.329Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
