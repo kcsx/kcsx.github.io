@@ -42,7 +42,7 @@ function loadWidget(config) {
 	let userAction = false,
 		userActionTimer,
 		messageTimer,
-		messageArray = ["你是谁？好像我在哪见过你...", "呵呵，不好意思，刚刚那句话是开玩笑的", "你知道吗？kcsx喜欢你~", "拿小拳拳锤你胸口！", "欢迎加入友情链接"];
+		messageArray = ["你是谁？好像我在哪见过你...", "呵呵，不好意思，刚刚那句话是开玩笑的", "你知道吗？kcsx喜欢你~", "怎么不理我，伤心", "现在很忙吗？都不和我互动"];
 	window.addEventListener("mousemove", () => userAction = true);
 	window.addEventListener("keydown", () => userAction = true);
 	setInterval(() => {
@@ -72,7 +72,7 @@ function loadWidget(config) {
 		document.querySelector("#waifu-tool .fa-user-circle").addEventListener("click", loadOtherModel);
 		document.querySelector("#waifu-tool .fa-street-view").addEventListener("click", loadRandModel);
 		document.querySelector("#waifu-tool .fa-camera-retro").addEventListener("click", () => {
-			showMessage("照好了嘛，是不是很可爱呢？", 6000, 9);
+			showMessage("如果能和你一起合影该多好", 6000, 9);
 			Live2D.captureName = "photo.png";
 			Live2D.captureFrame = true;
 		});
@@ -81,7 +81,7 @@ function loadWidget(config) {
 		});
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
-			showMessage("愿你有一天能与重要的人重逢。", 2000, 11);
+			showMessage("愿你有一天能与重要的人重逢", 2000, 11);
 			document.getElementById("waifu").style.bottom = "-500px";
 			setTimeout(() => {
 				document.getElementById("waifu").style.display = "none";
