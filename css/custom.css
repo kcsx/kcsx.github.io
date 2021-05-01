@@ -1,16 +1,53 @@
-svg.icon {
-    width: 1em; height: 1em;
-    /* width和height定义图标的默认宽度和高度*/
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
- }
- .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-    left: -66px !important;
-    /* 默认情况下缩进左侧66px，只留一点箭头部分 */
+/* 首页文章卡片 */
+#recent-posts > .recent-post-item{
+  /* background:rgba(255, 255, 255, 0.9); */
+  color:rgb(14, 14, 15);
+  opacity: 0.7
+}
+/* 首页侧栏卡片 */
+.card-widget{
+  background:rgba(17, 17, 17, 0.9);
+  color:rgb(14, 14, 15)
+}
+/* 文章页面正文背景 */
+div#post{
+  color:rgb(14, 14, 15)
+}
+/* 分页页面 */
+div#page{
+  opacity: 0.9;
+}
+/* 归档页面 */
+div#archive{
+  opacity: 0.9;
+}
+/* 标签页面 */
+div#tag{
+  opacity: 0.9;
+}
+/* 分类页面 */
+div#category{
+  opacity: 0.9;
+}
+/* 页脚透明 */
+#footer{
+    background: transparent!important;
+    opacity: 0.4
   }
-  
-  .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-    left: 0 !important;
-    /* 鼠标悬停是左侧缩进归零，完全显示按钮 */
+  /* 头图透明 */
+  #page-header{
+    /* background: transparent!important; */
+    opacity: 0.2
   }
+  /*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
+  #page-header.post-bg:before {
+    background-color: transparent!important;
+  }
+
+  div#gitcalendar{
+    background-image: url('PicsSet/topimg.jpg');
+  }
+  #aside{
+    background: rgba(56, 40, 40, 0.082);
+  }
+

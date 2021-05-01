@@ -42,7 +42,7 @@ function loadWidget(config) {
 	let userAction = false,
 		userActionTimer,
 		messageTimer,
-		messageArray = ["你是谁？好像我在哪见过你...", "呵呵，不好意思，刚刚那句话是开玩笑的", "你知道吗？kcsx喜欢你~", "怎么不理我，伤心", "现在很忙吗？都不和我互动"];
+		messageArray = ["你是谁？好像我在哪见过你...", "呵呵，抱歉，刚刚那句话是开玩笑的", "你知道吗？kcsx喜欢你~", "怎么不理我，伤心", "现在很忙吗？都不和我互动"];
 	window.addEventListener("mousemove", () => userAction = true);
 	window.addEventListener("keydown", () => userAction = true);
 	setInterval(() => {
@@ -97,7 +97,7 @@ function loadWidget(config) {
 			showMessage("你都复制了些什么呀，转载要记得加上出处哦！", 6000, 9);
 		});
 		window.addEventListener("visibilitychange", () => {
-			if (!document.hidden) showMessage("哇，你终于回来了～", 6000, 9);
+			if (!document.hidden) showMessage("哇，你终于回来了˚‧º·(˚ ˃̣̣̥᷄⌓˂̣̣̥᷅ )‧º·˚", 6000, 9);
 		});
 	})();
 
@@ -105,18 +105,18 @@ function loadWidget(config) {
 		let text;
 		if (location.pathname === "/") { // 如果是主页
 			const now = new Date().getHours();
-			if (now > 5 && now <= 7) text = "早上好！一日之计在于晨，美好的一天就要开始了。";
-			else if (now > 7 && now <= 11) text = "上午好！工作顺利嘛，不要久坐，多起来走动走动哦！";
+			if (now > 5 && now <= 7) text = "早安！一夜未见，我想你了";
+			else if (now > 7 && now <= 11) text = "上午好！记得不要久坐，多起来走动走动哦！";
 			else if (now > 11 && now <= 13) text = "中午了，工作了一个上午，现在是午餐时间！";
 			else if (now > 13 && now <= 17) text = "午后很容易犯困呢，今天的运动目标完成了吗？";
-			else if (now > 17 && now <= 19) text = "傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红～";
-			else if (now > 19 && now <= 21) text = "晚上好，今天过得怎么样？";
-			else if (now > 21 && now <= 23) text = ["已经这么晚了呀，早点休息吧，晚安～", "深夜时要爱护眼睛呀！"];
+			else if (now > 17 && now <= 19) text = "傍晚了！窗外夕阳的景色很美丽呢，一起运动校园吗～";
+			else if (now > 19 && now <= 21) text = "晚上好，一起看会书吧？";
+			else if (now > 21 && now <= 23) text = ["不要懈怠哦！再坚持一会儿!", "深夜时要爱护眼睛呀！"];
 			else text = "你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
 		} else if (document.referrer !== "") {
 			const referrer = new URL(document.referrer),
 				domain = referrer.hostname.split(".")[1];
-			if (location.hostname === referrer.hostname) text = `欢迎阅读<span>「${document.title.split(" - ")[0]}」</span>`;
+			if (location.hostname === referrer.hostname) text = `希望<span>「${document.title.split(" - ")[0]}」</span>能为您带来惊喜!`;
 			else if (domain === "baidu") text = `Hello！来自 百度搜索 的朋友<br>你是搜索 <span>${referrer.search.split("&wd=")[1].split("&")[0]}</span> 找到的我吗？`;
 			else if (domain === "so") text = `Hello！来自 360搜索 的朋友<br>你是搜索 <span>${referrer.search.split("&q=")[1].split("&")[0]}</span> 找到的我吗？`;
 			else if (domain === "google") text = `Hello！来自 谷歌搜索 的朋友<br>欢迎阅读<span>「${document.title.split(" - ")[0]}」</span>`;
@@ -234,7 +234,7 @@ function loadWidget(config) {
 				.then(response => response.json())
 				.then(result => {
 					if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
-					else loadModel(modelId, result.textures.id, "我的新衣服好看嘛？");
+					else loadModel(modelId, result.textures.id, "我的新衣服好看吗？");
 				});
 		}
 	}
