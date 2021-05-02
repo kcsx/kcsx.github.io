@@ -43,10 +43,6 @@ div#category{
   #page-header.post-bg:before {
     background-color: transparent!important;
   }
-
-  div#gitcalendar{
-    background-image: url('PicsSet/topimg.jpg');
-  }
   #aside{
     background: rgba(56, 40, 40, 0.082);
   }
