@@ -2,7 +2,6 @@
 #recent-posts > .recent-post-item{
   /* background:rgba(255, 255, 255, 0.9); */
   color:rgb(14, 14, 15);
-  opacity: 0.7
 }
 /* 首页侧栏卡片 */
 .card-widget{
@@ -32,12 +31,13 @@ div#category{
 /* 页脚透明 */
 #footer{
     background: transparent!important;
-    opacity: 0.4
+    opacity: 0.4;
+    color:rgb(255,255,255)
   }
   /* 头图透明 */
   #page-header{
     /* background: transparent!important; */
-    opacity: 0.1
+    /* opacity: 0.5 */
   }
   /*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
   #page-header.post-bg:before {
