@@ -3507,8 +3507,6 @@ blockquote footer cite:before {
   width: auto;
 }
 .gitcalendar {
-  background-image: url("PicsSet/topimg.jpg");
-  color: #000;
   font-family: SourceHanSans-Medium;
   border: 1px solid #ddd;
   border-radius: 3px;
@@ -3549,8 +3547,7 @@ blockquote footer cite:before {
   min-height: 70px;
 }
 .gitcalendar-graph text.wday {
-  font-size: 9px;
-  fill: #aaa;
+  font-size: 8px;
 }
 .gitcalendar-graph text.month {
   font-size: 10px;
@@ -3614,7 +3611,7 @@ blockquote footer cite:before {
   text-decoration: none;
 }
 .contrib-footer {
-  font-size: 12px;
+  font-size: 11px;
   padding: 0 10px 12px;
   text-align: left;
   width: 100%;
@@ -3717,9 +3714,6 @@ h2.f4.text-normal.mb-3 {
 .angle-box {
   position: fixed;
   padding: 10px;
-}
-.word {
-  colot: #fff;
 }
 #page-header {
   position: relative;
