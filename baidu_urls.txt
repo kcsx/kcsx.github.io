@@ -3,6 +3,7 @@ http://kcsx.xyz/2021/05/30/javascript-syntax-5/
 http://kcsx.xyz/2021/05/29/javascript-syntax-4/
 http://kcsx.xyz/2021/05/29/javascript-syntax-3/
 http://kcsx.xyz/2021/05/29/javascript-syntax-2/
+http://kcsx.xyz/2021/05/28/javascript-syntax-1/
 http://kcsx.xyz/2021/05/28/html-syntax/
 http://kcsx.xyz/2021/05/21/English-synonymous-substitution-1/
 http://kcsx.xyz/2021/05/14/Elementary-kaoyan-English-mail-writing/
@@ -11,7 +12,6 @@ http://kcsx.xyz/2021/05/09/PAT-B1032-SOL/
 http://kcsx.xyz/2021/05/07/software-process-models/
 http://kcsx.xyz/2021/05/07/high-frequency-sentence/
 http://kcsx.xyz/2021/05/03/Icon-Collection/
-http://kcsx.xyz/2021/05/01/javascript-syntax-1/
 http://kcsx.xyz/2021/05/01/javascript-syntax/
 http://kcsx.xyz/2021/05/01/javascript-history/
 http://kcsx.xyz/2021/04/30/Modify-Butterfly/
