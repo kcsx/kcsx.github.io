@@ -9,66 +9,48 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Markdown示例</title>
     <url>/posts/ed04/</url>
     <content><![CDATA[<!-- 标题 -->
-<h1>标题</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 标题1</span></span><br><span class="line"><span class="section">## 标题2</span></span><br></pre></td></tr></table></figure>
-<h1>粗体与斜体</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">### 斜体</span></span><br><span class="line">Italicized text is the <span class="emphasis">*cat&#x27;s meow*</span> # 斜体</span><br><span class="line">A<span class="emphasis">*cat*</span>meow # 斜体（突出中间部分）</span><br><span class="line"><span class="section">### 粗体</span></span><br><span class="line"><span class="strong">**bold text**</span></span><br><span class="line"><span class="strong">__bold text__</span></span><br></pre></td></tr></table></figure>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 标题1</span></span><br><span class="line"><span class="section">## 标题2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">### 斜体</span></span><br><span class="line">Italicized text is the <span class="emphasis">*cat&#x27;s meow*</span> # 斜体</span><br><span class="line">A<span class="emphasis">*cat*</span>meow # 斜体（突出中间部分）</span><br><span class="line"><span class="section">### 粗体</span></span><br><span class="line"><span class="strong">**bold text**</span></span><br><span class="line"><span class="strong">__bold text__</span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<h3 id="斜体">斜体</h3>
-<p>Italicized text is the <em>cat’s meow</em> # 斜体<br>
-A<em>cat</em>meow # 斜体（突出中间部分）</p>
-<h3 id="粗体">粗体</h3>
-<p><strong>bold text</strong><br>
-<strong>bold text</strong></p>
-<h1>代码块</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 上面三个\`，下面三个\`</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1>引用</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 嵌套引用</span></span><br><span class="line"><span class="quote">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span></span><br><span class="line"><span class="section">## 带其他元素的引用</span></span><br><span class="line"><span class="quote">&gt; #### The quarterly results look great!</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt; - Revenue was off the chart.</span></span><br><span class="line"><span class="quote">&gt; - Profits were higher than ever.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;  <span class="emphasis">*Everything*</span> is going according to <span class="strong">**plan**</span>.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>Italicized text is the <em>cat’s meow</em> # 斜体<br>A<em>cat</em>meow # 斜体（突出中间部分）</p>
+<h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p><strong>bold text</strong><br><strong>bold text</strong></p>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 上面三个\`，下面三个\`</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 嵌套引用</span></span><br><span class="line"><span class="quote">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span></span><br><span class="line"><span class="section">## 带其他元素的引用</span></span><br><span class="line"><span class="quote">&gt; #### The quarterly results look great!</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt; - Revenue was off the chart.</span></span><br><span class="line"><span class="quote">&gt; - Profits were higher than ever.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;  <span class="emphasis">*Everything*</span> is going according to <span class="strong">**plan**</span>.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<h2 id="嵌套引用">嵌套引用</h2>
-<blockquote>
+<h2 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h2><blockquote>
 <p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
 <blockquote>
 <p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
 </blockquote>
 </blockquote>
-<h2 id="带其他元素的引用">带其他元素的引用</h2>
-<blockquote>
-<h4 id="The-quarterly-results-look-great">The quarterly results look great!</h4>
-<ul>
+<h2 id="带其他元素的引用"><a href="#带其他元素的引用" class="headerlink" title="带其他元素的引用"></a>带其他元素的引用</h2><blockquote>
+<h4 id="The-quarterly-results-look-great"><a href="#The-quarterly-results-look-great" class="headerlink" title="The quarterly results look great!"></a>The quarterly results look great!</h4><ul>
 <li>Revenue was off the chart.</li>
 <li>Profits were higher than ever.</li>
 </ul>
-<p><em>Everything</em> is going according to <strong>plan</strong>.</p>
+<p> <em>Everything</em> is going according to <strong>plan</strong>.</p>
 </blockquote>
-<h1>列表</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 有序列表</span></span><br><span class="line"><span class="bullet">1.</span> First item</span><br><span class="line"><span class="bullet">2.</span> Second item</span><br><span class="line"><span class="bullet">3.</span> Third item</span><br><span class="line"><span class="bullet">4.</span> Fourth item</span><br><span class="line"><span class="section">## 无序列表</span></span><br><span class="line"><span class="bullet">-</span> First item</span><br><span class="line"><span class="bullet">+</span> Second item</span><br><span class="line"><span class="bullet">-</span> Third item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">*</span> Fourth item</span><br></pre></td></tr></table></figure>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 有序列表</span></span><br><span class="line"><span class="bullet">1.</span> First item</span><br><span class="line"><span class="bullet">2.</span> Second item</span><br><span class="line"><span class="bullet">3.</span> Third item</span><br><span class="line"><span class="bullet">4.</span> Fourth item</span><br><span class="line"><span class="section">## 无序列表</span></span><br><span class="line"><span class="bullet">-</span> First item</span><br><span class="line"><span class="bullet">+</span> Second item</span><br><span class="line"><span class="bullet">-</span> Third item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">*</span> Fourth item</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<h2 id="有序列表">有序列表</h2>
-<ol>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><ol>
 <li>First item</li>
 <li>Second item</li>
 <li>Third item</li>
 <li>Fourth item</li>
 </ol>
-<h2 id="无序列表">无序列表</h2>
-<ul>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
 <li>First item</li>
 </ul>
 <ul>
 <li>Second item</li>
 </ul>
 <ul>
-<li>Third item
-<ul>
+<li>Third item<ul>
 <li>Indented item</li>
 <li>Indented item</li>
 </ul>
@@ -77,32 +59,27 @@ A<em>cat</em>meow # 斜体（突出中间部分）</p>
 <ul>
 <li>Fourth item</li>
 </ul>
-<h1>分割线</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">***</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">________________<span class="emphasis">_</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">***</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">________________<span class="emphasis">_</span></span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <hr>
 <hr>
 <hr>
-<h1>链接</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一个链接 [<span class="string">Markdown语法</span>](<span class="link">https://markdown.com.cn &quot;标题&quot;</span>)。</span><br><span class="line"><span class="language-xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="section">## 格式化</span></span><br><span class="line">I love supporting the <span class="strong">**[<span class="string">EFF</span>](<span class="link">https://eff.org</span>)**</span>.</span><br><span class="line">This is the <span class="emphasis">*[<span class="string">Markdown Guide</span>](<span class="link">https://www.markdownguide.org</span>)*</span>.</span><br><span class="line">See the section on [<span class="string">`code`</span>](<span class="link">#code</span>).</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br>
-这是一个链接 <a href="https://markdown.com.cn" title="标题">Markdown语法</a>。<br>
-<a href="https://markdown.com.cn">https://markdown.com.cn</a></p>
-<h2 id="格式化">格式化</h2>
-<p>I love supporting the <strong><a href="https://eff.org">EFF</a></strong>.<br>
-This is the <em><a href="https://www.markdownguide.org">Markdown Guide</a></em>.<br>
-See the section on <a href="#code"><code>code</code></a>.</p>
-<h1>图片</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这是图片</span>](<span class="link">/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;</span>)</span><br><span class="line"><span class="section">## 链接图片</span></span><br><span class="line">[<span class="string">![沙漠中的岩石图片</span>](<span class="link">/assets/img/shiprock.jpg &quot;Shiprock&quot;</span>)](<span class="link">https://markdown.com.cn</span>) </span><br></pre></td></tr></table></figure>
-<p>效果如下：<br>
-<img src="/assets/img/philly-magic-garden.jpg" alt="这是图片" title="Magic Gardens"></p>
-<h2 id="链接图片">链接图片</h2>
-<p><a href="https://markdown.com.cn"><img src="/assets/img/shiprock.jpg" alt="沙漠中的岩石图片" title="Shiprock"></a></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一个链接 [<span class="string">Markdown语法</span>](<span class="link">https://markdown.com.cn &quot;标题&quot;</span>)。</span><br><span class="line"><span class="language-xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="section">## 格式化</span></span><br><span class="line">I love supporting the <span class="strong">**[<span class="string">EFF</span>](<span class="link">https://eff.org</span>)**</span>.</span><br><span class="line">This is the <span class="emphasis">*[<span class="string">Markdown Guide</span>](<span class="link">https://www.markdownguide.org</span>)*</span>.</span><br><span class="line">See the section on [<span class="string">`code`</span>](<span class="link">#code</span>).</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br>这是一个链接 <a href="https://markdown.com.cn/" title="标题">Markdown语法</a>。<br><a href="https://markdown.com.cn/">https://markdown.com.cn</a></p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>I love supporting the <strong><a href="https://eff.org/">EFF</a></strong>.<br>This is the <em><a href="https://www.markdownguide.org/">Markdown Guide</a></em>.<br>See the section on <a href="#code"><code>code</code></a>.</p>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这是图片</span>](<span class="link">/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;</span>)</span><br><span class="line"><span class="section">## 链接图片</span></span><br><span class="line">[<span class="string">![沙漠中的岩石图片</span>](<span class="link">/assets/img/shiprock.jpg &quot;Shiprock&quot;</span>)](<span class="link">https://markdown.com.cn</span>) </span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="/assets/img/philly-magic-garden.jpg" alt="这是图片" title="Magic Gardens"></p>
+<h2 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h2><p><a href="https://markdown.com.cn/"><img src="/assets/img/shiprock.jpg" alt="沙漠中的岩石图片" title="Shiprock"></a> </p>
 ]]></content>
   </entry>
   <entry>
     <title>Harmony编年史</title>
     <url>/posts/88b0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
