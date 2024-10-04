@@ -1,46 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Harmony框架结构</title>
-    <url>/posts/fdb3/</url>
-    <content><![CDATA[]]></content>
+    <title>Harmony常用组件</title>
+    <url>/posts/70e0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>布局</h1>
+<h2 id="主轴与交叉轴概述">主轴与交叉轴概述</h2>
+<h2 id="Column">Column</h2>
+<h2 id="Row">Row</h2>
+]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
-    <content><![CDATA[]]></content>
+    <title>Harmony框架结构</title>
+    <url>/posts/fdb3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx" alt=""></p>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
+    <title>Harmony的Stage模型</title>
+    <url>/posts/8aee/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>Stage模型概述</h1>
+<h2 id="概述">概述</h2>
+<p>Stage模型是</p>
+<blockquote>
+<ol>
+<li>Stage模型中，多个应用组件共享同一个ArkTS引擎实例，在Stage模型中，应用组件之间可以方便的共享对象和状态，同时减少复杂应用运行对内存的占用。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[https://developer.huawei.com/consumer/cn/arkui/arkui-stage/](https://developer.huawei.com/consumer/cn/arkui/arkui-stage)
+">[1]</span></a></sup></li>
+<li>Stage模型提供了AbilityStage、WindowStage等类作为应用组件和Window窗口的“舞台”，因此称这种应用模型为Stage模型。</li>
+</ol>
+</blockquote>
+<h2 id="设计思路">设计思路</h2>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  flowchart TB;
+    target1((应用能力与系统性能平衡))
+    target2((原生支持组件级迁移与协同))
+    target3((支持多设备、多窗口))
+    method1[Ability与UI分离]
+    method2[后台管理]
+    method3[基于场景的服务机制]
+    method4[单进程模型]
+    method5[UI与服务统一的Ability组件]
+    method6[Ability生命周期定义]
+    method7[组件管理与窗口管理解耦]
+    target1--&gt;method1
+    target1--&gt;method2
+    target1--&gt;method3
+    target1--&gt;method4
+    target2--&gt;method1
+    target2--&gt;method5
+    target3--&gt;method6
+    target3--&gt;method7
+  </pre></div>
+<h1>整体结构</h1>
+<p><img src="/Harmony/ui-qt.jpg" alt="Stage模型" title="Stage模型"></p>
+<h2 id="各类组件">各类组件</h2>
+<p>Satge模型提供UIAbility和ExtensionAbility两种组件，有具体类承载，支持面向对象。<br>
+其中，UIAbility、ExtensionAbility等组件详情如下：</p>
+<h3 id="UIAbility组件">UIAbility组件</h3>
+<ul>
+<li>包含UI的应用组件，主要用于和用户交互</li>
+<li>生命周期只包含创建/销毁/前台/后台等状态</li>
+</ul>
+<h3 id="ExtensionAbility组件">ExtensionAbility组件</h3>
+<ul>
+<li>面向特定场景的应用组件</li>
+<li>需要使用ExtensionAbility的派生类</li>
+<li>ExtensionAbility派生类实例由用户触发创建，并由系统管理<em>生命周期</em></li>
+</ul>
+<h3 id="WindowStage类">WindowStage类</h3>
+<ul>
+<li>与显示相关的状态通过WindowStage的事件暴露给开发者</li>
+<li>每个UIAbility类实例都会与一个WindowStage类实例绑定</li>
+<li>提供了应用进程内窗口管理器的作用</li>
+<li>包含一个主窗口。UIAbility通过WindowStage持有了一个主窗口，该主窗口为ArkUI提供了绘制区域</li>
+</ul>
+<h3 id="Context">Context</h3>
+<ul>
+<li>Context及其派生类向开发者提供在运行期可以调用的各种资源和能力</li>
+<li>UIAbility组件和各种ExtensionAbility派生类都有各自不同的Context类</li>
+</ul>
+<h3 id="AbilityStage">AbilityStage</h3>
+<ul>
+<li>每个Entry类型或者Feature类型的HAP在运行期都有一个AbilityStage类实例</li>
+<li>HAP中的代码首次被加载到进程中的时候，系统会先创建AbilityStage实例</li>
+<li>每个在该HAP中定义的UIAbility类，在实例化后都会与该实例产生关联</li>
+<li>可通过AbilityStage获取该HAP中UIAbility实例的运行时信息</li>
+</ul>
+<h2 id="Stage模型流程">Stage模型流程</h2>
+<h1>相关概念补充</h1>
+<h2 id="HAP-Harmony-Ability-Package">HAP(Harmony Ability Package)</h2>
+<ul>
+<li>应用安装与运行的单元</li>
+<li>将code、resources、config、std library等打包为模块</li>
+<li>分为entry(应用入口、基础功能)和feature(动态特性)两类</li>
+<li>单个HAP(无ExtensionAbility)：1个Entry+m个feature。推荐1个UIAbility+m个页面</li>
+<li>多个HAP：n个Entry+m个feature。每个HAP1个UIAbility或ExtensionAbility</li>
+</ul>
+<h2 id="HAR-HarmonyOS-Ability-Resource-sup-id-fnref-2-a-href-fn-2-rel-footnote-span-class-hint-top-hint-error-hint-medium-hint-rounded-hint-bounce-aria-label-https-blog-csdn-net-u014696856-article-details-142211942-https-blog-csdn-net-u014696856-article-details-142211942-2-span-a-sup">HAR(HarmonyOS Ability Resource)<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[https://blog.csdn.net/u014696856/article/details/142211942](https://blog.csdn.net/u014696856/article/details/142211942)">[2]</span></a></sup></h2>
+<ul>
+<li>静态共享包，用于封装和共享代码、资源和第三方库，允许开发者将独立的功能模块打包并发布为一个可重用的单元</li>
+<li>不仅可以包含代码文件，还可以包括UI布局、图片、配置文件、第三方库等资源</li>
+<li>实现代码的模块化和复用</li>
+</ul>
+<h2 id="HSP-Harmony-Shared-Package">HSP(Harmony Shared Package)</h2>
+<ul>
+<li>动态共享包</li>
+<li>与宿主应用同进程、命名空间、生命周期</li>
+</ul>
+<hr>
+<h1>参考文献：</h1>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://developer.huawei.com/consumer/cn/arkui/arkui-stage">https://developer.huawei.com/consumer/cn/arkui/arkui-stage/</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/u014696856/article/details/142211942">https://blog.csdn.net/u014696856/article/details/142211942</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
   </entry>
   <entry>
     <title>Markdown示例</title>
     <url>/posts/ed04/</url>
-    <content><![CDATA[<!-- 标题 -->
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!-- 标题 -->
 <h1>标题</h1>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 标题1</span></span><br><span class="line"><span class="section">## 标题2</span></span><br></pre></td></tr></table></figure>
 <h1>粗体与斜体</h1>
@@ -122,6 +209,50 @@ See the section on <a href="#code"><code>code</code></a>.</p>
 <img src="/assets/img/philly-magic-garden.jpg" alt="这是图片" title="Magic Gardens"></p>
 <h2 id="链接图片">链接图片</h2>
 <p><a href="https://markdown.com.cn"><img src="/assets/img/shiprock.jpg" alt="沙漠中的岩石图片" title="Shiprock"></a></p>
+<h1>流程图</h1>
+<p>详见<img src="https://mermaid.js.org/syntax/flowchart.html" alt="https://mermaid.js.org/syntax/flowchart.html"></p>
+<!-- # 参考文献
+需"npm install hexo-reference --save"安装插件。
+```Markdown
+### 引用文献的语句
+<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[]()
+``` -->">[1]</span></a></sup>
+<h3 id="引用参考文献：">引用参考文献：</h3>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href=""></a>
+``` --&gt;<a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+  </entry>
+  <entry>
+    <title>blog&#39;s plug-in</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+  </entry>
+  <entry>
+    <title>Harmony通用属性</title>
+    <url>/posts/bbc6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+  </entry>
+  <entry>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
 </search>
