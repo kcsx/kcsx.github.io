@@ -9,6 +9,15 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony框架结构</title>
+    <url>/posts/fdb3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony常用组件</title>
     <url>/posts/70e0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
@@ -20,7 +29,16 @@
 <li>设置主轴：.justyfyContent(FlexAlign.)</li>
 <li>设置交叉轴：.alignItems(HorizontalAlign&#x2F;VerticalAlign.)</li>
 </ul>
-<h2 id="Column"><a href="#Column" class="headerlink" title="Column"></a>Column</h2><h2 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h2><h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><h2 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h2><h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2>]]></content>
+<h2 id="Column"><a href="#Column" class="headerlink" title="Column"></a>Column</h2><h2 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h2><h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><h2 id="RelativeContainer"><a href="#RelativeContainer" class="headerlink" title="RelativeContainer"></a>RelativeContainer</h2><h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><h2 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h2><h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><h2 id="Checkbox"><a href="#Checkbox" class="headerlink" title="Checkbox"></a>Checkbox</h2><h2 id="Refresh"><a href="#Refresh" class="headerlink" title="Refresh"></a>Refresh</h2><h2 id="TextTimer"><a href="#TextTimer" class="headerlink" title="TextTimer"></a>TextTimer</h2><h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><h2 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h2><h2 id="Scroll"><a href="#Scroll" class="headerlink" title="Scroll"></a>Scroll</h2><h2 id="Swiper"><a href="#Swiper" class="headerlink" title="Swiper"></a>Swiper</h2><h2 id="TextInput"><a href="#TextInput" class="headerlink" title="TextInput"></a>TextInput</h2><h2 id="Divider"><a href="#Divider" class="headerlink" title="Divider"></a>Divider</h2><h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony媒体相关</title>
+    <url>/posts/86c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">Videocontroller</span>=<span class="keyword">new</span> <span class="title class_">Videocontroller</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
+]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -107,32 +125,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony框架结构</title>
-    <url>/posts/fdb3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony媒体相关</title>
-    <url>/posts/86c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">Videocontroller</span>=<span class="keyword">new</span> <span class="title class_">Videocontroller</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony编年史</title>
     <url>/posts/88b0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
@@ -154,14 +146,6 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony通用属性</title>
-    <url>/posts/bbc6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
@@ -249,6 +233,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony通用属性</title>
+    <url>/posts/bbc6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony网络相关</title>
+    <url>/posts/cf3a/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">info</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">getPrefrenInstance</span>(<span class="attr">context</span>:<span class="title class_">Context</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony状态管理</title>
     <url>/posts/8fb2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="实时渲染必备条件"><a href="#实时渲染必备条件" class="headerlink" title="实时渲染必备条件"></a>实时渲染必备条件</h1><ol>
@@ -297,17 +300,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Harmony网络相关</title>
-    <url>/posts/cf3a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">info</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">getPrefrenInstance</span>(<span class="attr">context</span>:<span class="title class_">Context</span>)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony小技巧</title>
     <url>/posts/ca8a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h1><p>xx as Type</p>
@@ -316,6 +308,14 @@
 <h1 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="meta">@State</span> <span class="attr">now</span>: <span class="title class_">Date</span> = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"><span class="meta">@State</span> <span class="attr">formattedDate</span>: <span class="built_in">string</span> = <span class="variable language_">this</span>.<span class="property">now</span>.<span class="title function_">toLocaleDateString</span>(<span class="string">&quot;en-US&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
