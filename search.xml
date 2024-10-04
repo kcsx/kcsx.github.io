@@ -23,7 +23,7 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Stage模型概述"><a href="#Stage模型概述" class="headerlink" title="Stage模型概述"></a>Stage模型概述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Stage模型是</p>
 <blockquote>
 <ol>
-<li>Stage模型中，多个应用组件共享同一个ArkTS引擎实例，在Stage模型中，应用组件之间可以方便的共享对象和状态，同时减少复杂应用运行对内存的占用。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[https://developer.huawei.com/consumer/cn/arkui/arkui-stage/](https://developer.huawei.com/consumer/cn/arkui/arkui-stage)
+<li>Stage模型中，多个应用组件共享同一个ArkTS引擎实例，在Stage模型中，应用组件之间可以方便的共享对象和状态，同时减少复杂应用运行对内存的占用。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Stage模型](https://developer.huawei.com/consumer/cn/arkui/arkui-stage)
 ">[1]</span></a></sup></li>
 <li>Stage模型提供了AbilityStage、WindowStage等类作为应用组件和Window窗口的“舞台”，因此称这种应用模型为Stage模型。</li>
 </ol>
@@ -83,7 +83,7 @@
 <li>单个HAP(无ExtensionAbility)：1个Entry+m个feature。推荐1个UIAbility+m个页面</li>
 <li>多个HAP：n个Entry+m个feature。每个HAP1个UIAbility或ExtensionAbility</li>
 </ul>
-<h2 id="HAR-HarmonyOS-Ability-Resource-2"><a href="#HAR-HarmonyOS-Ability-Resource-2" class="headerlink" title="HAR(HarmonyOS Ability Resource)[2]"></a>HAR(HarmonyOS Ability Resource)<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[https://blog.csdn.net/u014696856/article/details/142211942](https://blog.csdn.net/u014696856/article/details/142211942)">[2]</span></a></sup></h2><ul>
+<h2 id="HAR-HarmonyOS-Ability-Resource-2"><a href="#HAR-HarmonyOS-Ability-Resource-2" class="headerlink" title="HAR(HarmonyOS Ability Resource)[2]"></a>HAR(HarmonyOS Ability Resource)<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[HAR](https://blog.csdn.net/u014696856/article/details/142211942)">[2]</span></a></sup></h2><ul>
 <li>静态共享包，用于封装和共享代码、资源和第三方库，允许开发者将独立的功能模块打包并发布为一个可重用的单元</li>
 <li>不仅可以包含代码文件，还可以包括UI布局、图片、配置文件、第三方库等资源</li>
 <li>实现代码的模块化和复用</li>
@@ -93,7 +93,7 @@
 <li>与宿主应用同进程、命名空间、生命周期</li>
 </ul>
 <hr>
-<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://developer.huawei.com/consumer/cn/arkui/arkui-stage">https://developer.huawei.com/consumer/cn/arkui/arkui-stage/</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/u014696856/article/details/142211942">https://blog.csdn.net/u014696856/article/details/142211942</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://developer.huawei.com/consumer/cn/arkui/arkui-stage">Stage模型</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/u014696856/article/details/142211942">HAR</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -102,14 +102,6 @@
     <title>Harmony最佳实践</title>
     <url>/posts/e1d9/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-  </entry>
-  <entry>
-    <title>博客所用插件记录</title>
-    <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>博客</tag>
-      </tags>
   </entry>
   <entry>
     <title>Harmony编年史</title>
@@ -190,6 +182,19 @@
 ``` --&gt;<a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
   </entry>
   <entry>
+    <title>博客所用插件记录</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony通用属性</title>
+    <url>/posts/bbc6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/posts/3eeb/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -206,10 +211,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Harmony通用属性</title>
-    <url>/posts/bbc6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
   </entry>
 </search>
