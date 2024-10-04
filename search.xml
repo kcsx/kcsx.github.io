@@ -1,55 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Harmony框架结构</title>
-    <url>/posts/fdb3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx" alt=""></p>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony常用组件</title>
     <url>/posts/70e0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>布局</h1>
-<h2 id="思路">思路</h2>
-<ol>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
 <li>将每个组件看作盒子</li>
 <li>可以通过DevEco Previewer的TT查看，也可以自己设置.borderWidth查看盒子</li>
 </ol>
-<h2 id="主轴与交叉轴概述">主轴与交叉轴概述</h2>
-<p>两个轴相互垂直，不同容器中主轴方向不一样。如Column主轴为竖、交叉轴为横，而Row则相反。</p>
+<h2 id="主轴与交叉轴概述"><a href="#主轴与交叉轴概述" class="headerlink" title="主轴与交叉轴概述"></a>主轴与交叉轴概述</h2><p>两个轴相互垂直，不同容器中主轴方向不一样。如Column主轴为竖、交叉轴为横，而Row则相反。</p>
 <ul>
 <li>设置主轴：.justyfyContent(FlexAlign.)</li>
-<li>设置交叉轴：.alignItems(HorizontalAlign/VerticalAlign.)</li>
+<li>设置交叉轴：.alignItems(HorizontalAlign&#x2F;VerticalAlign.)</li>
 </ul>
-<h2 id="Column">Column</h2>
-<h2 id="Row">Row</h2>
-<h2 id="Grid">Grid</h2>
-<h2 id="Flex">Flex</h2>
-<h2 id="Tabs">Tabs</h2>
-]]></content>
+<h2 id="Column"><a href="#Column" class="headerlink" title="Column"></a>Column</h2><h2 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h2><h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><h2 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h2><h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
-    <title>Harmony媒体相关</title>
-    <url>/posts/86c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>媒体组件</h1>
-<h2 id="Video">Video</h2>
-]]></content>
+    <title>设计模式</title>
+    <url>/posts/d104/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <tags>
-        <tag>鸿蒙</tag>
+        <tag>计算机基础</tag>
       </tags>
   </entry>
   <entry>
     <title>Harmony的Stage模型</title>
     <url>/posts/8aee/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>Stage模型概述</h1>
-<h2 id="概述">概述</h2>
-<p>Stage模型是</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Stage模型概述"><a href="#Stage模型概述" class="headerlink" title="Stage模型概述"></a>Stage模型概述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Stage模型是</p>
 <blockquote>
 <ol>
 <li>Stage模型中，多个应用组件共享同一个ArkTS引擎实例，在Stage模型中，应用组件之间可以方便的共享对象和状态，同时减少复杂应用运行对内存的占用。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Stage模型](https://developer.huawei.com/consumer/cn/arkui/arkui-stage)
@@ -57,8 +36,7 @@
 <li>Stage模型提供了AbilityStage、WindowStage等类作为应用组件和Window窗口的“舞台”，因此称这种应用模型为Stage模型。</li>
 </ol>
 </blockquote>
-<h2 id="设计思路">设计思路</h2>
-<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><div class="mermaid-wrap"><pre class="mermaid-src" hidden>
   flowchart TB;
     target1((应用能力与系统性能平衡))
     target2((原生支持组件级迁移与协同))
@@ -79,73 +57,60 @@
     target3--&gt;method6
     target3--&gt;method7
   </pre></div>
-<h1>整体结构</h1>
-<p><img src="/Harmony/ui-qt.jpg" alt="Stage模型" title="Stage模型"></p>
-<h2 id="各类组件">各类组件</h2>
-<p>Satge模型提供UIAbility和ExtensionAbility两种组件，有具体类承载，支持面向对象。<br>
-其中，UIAbility、ExtensionAbility等组件详情如下：</p>
-<h3 id="UIAbility组件">UIAbility组件</h3>
-<ul>
+<h1 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h1><p><img src="/Harmony/ui-qt.jpg" alt="Stage模型" title="Stage模型"></p>
+<h2 id="各类组件"><a href="#各类组件" class="headerlink" title="各类组件"></a>各类组件</h2><p>Satge模型提供UIAbility和ExtensionAbility两种组件，有具体类承载，支持面向对象。<br>其中，UIAbility、ExtensionAbility等组件详情如下：</p>
+<h3 id="UIAbility组件"><a href="#UIAbility组件" class="headerlink" title="UIAbility组件"></a>UIAbility组件</h3><ul>
 <li>包含UI的应用组件，主要用于和用户交互</li>
-<li>生命周期只包含创建/销毁/前台/后台等状态</li>
+<li>生命周期只包含创建&#x2F;销毁&#x2F;前台&#x2F;后台等状态</li>
 </ul>
-<h3 id="ExtensionAbility组件">ExtensionAbility组件</h3>
-<ul>
+<h3 id="ExtensionAbility组件"><a href="#ExtensionAbility组件" class="headerlink" title="ExtensionAbility组件"></a>ExtensionAbility组件</h3><ul>
 <li>面向特定场景的应用组件</li>
 <li>需要使用ExtensionAbility的派生类</li>
 <li>ExtensionAbility派生类实例由用户触发创建，并由系统管理<em>生命周期</em></li>
 </ul>
-<h3 id="WindowStage类">WindowStage类</h3>
-<ul>
+<h3 id="WindowStage类"><a href="#WindowStage类" class="headerlink" title="WindowStage类"></a>WindowStage类</h3><ul>
 <li>与显示相关的状态通过WindowStage的事件暴露给开发者</li>
 <li>每个UIAbility类实例都会与一个WindowStage类实例绑定</li>
 <li>提供了应用进程内窗口管理器的作用</li>
 <li>包含一个主窗口。UIAbility通过WindowStage持有了一个主窗口，该主窗口为ArkUI提供了绘制区域</li>
 </ul>
-<h3 id="Context">Context</h3>
-<ul>
+<h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h3><ul>
 <li>Context及其派生类向开发者提供在运行期可以调用的各种资源和能力</li>
 <li>UIAbility组件和各种ExtensionAbility派生类都有各自不同的Context类</li>
 </ul>
-<h3 id="AbilityStage">AbilityStage</h3>
-<ul>
+<h3 id="AbilityStage"><a href="#AbilityStage" class="headerlink" title="AbilityStage"></a>AbilityStage</h3><ul>
 <li>每个Entry类型或者Feature类型的HAP在运行期都有一个AbilityStage类实例</li>
 <li>HAP中的代码首次被加载到进程中的时候，系统会先创建AbilityStage实例</li>
 <li>每个在该HAP中定义的UIAbility类，在实例化后都会与该实例产生关联</li>
 <li>可通过AbilityStage获取该HAP中UIAbility实例的运行时信息</li>
 </ul>
-<h2 id="Stage模型流程">Stage模型流程</h2>
-<h1>相关概念补充</h1>
-<h2 id="HAP-Harmony-Ability-Package">HAP(Harmony Ability Package)</h2>
-<ul>
+<h2 id="Stage模型流程"><a href="#Stage模型流程" class="headerlink" title="Stage模型流程"></a>Stage模型流程</h2><h1 id="相关概念补充"><a href="#相关概念补充" class="headerlink" title="相关概念补充"></a>相关概念补充</h1><h2 id="HAP-Harmony-Ability-Package"><a href="#HAP-Harmony-Ability-Package" class="headerlink" title="HAP(Harmony Ability Package)"></a>HAP(Harmony Ability Package)</h2><ul>
 <li>应用安装与运行的单元</li>
 <li>将code、resources、config、std library等打包为模块</li>
 <li>分为entry(应用入口、基础功能)和feature(动态特性)两类</li>
 <li>单个HAP(无ExtensionAbility)：1个Entry+m个feature。推荐1个UIAbility+m个页面</li>
 <li>多个HAP：n个Entry+m个feature。每个HAP1个UIAbility或ExtensionAbility</li>
 </ul>
-<h2 id="HAR-HarmonyOS-Ability-Resource-sup-id-fnref-2-a-href-fn-2-rel-footnote-span-class-hint-top-hint-error-hint-medium-hint-rounded-hint-bounce-aria-label-HAR-https-blog-csdn-net-u014696856-article-details-142211942-2-span-a-sup">HAR(HarmonyOS Ability Resource)<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[HAR](https://blog.csdn.net/u014696856/article/details/142211942)">[2]</span></a></sup></h2>
-<ul>
+<h2 id="HAR-HarmonyOS-Ability-Resource-2"><a href="#HAR-HarmonyOS-Ability-Resource-2" class="headerlink" title="HAR(HarmonyOS Ability Resource)[2]"></a>HAR(HarmonyOS Ability Resource)<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[HAR](https://blog.csdn.net/u014696856/article/details/142211942)">[2]</span></a></sup></h2><ul>
 <li>静态共享包，用于封装和共享代码、资源和第三方库，允许开发者将独立的功能模块打包并发布为一个可重用的单元</li>
 <li>不仅可以包含代码文件，还可以包括UI布局、图片、配置文件、第三方库等资源</li>
 <li>实现代码的模块化和复用</li>
 </ul>
-<h2 id="HSP-Harmony-Shared-Package">HSP(Harmony Shared Package)</h2>
-<ul>
+<h2 id="HSP-Harmony-Shared-Package"><a href="#HSP-Harmony-Shared-Package" class="headerlink" title="HSP(Harmony Shared Package)"></a>HSP(Harmony Shared Package)</h2><ul>
 <li>动态共享包</li>
 <li>与宿主应用同进程、命名空间、生命周期</li>
 </ul>
 <hr>
-<h1>参考文献：</h1>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://developer.huawei.com/consumer/cn/arkui/arkui-stage">Stage模型</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/u014696856/article/details/142211942">HAR</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+<h1 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h1><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://developer.huawei.com/consumer/cn/arkui/arkui-stage">Stage模型</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://blog.csdn.net/u014696856/article/details/142211942">HAR</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <title>Harmony框架结构</title>
+    <url>/posts/fdb3/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="https://ghchart.rshah.org/kcsx"></p>
+]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -153,7 +118,40 @@
   <entry>
     <title>Harmony编年史</title>
     <url>/posts/88b0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony生命周期</title>
+    <url>/posts/bfed/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony媒体相关</title>
+    <url>/posts/86c4/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">controller:Videocontroller=new Videocontroller()</span><br><span class="line">Video(&#123;src:&#x27;&#x27;,currentProgressRate:this.speed,controller:this.controller&#125;)</span><br><span class="line">this.controller.start()</span><br><span class="line">this.controller.pause()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony路由</title>
+    <url>/posts/420d/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -161,59 +159,46 @@
   <entry>
     <title>Markdown示例</title>
     <url>/posts/ed04/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!-- 标题 -->
-<h1>标题</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 标题1</span></span><br><span class="line"><span class="section">## 标题2</span></span><br></pre></td></tr></table></figure>
-<h1>粗体与斜体</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">### 斜体</span></span><br><span class="line">Italicized text is the <span class="emphasis">*cat&#x27;s meow*</span> # 斜体</span><br><span class="line">A<span class="emphasis">*cat*</span>meow # 斜体（突出中间部分）</span><br><span class="line"><span class="section">### 粗体</span></span><br><span class="line"><span class="strong">**bold text**</span></span><br><span class="line"><span class="strong">__bold text__</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><!-- 标题 -->
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 标题1</span></span><br><span class="line"><span class="section">## 标题2</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">### 斜体</span></span><br><span class="line">Italicized text is the <span class="emphasis">*cat&#x27;s meow*</span> # 斜体</span><br><span class="line">A<span class="emphasis">*cat*</span>meow # 斜体（突出中间部分）</span><br><span class="line"><span class="section">### 粗体</span></span><br><span class="line"><span class="strong">**bold text**</span></span><br><span class="line"><span class="strong">__bold text__</span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<h3 id="斜体">斜体</h3>
-<p>Italicized text is the <em>cat’s meow</em> # 斜体<br>
-A<em>cat</em>meow # 斜体（突出中间部分）</p>
-<h3 id="粗体">粗体</h3>
-<p><strong>bold text</strong><br>
-<strong>bold text</strong></p>
-<h1>代码块</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 上面三个\`，下面三个\`</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1>引用</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 嵌套引用</span></span><br><span class="line"><span class="quote">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span></span><br><span class="line"><span class="section">## 带其他元素的引用</span></span><br><span class="line"><span class="quote">&gt; #### The quarterly results look great!</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt; - Revenue was off the chart.</span></span><br><span class="line"><span class="quote">&gt; - Profits were higher than ever.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;  <span class="emphasis">*Everything*</span> is going according to <span class="strong">**plan**</span>.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>Italicized text is the <em>cat’s meow</em> # 斜体<br>A<em>cat</em>meow # 斜体（突出中间部分）</p>
+<h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p><strong>bold text</strong><br><strong>bold text</strong></p>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 上面三个\`，下面三个\`</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 嵌套引用</span></span><br><span class="line"><span class="quote">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span></span><br><span class="line"><span class="section">## 带其他元素的引用</span></span><br><span class="line"><span class="quote">&gt; #### The quarterly results look great!</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt; - Revenue was off the chart.</span></span><br><span class="line"><span class="quote">&gt; - Profits were higher than ever.</span></span><br><span class="line"><span class="quote">&gt;</span></span><br><span class="line"><span class="quote">&gt;  <span class="emphasis">*Everything*</span> is going according to <span class="strong">**plan**</span>.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<h2 id="嵌套引用">嵌套引用</h2>
-<blockquote>
+<h2 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h2><blockquote>
 <p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
 <blockquote>
 <p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
 </blockquote>
 </blockquote>
-<h2 id="带其他元素的引用">带其他元素的引用</h2>
-<blockquote>
-<h4 id="The-quarterly-results-look-great">The quarterly results look great!</h4>
-<ul>
+<h2 id="带其他元素的引用"><a href="#带其他元素的引用" class="headerlink" title="带其他元素的引用"></a>带其他元素的引用</h2><blockquote>
+<h4 id="The-quarterly-results-look-great"><a href="#The-quarterly-results-look-great" class="headerlink" title="The quarterly results look great!"></a>The quarterly results look great!</h4><ul>
 <li>Revenue was off the chart.</li>
 <li>Profits were higher than ever.</li>
 </ul>
-<p><em>Everything</em> is going according to <strong>plan</strong>.</p>
+<p> <em>Everything</em> is going according to <strong>plan</strong>.</p>
 </blockquote>
-<h1>列表</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 有序列表</span></span><br><span class="line"><span class="bullet">1.</span> First item</span><br><span class="line"><span class="bullet">2.</span> Second item</span><br><span class="line"><span class="bullet">3.</span> Third item</span><br><span class="line"><span class="bullet">4.</span> Fourth item</span><br><span class="line"><span class="section">## 无序列表</span></span><br><span class="line"><span class="bullet">-</span> First item</span><br><span class="line"><span class="bullet">+</span> Second item</span><br><span class="line"><span class="bullet">-</span> Third item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">*</span> Fourth item</span><br></pre></td></tr></table></figure>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 有序列表</span></span><br><span class="line"><span class="bullet">1.</span> First item</span><br><span class="line"><span class="bullet">2.</span> Second item</span><br><span class="line"><span class="bullet">3.</span> Third item</span><br><span class="line"><span class="bullet">4.</span> Fourth item</span><br><span class="line"><span class="section">## 无序列表</span></span><br><span class="line"><span class="bullet">-</span> First item</span><br><span class="line"><span class="bullet">+</span> Second item</span><br><span class="line"><span class="bullet">-</span> Third item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">    -</span> Indented item</span><br><span class="line"><span class="bullet">*</span> Fourth item</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<h2 id="有序列表">有序列表</h2>
-<ol>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><ol>
 <li>First item</li>
 <li>Second item</li>
 <li>Third item</li>
 <li>Fourth item</li>
 </ol>
-<h2 id="无序列表">无序列表</h2>
-<ul>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
 <li>First item</li>
 </ul>
 <ul>
 <li>Second item</li>
 </ul>
 <ul>
-<li>Third item
-<ul>
+<li>Third item<ul>
 <li>Indented item</li>
 <li>Indented item</li>
 </ul>
@@ -222,37 +207,26 @@ A<em>cat</em>meow # 斜体（突出中间部分）</p>
 <ul>
 <li>Fourth item</li>
 </ul>
-<h1>分割线</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">***</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">________________<span class="emphasis">_</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">***</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">________________<span class="emphasis">_</span></span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <hr>
 <hr>
 <hr>
-<h1>链接</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一个链接 [<span class="string">Markdown语法</span>](<span class="link">https://markdown.com.cn &quot;标题&quot;</span>)。</span><br><span class="line"><span class="language-xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="section">## 格式化</span></span><br><span class="line">I love supporting the <span class="strong">**[<span class="string">EFF</span>](<span class="link">https://eff.org</span>)**</span>.</span><br><span class="line">This is the <span class="emphasis">*[<span class="string">Markdown Guide</span>](<span class="link">https://www.markdownguide.org</span>)*</span>.</span><br><span class="line">See the section on [<span class="string">`code`</span>](<span class="link">#code</span>).</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br>
-这是一个链接 <a href="https://markdown.com.cn" title="标题">Markdown语法</a>。<br>
-<a href="https://markdown.com.cn">https://markdown.com.cn</a></p>
-<h2 id="格式化">格式化</h2>
-<p>I love supporting the <strong><a href="https://eff.org">EFF</a></strong>.<br>
-This is the <em><a href="https://www.markdownguide.org">Markdown Guide</a></em>.<br>
-See the section on <a href="#code"><code>code</code></a>.</p>
-<h1>图片</h1>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这是图片</span>](<span class="link">/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;</span>)</span><br><span class="line"><span class="section">## 链接图片</span></span><br><span class="line">[<span class="string">![沙漠中的岩石图片</span>](<span class="link">/assets/img/shiprock.jpg &quot;Shiprock&quot;</span>)](<span class="link">https://markdown.com.cn</span>) </span><br></pre></td></tr></table></figure>
-<p>效果如下：<br>
-<img src="/assets/img/philly-magic-garden.jpg" alt="这是图片" title="Magic Gardens"></p>
-<h2 id="链接图片">链接图片</h2>
-<p><a href="https://markdown.com.cn"><img src="/assets/img/shiprock.jpg" alt="沙漠中的岩石图片" title="Shiprock"></a></p>
-<h1>流程图</h1>
-<p>详见<img src="https://mermaid.js.org/syntax/flowchart.html" alt="https://mermaid.js.org/syntax/flowchart.html"></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是一个链接 [<span class="string">Markdown语法</span>](<span class="link">https://markdown.com.cn &quot;标题&quot;</span>)。</span><br><span class="line"><span class="language-xml">&lt;https://markdown.com.cn&gt;</span></span><br><span class="line"><span class="section">## 格式化</span></span><br><span class="line">I love supporting the <span class="strong">**[<span class="string">EFF</span>](<span class="link">https://eff.org</span>)**</span>.</span><br><span class="line">This is the <span class="emphasis">*[<span class="string">Markdown Guide</span>](<span class="link">https://www.markdownguide.org</span>)*</span>.</span><br><span class="line">See the section on [<span class="string">`code`</span>](<span class="link">#code</span>).</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br>这是一个链接 <a href="https://markdown.com.cn/" title="标题">Markdown语法</a>。<br><a href="https://markdown.com.cn/">https://markdown.com.cn</a></p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>I love supporting the <strong><a href="https://eff.org/">EFF</a></strong>.<br>This is the <em><a href="https://www.markdownguide.org/">Markdown Guide</a></em>.<br>See the section on <a href="#code"><code>code</code></a>.</p>
+<h1 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h1><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">这是图片</span>](<span class="link">/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;</span>)</span><br><span class="line"><span class="section">## 链接图片</span></span><br><span class="line">[<span class="string">![沙漠中的岩石图片</span>](<span class="link">/assets/img/shiprock.jpg &quot;Shiprock&quot;</span>)](<span class="link">https://markdown.com.cn</span>) </span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="/assets/img/philly-magic-garden.jpg" alt="这是图片" title="Magic Gardens"></p>
+<h2 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h2><p><a href="https://markdown.com.cn/"><img src="/assets/img/shiprock.jpg" alt="沙漠中的岩石图片" title="Shiprock"></a> </p>
+<h1 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h1><p>详见<img src="https://mermaid.js.org/syntax/flowchart.html" alt="https://mermaid.js.org/syntax/flowchart.html"></p>
 <!-- # 参考文献
 需"npm install hexo-reference --save"安装插件。
 ```Markdown
 ### 引用文献的语句
 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[]()
 ``` -->">[1]</span></a></sup>
-<h3 id="引用参考文献：">引用参考文献：</h3>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href=""></a>
+
+<h3 id="引用参考文献："><a href="#引用参考文献：" class="headerlink" title="引用参考文献："></a>引用参考文献：</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href=""></a>
 ``` --&gt;<a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>博客</tag>
@@ -261,7 +235,7 @@ See the section on <a href="#code"><code>code</code></a>.</p>
   <entry>
     <title>博客所用插件记录</title>
     <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <tags>
         <tag>博客</tag>
       </tags>
@@ -269,7 +243,7 @@ See the section on <a href="#code"><code>code</code></a>.</p>
   <entry>
     <title>Harmony通用属性</title>
     <url>/posts/bbc6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -277,11 +251,10 @@ See the section on <a href="#code"><code>code</code></a>.</p>
   <entry>
     <title>Harmony网络相关</title>
     <url>/posts/cf3a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>Get方式</h1>
-<h2 id="根据JSON内容设置接口">根据JSON内容设置接口</h2>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="获取">获取</h2>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">info</span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">getPrefrenInstance</span>(<span class="attr">context</span>:<span class="title class_">Context</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -289,29 +262,29 @@ See the section on <a href="#code"><code>code</code></a>.</p>
   <entry>
     <title>Harmony状态管理</title>
     <url>/posts/8fb2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>实时渲染必备条件</h1>
-<ol>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="实时渲染必备条件"><a href="#实时渲染必备条件" class="headerlink" title="实时渲染必备条件"></a>实时渲染必备条件</h1><ol>
 <li>有状态修饰器</li>
-<li></li>
+<li>第一层级数据改变<br>但@Builder原则上只展示界面，不涉及状态相关，不改变数据</li>
 </ol>
-<h1>@Stata</h1>
-<h1>@Prop</h1>
-<h1>@Provide和@Consume</h1>
-<h1>@Obeserved和@ObjectLink</h1>
-<h2 id="概述">概述</h2>
-<h2 id="示例">示例</h2>
-<h3 id="常规用法">常规用法</h3>
-<p>@entry组件：通过将@State修饰的变量a:A，赋值给View组件，即View({a.attr:a.attr})<br>
-View组件：通过@ObjectLink attr，观察和修改a的属性attr<br>
-@Observer A：有成员a类型为BasicClassA<br>
-@Observer BasicClassA：有属性attr</p>
+<h1 id="相关组件"><a href="#相关组件" class="headerlink" title="相关组件"></a>相关组件</h1><h2 id="Stata"><a href="#Stata" class="headerlink" title="@Stata"></a>@Stata</h2><p>驱动界面刷新</p>
+<h2 id="Prop"><a href="#Prop" class="headerlink" title="@Prop"></a>@Prop</h2><ul>
+<li>父传子，只传一次</li>
+<li>深拷贝，父与子各有一份完全独立的数据(独立内存区域)<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@entry</span><br><span class="line">@Component</span><br><span class="line">struct Parent&#123;</span><br><span class="line">    @State val:number = 0</span><br><span class="line">    build()&#123;</span><br><span class="line">        Son(&#123;val:val&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@Component</span><br><span class="line">struct Parent&#123;</span><br><span class="line">    @Prop val</span><br><span class="line">    build()&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Link"><a href="#Link" class="headerlink" title="@Link"></a>@Link</h2><ul>
+<li>浅拷贝，父与子共用一份数据</li>
+</ul>
+<h2 id="Provide和-Consume"><a href="#Provide和-Consume" class="headerlink" title="@Provide和@Consume"></a>@Provide和@Consume</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@entry</span><br><span class="line">@Component</span><br><span class="line">struct Parent&#123;</span><br><span class="line">    @Provide val:number = 0</span><br><span class="line">    build()&#123;</span><br><span class="line">        Son(&#123;val:val&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@Component</span><br><span class="line">struct Parent&#123;</span><br><span class="line">    @Consume val</span><br><span class="line">    build()&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Obeserved和-ObjectLink"><a href="#Obeserved和-ObjectLink" class="headerlink" title="@Obeserved和@ObjectLink"></a>@Obeserved和@ObjectLink</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="常规用法"><a href="#常规用法" class="headerlink" title="常规用法"></a>常规用法</h4><p>@entry组件：通过将@State修饰的变量a:A，赋值给View组件，即View({a.attr:a.attr})<br>View组件：通过@ObjectLink attr，观察和修改a的属性attr<br>@Observer A：有成员a类型为BasicClassA<br>@Observer BasicClassA：有属性attr</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="嵌套对象">嵌套对象</h3>
-<h1>@LocalStorage</h1>
-<h1>@AppStorage</h1>
-<h1>@Watch</h1>
-<h1>$$</h1>
-]]></content>
+<h4 id="嵌套对象"><a href="#嵌套对象" class="headerlink" title="嵌套对象"></a>嵌套对象</h4><h2 id="Watch"><a href="#Watch" class="headerlink" title="@Watch"></a>@Watch</h2><h2 id=""><a href="#" class="headerlink" title="$$"></a>$$</h2><h1 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h1><h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="@LocalStorage"></a>@LocalStorage</h2><ul>
+<li>在一个Ability内数据共享，局限性大，基本用不上</li>
+<li>一般只用于服务卡片</li>
+</ul>
+<p>###示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="AppStorage"><a href="#AppStorage" class="headerlink" title="@AppStorage"></a>@AppStorage</h2>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -319,8 +292,7 @@ View组件：通过@ObjectLink attr，观察和修改a的属性attr<br>
   <entry>
     <title>Harmony小技巧</title>
     <url>/posts/ca8a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>类型断言</h1>
-<p>xx as type</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h1><p>xx as type</p>
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -329,19 +301,18 @@ View组件：通过@ObjectLink attr，观察和修改a的属性attr<br>
   <entry>
     <title>Hello World</title>
     <url>/posts/3eeb/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
