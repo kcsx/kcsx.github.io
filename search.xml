@@ -90,14 +90,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony的Stage模型</title>
     <url>/posts/8aee/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>Stage模型概述</h1>
@@ -196,8 +188,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony生命周期</title>
     <url>/posts/bfed/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -208,14 +216,6 @@
     <url>/posts/420d/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个Ability里面的多个page可通过router进行切换</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">pushUrl</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;pages/day04/Localstoragecase02&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
