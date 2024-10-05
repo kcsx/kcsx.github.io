@@ -9,14 +9,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony性能优化</title>
-    <url>/posts/21b1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony常用组件(1)——布局</title>
     <url>/posts/70e0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
@@ -41,6 +33,14 @@
 <p>自定义tabBar：不使用自定义导航栏时，系统默认的Tabs会实现切换逻辑。在使用了自定义导航栏后，切换页签的逻辑需要手动实现。即用户点击对应页签时，屏幕需要显示相应的内容页。</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建controller</span></span><br><span class="line">tabsController : <span class="title class_">TabsController</span> = <span class="keyword">new</span> <span class="title class_">TabsController</span>()</span><br><span class="line"><span class="meta">@State</span> <span class="attr">currentIndex</span>:<span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//将controller赋予Tabs容器</span></span><br><span class="line"><span class="title class_">Tabs</span>(<span class="variable language_">this</span>.<span class="property">tabsController</span>)</span><br><span class="line"><span class="comment">//在自定义tabBar中实现切换逻辑</span></span><br><span class="line"><span class="meta">@Builder</span> <span class="title class_">TabBuilder</span>(<span class="attr">title</span>: <span class="built_in">string</span>, <span class="attr">targetIndex</span>: <span class="built_in">number</span>) &#123;</span><br><span class="line">  <span class="title class_">Column</span>() &#123;</span><br><span class="line">  ...</span><br><span class="line">  .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = targetIndex;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">tabsController</span>.<span class="title function_">changeIndex</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony性能优化</title>
+    <url>/posts/21b1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -146,6 +146,14 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony常用组件(2)——其他</title>
     <url>/posts/e93f/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="遍历组件"><a href="#遍历组件" class="headerlink" title="遍历组件"></a>遍历组件</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">ForEach</span>(<span class="variable language_">this</span>.<span class="property">list</span>,(<span class="attr">item</span>:<span class="title class_">Type</span>,idx)=&#123;</span><br><span class="line">	<span class="title function_">myComponent</span>(&#123;<span class="attr">myVal</span>:item&#125;) </span><br><span class="line">&#125;)</span><br><span class="line">struct myComponet&#123;</span><br><span class="line">	<span class="attr">myVal</span>:<span class="variable constant_">TYPE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -225,14 +233,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony编年史</title>
     <url>/posts/88b0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
@@ -243,7 +243,62 @@
   <entry>
     <title>Harmony生命周期</title>
     <url>/posts/bfed/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>组件是 OpenHarmony 页面最小显示单元<br>为了让系统知道这是一个组件，需要使用 @Component 修饰符和 struct 关键字修饰<br>自定义组件禁止添加构造函数</p>
+<p>必须实现 build()方法，该方法满足 Builder 构造器接口定义，用于定义组件的声明式 UI 描述<br>在组件创建或者组件内 @State 修饰的变量更新时系统都会自动调用 build() 方法刷新UI</p>
+<h1 id="系统组件生命周期"><a href="#系统组件生命周期" class="headerlink" title="系统组件生命周期"></a>系统组件生命周期</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onAppear</span>()</span><br><span class="line"><span class="title function_">onDisAppear</span>()</span><br></pre></td></tr></table></figure>
+
+<h1 id="自定义组件生命周期"><a href="#自定义组件生命周期" class="headerlink" title="自定义组件生命周期"></a>自定义组件生命周期</h1><ul>
+<li>@Component 修饰的组件，ArkUI开发框架会自动为其赋予私有的生命周期方法 aboutToAppear() 和 aboutToDisappear() ，它们用于通知开发者该自定义组件的生命周的变更<br>aboutToAppear：函数在创建自定义组件的新实例后，在执行其 build() 函数之前执行。允许在该函数中改变状态变量，更改将在后续执行 build() 函数中生效<br>aboutToDisappear：函数在自定义组件析构消耗之前执行。不允许在该函数中改变状态变量，特别是 @Link 变量的修改可能会导致应用程序行为不稳定</li>
+</ul>
+<p>自定义属性的特点：<br>可组合：允许开发人员组合使用内置组件和其他组件，以及公共属性和方法。<br>可重用：可以被其他组件重用，并作为不同的实例在不同的父组件或容器中使用；<br>有生命周期：生命周期的回调方法可以在组件中配置，用于业务逻辑处理；<br>数据驱动更新：可以由状态数据驱动，实现UI自动更新。</p>
+<h1 id="页面的生命周期"><a href="#页面的生命周期" class="headerlink" title="页面的生命周期"></a>页面的生命周期</h1><p>页面本质上也是一个组件，只是页面对于组件来讲多了一个修饰符 @Entry(表示当前组件是一个页面，需要在 config.json 中做配置)<br>除了具有组件的生命周期外，它还有自己独有的生命周期方法</p>
+<p>onPageShow：页面显示时触发一次，包括路由过程、应用进入前后台等场景，仅 @Entry 修饰的自定义组件生效<br>onPageHide：页面消失时触发一次，包括路由过程、应用进入前后台等场景，仅 @Entry 修饰的自定义组件生效<br>onBackPress：当用户点击返回按钮时触发，仅 @Entry 修饰的自定义组件生效。该方法返回 boolean 类型的值<br>1、返回 true 表示页面自己处理返回逻辑, 不进行页面路由。<br>2、返回 false 表示使用默认的返回逻辑。<br>3、不返回值会作为 false 处理</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onAppear</td>
+<td>系统组件独有的方法，组件从组件树上挂载的回调。</td>
+</tr>
+<tr>
+<td>onDisAppear</td>
+<td>系统组件独有的方法，组件从组件树上卸载的回到。</td>
+</tr>
+<tr>
+<td>aboutToAppear</td>
+<td>函数在创建自定义组件的新实例后，在执行其 build() 函数之前执行。允许在该函数中改变状态变量，更改将在后续执行 build() 函数中生效。</td>
+</tr>
+<tr>
+<td>aboutToDisappear</td>
+<td>函数在自定义组件析构消耗之前执行。不允许在该函数中改变状态变量，特别是 @Link 变量的修改可能会导致应用程序行为不稳定。</td>
+</tr>
+<tr>
+<td>onPageShow</td>
+<td>页面显示时触发该回调，包括路由过程、应用进入前后台等场景。仅 @Entry 修饰的自定义组件生效。</td>
+</tr>
+<tr>
+<td>onPageHide</td>
+<td>页面消失时触发该回调，包括路由过程、应用进入前后台等场景。仅 @Entry 修饰的自定义组件生效。</td>
+</tr>
+<tr>
+<td>onBackPress</td>
+<td>当用户点击返回按钮时触发，该方法返回 boolean 类型，true：表示页面自己处理返回逻辑, 不进行页面路由。false：表示使用默认的返回逻辑。不返回值会作为 false 处理。仅 @Entry 修饰的自定义组件生效。</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony路由</title>
+    <url>/posts/420d/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个Ability里面的多个page可通过router进行切换</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">pushUrl</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;pages/day04/Localstoragecase02&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -325,14 +380,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客所用插件记录</title>
-    <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony通用信息(1)——通用属性</title>
     <url>/posts/bbc6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="通用属性"><a href="#通用属性" class="headerlink" title="通用属性"></a>通用属性</h1><h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//缺省时使用元素自身内容需要的宽/高</span></span><br><span class="line"><span class="comment">//若子组件的宽/高大于父组件的宽/高，则会画出父组件的范围</span></span><br><span class="line"><span class="comment">//从API version 10开始，该接口支持calc计算特性</span></span><br><span class="line"><span class="title function_">width</span>(<span class="attr">value</span>: <span class="title class_">Length</span>)</span><br><span class="line"><span class="title function_">height</span>(<span class="attr">value</span>: <span class="title class_">Length</span>)</span><br><span class="line"><span class="comment">//从API version 10开始，该接口支持calc计算特性</span></span><br><span class="line"><span class="title function_">size</span>(<span class="attr">value</span>: <span class="title class_">SizeOptions</span>)</span><br><span class="line"><span class="comment">//从API version 10开始，该接口支持calc计算特性</span></span><br><span class="line"><span class="title function_">padding</span>(<span class="attr">value</span>: <span class="title class_">Padding</span> | <span class="title class_">Length</span> | <span class="title class_">LocalizedPadding</span>)</span><br><span class="line"><span class="title function_">margin</span>(<span class="attr">value</span>: <span class="title class_">Margin</span> | <span class="title class_">Length</span> | <span class="title class_">LocalizedMargin</span>)</span><br><span class="line"><span class="comment">//对子组件进行重新布局</span></span><br><span class="line"><span class="comment">//子元素与兄弟元素占主轴尺寸按照权重进行分配</span></span><br><span class="line"><span class="comment">//忽略元素本身尺寸设置</span></span><br><span class="line"><span class="comment">//表示自适应占满剩余空间</span></span><br><span class="line"><span class="title function_">layoutWeight</span>(<span class="attr">value</span>: <span class="built_in">number</span> | <span class="built_in">string</span>)</span><br><span class="line"><span class="comment">//设置约束尺寸，组件布局时，进行尺寸范围限制</span></span><br><span class="line"><span class="comment">//优先级高于Width和Height</span></span><br><span class="line"><span class="title function_">constraintSize</span>(<span class="attr">value</span>: <span class="title class_">ConstraintSizeOptions</span>)</span><br><span class="line"><span class="title function_">constraintSize</span>(minWidth/maxWidth/minHeight/maxHeight)</span><br></pre></td></tr></table></figure>
@@ -371,6 +418,14 @@
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客所用插件记录</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -480,14 +535,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Harmony路由</title>
-    <url>/posts/420d/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个Ability里面的多个page可通过router进行切换</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">pushUrl</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;pages/day04/Localstoragecase02&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
   </entry>
 </search>
