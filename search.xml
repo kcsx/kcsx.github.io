@@ -9,10 +9,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony框架结构</title>
-    <url>/posts/fdb3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
-]]></content>
+    <title>Harmony性能优化</title>
+    <url>/posts/21b1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -47,18 +46,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony媒体相关</title>
-    <url>/posts/86c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">Videocontroller</span>=<span class="keyword">new</span> <span class="title class_">Videocontroller</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
+    <title>Harmony框架结构</title>
+    <url>/posts/fdb3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
+<h1 id="ArkUI"><a href="#ArkUI" class="headerlink" title="ArkUI"></a>ArkUI</h1><p><img src="/source/Harmony/ArkUI_Frame.png" alt="ArkUI框架" title="ArkUI框架"></p>
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <title>Harmony媒体相关</title>
+    <url>/posts/86c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">Videocontroller</span>=<span class="keyword">new</span> <span class="title class_">Videocontroller</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
+]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -224,6 +225,14 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony编年史</title>
     <url>/posts/88b0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
@@ -235,15 +244,6 @@
     <title>Harmony生命周期</title>
     <url>/posts/bfed/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony路由</title>
-    <url>/posts/420d/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个Ability里面的多个page可通过router进行切换</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">pushUrl</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;pages/day04/Localstoragecase02&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -385,24 +385,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Harmony状态管理</title>
     <url>/posts/8fb2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="实时渲染必备条件"><a href="#实时渲染必备条件" class="headerlink" title="实时渲染必备条件"></a>实时渲染必备条件</h1><ol>
@@ -477,6 +459,33 @@
 
 <h2 id="zIndex-n"><a href="#zIndex-n" class="headerlink" title=".zIndex(n)"></a>.zIndex(n)</h2><p>在父容器中的层级，n越高层级越高</p>
 ]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Harmony路由</title>
+    <url>/posts/420d/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个Ability里面的多个page可通过router进行切换</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">router.<span class="title function_">pushUrl</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>:<span class="string">&quot;pages/day04/Localstoragecase02&quot;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
