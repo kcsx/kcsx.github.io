@@ -9,25 +9,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony性能优化</title>
-    <url>/posts/21b1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony框架结构</title>
-    <url>/posts/fdb3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx" alt=""></p>
-<h1>ArkUI</h1>
-<p><img src="/source/Harmony/ArkUI_Frame.png" alt="ArkUI框架" title="ArkUI框架"></p>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony常用组件(1)——布局</title>
     <url>/posts/70e0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>布局</h1>
@@ -61,6 +42,17 @@
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Tabs</span>()&#123;</span><br><span class="line">    <span class="title class_">TabContent</span>()&#123;&#125;</span><br><span class="line">    .<span class="title function_">tabBar</span>(<span class="variable language_">this</span>.<span class="title function_">newTab</span>())</span><br><span class="line">&#125;</span><br><span class="line">.<span class="title function_">barPosition</span>(<span class="title class_">BarPosition</span>.<span class="property">End</span>)</span><br><span class="line">.<span class="title function_">scrollable</span>(<span class="literal">false</span>)</span><br><span class="line">.<span class="title function_">onChange</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">	&#125;)</span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="title function_">newTab</span>(<span class="params"></span>)&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>自定义tabBar：不使用自定义导航栏时，系统默认的Tabs会实现切换逻辑。在使用了自定义导航栏后，切换页签的逻辑需要手动实现。即用户点击对应页签时，屏幕需要显示相应的内容页。</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建controller</span></span><br><span class="line">tabsController : <span class="title class_">TabsController</span> = <span class="keyword">new</span> <span class="title class_">TabsController</span>()</span><br><span class="line"><span class="meta">@State</span> <span class="attr">currentIndex</span>:<span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//将controller赋予Tabs容器</span></span><br><span class="line"><span class="title class_">Tabs</span>(<span class="variable language_">this</span>.<span class="property">tabsController</span>)</span><br><span class="line"><span class="comment">//在自定义tabBar中实现切换逻辑</span></span><br><span class="line"><span class="meta">@Builder</span> <span class="title class_">TabBuilder</span>(<span class="attr">title</span>: <span class="built_in">string</span>, <span class="attr">targetIndex</span>: <span class="built_in">number</span>) &#123;</span><br><span class="line">  <span class="title class_">Column</span>() &#123;</span><br><span class="line">  ...</span><br><span class="line">  .<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">currentIndex</span> = targetIndex;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">tabsController</span>.<span class="title function_">changeIndex</span>(<span class="variable language_">this</span>.<span class="property">currentIndex</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony框架结构</title>
+    <url>/posts/fdb3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx" alt=""></p>
+<h1>ArkUI</h1>
+<p><img src="/source/Harmony/ArkUI_Frame.png" alt="ArkUI框架" title="ArkUI框架"></p>
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -221,86 +213,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony生命周期</title>
-    <url>/posts/bfed/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>组件</h1>
-<ul>
-<li>组件是 OpenHarmony 页面最小显示单元</li>
-<li>为了让系统知道这是一个组件，需要使用 @Component 修饰符和 struct 关键字修饰</li>
-<li>自定义组件禁止添加构造函数</li>
-<li>必须实现 build()方法，该方法满足 Builder 构造器接口定义，用于定义组件的声明式 UI 描述</li>
-<li>在组件创建或者组件内 @State 修饰的变量更新时系统都会自动调用 build() 方法刷新UI</li>
-</ul>
-<h1>系统组件生命周期</h1>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onAppear</span>()</span><br><span class="line"><span class="title function_">onDisAppear</span>()</span><br></pre></td></tr></table></figure>
-<h1>自定义组件生命周期</h1>
-<p>@Component 修饰的组件，ArkUI开发框架会自动为其赋予私有的生命周期方法 aboutToAppear() 和 aboutToDisappear() ，它们用于通知开发者该自定义组件的生命周的变更</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数在创建自定义组件的新实例后，在执行其 build() 函数之前执行</span></span><br><span class="line"><span class="comment">//允许在该函数中改变状态变量，更改将在后续执行 build() 函数中生效</span></span><br><span class="line"><span class="title function_">aboutToAppear</span>()</span><br><span class="line"><span class="comment">//函数在自定义组件析构消耗之前执行</span></span><br><span class="line"><span class="comment">//不允许在该函数中改变状态变量，特别是 @Link 变量的修改可能会导致应用程序行为不稳定</span></span><br><span class="line"><span class="title function_">aboutToDisappear</span>()</span><br></pre></td></tr></table></figure>
-<p>自定义组件有如下特点：</p>
-<ul>
-<li>可组合：允许开发人员组合使用内置组件和其他组件，以及公共属性和方法。</li>
-<li>可重用：可以被其他组件重用，并作为不同的实例在不同的父组件或容器中使用；</li>
-<li>有生命周期：生命周期的回调方法可以在组件中配置，用于业务逻辑处理；</li>
-<li>数据驱动更新：可以由状态数据驱动，实现UI自动更新。</li>
-</ul>
-<h1>页面的生命周期</h1>
-<ul>
-<li>页面本质上也是一个组件，只是页面对于组件来讲多了一个修饰符 @Entry(表示当前组件是一个页面，需要在config.json中做配置)</li>
-<li>除了具有组件的生命周期外，它还有自己独有的生命周期方法</li>
-</ul>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面显示时触发一次，包括路由过程、应用进入前后台等场景</span></span><br><span class="line"><span class="comment">//仅 @Entry 修饰的自定义组件生效</span></span><br><span class="line"><span class="title function_">onPageShow</span>()</span><br><span class="line"><span class="comment">//页面消失时触发一次，包括路由过程、应用进入前后台等场景</span></span><br><span class="line"><span class="comment">//仅 @Entry 修饰的自定义组件生效</span></span><br><span class="line"><span class="title function_">onPageHide</span>()</span><br><span class="line"><span class="comment">//当用户点击返回按钮时触发</span></span><br><span class="line"><span class="comment">//仅 @Entry 修饰的自定义组件生效</span></span><br><span class="line"><span class="comment">//返回 true 表示页面自己处理返回逻辑, 不进行页面路由</span></span><br><span class="line"><span class="comment">//返回 false 表示使用默认的返回逻辑</span></span><br><span class="line"><span class="comment">//不返回值会作为 false 处理</span></span><br><span class="line"><span class="title function_">onBackPress</span>()</span><br></pre></td></tr></table></figure>
-<h1>系统组件、自定义组件、页 面的对比</h1>
-<table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>onAppear</td>
-<td>系统组件独有的方法，组件从组件树上挂载的回调。</td>
-</tr>
-<tr>
-<td>onDisAppear</td>
-<td>系统组件独有的方法，组件从组件树上卸载的回到。</td>
-</tr>
-<tr>
-<td>aboutToAppear</td>
-<td>函数在创建自定义组件的新实例后，在执行其 build() 函数之前执行。允许在该函数中改变状态变量，更改将在后续执行 build() 函数中生效。</td>
-</tr>
-<tr>
-<td>aboutToDisappear</td>
-<td>函数在自定义组件析构消耗之前执行。不允许在该函数中改变状态变量，特别是 @Link 变量的修改可能会导致应用程序行为不稳定。</td>
-</tr>
-<tr>
-<td>onPageShow</td>
-<td>页面显示时触发该回调，包括路由过程、应用进入前后台等场景。仅 @Entry 修饰的自定义组件生效。</td>
-</tr>
-<tr>
-<td>onPageHide</td>
-<td>页面消失时触发该回调，包括路由过程、应用进入前后台等场景。仅 @Entry 修饰的自定义组件生效。</td>
-</tr>
-<tr>
-<td>onBackPress</td>
-<td>当用户点击返回按钮时触发，该方法返回 boolean 类型，true：表示页面自己处理返回逻辑, 不进行页面路由。false：表示使用默认的返回逻辑。不返回值会作为 false 处理。仅 @Entry 修饰的自定义组件生效。</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>上面的回调函数是私有的，在运行时由开发框架在特定的时间进行调用，不能从应用程序中手动调用这些回调函数</li>
-<li>允许在生命周期函数中使用 Promise 和异步回调函数，比如网络资源获取，定时器设置等</li>
-<li>不允许在生命周期函数中使用 async await</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
+    <title>Harmony性能优化</title>
+    <url>/posts/21b1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -384,6 +298,14 @@ TAB、Shift + TAB  | 通用组件  | 触发进入走焦状态/走焦 | 系统按
 </ul>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onTouchIntercept</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">TouchEvent</span>, <span class="title class_">HitTestMode</span>&gt;)</span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
   </entry>
   <entry>
     <title>Harmony路由</title>
@@ -495,6 +417,98 @@ See the section on <a href="#code"><code>code</code></a>.</p>
       </tags>
   </entry>
   <entry>
+    <title>Harmony生命周期</title>
+    <url>/posts/bfed/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>组件</h1>
+<ul>
+<li>组件是 OpenHarmony 页面最小显示单元</li>
+<li>为了让系统知道这是一个组件，需要使用 @Component 修饰符和 struct 关键字修饰</li>
+<li>自定义组件禁止添加构造函数</li>
+<li>必须实现 build()方法，该方法满足 Builder 构造器接口定义，用于定义组件的声明式 UI 描述</li>
+<li>在组件创建或者组件内 @State 修饰的变量更新时系统都会自动调用 build() 方法刷新UI</li>
+</ul>
+<h1>系统组件生命周期</h1>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onAppear</span>()</span><br><span class="line"><span class="title function_">onDisAppear</span>()</span><br></pre></td></tr></table></figure>
+<h1>自定义组件生命周期</h1>
+<p>@Component 修饰的组件，ArkUI开发框架会自动为其赋予私有的生命周期方法 aboutToAppear() 和 aboutToDisappear() ，它们用于通知开发者该自定义组件的生命周的变更</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数在创建自定义组件的新实例后，在执行其 build() 函数之前执行</span></span><br><span class="line"><span class="comment">//允许在该函数中改变状态变量，更改将在后续执行 build() 函数中生效</span></span><br><span class="line"><span class="title function_">aboutToAppear</span>()</span><br><span class="line"><span class="comment">//函数在自定义组件析构消耗之前执行</span></span><br><span class="line"><span class="comment">//不允许在该函数中改变状态变量，特别是 @Link 变量的修改可能会导致应用程序行为不稳定</span></span><br><span class="line"><span class="title function_">aboutToDisappear</span>()</span><br></pre></td></tr></table></figure>
+<p>自定义组件有如下特点：</p>
+<ul>
+<li>可组合：允许开发人员组合使用内置组件和其他组件，以及公共属性和方法。</li>
+<li>可重用：可以被其他组件重用，并作为不同的实例在不同的父组件或容器中使用；</li>
+<li>有生命周期：生命周期的回调方法可以在组件中配置，用于业务逻辑处理；</li>
+<li>数据驱动更新：可以由状态数据驱动，实现UI自动更新。</li>
+</ul>
+<h1>页面的生命周期</h1>
+<ul>
+<li>页面本质上也是一个组件，只是页面对于组件来讲多了一个修饰符 @Entry(表示当前组件是一个页面，需要在config.json中做配置)</li>
+<li>除了具有组件的生命周期外，它还有自己独有的生命周期方法</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//页面显示时触发一次，包括路由过程、应用进入前后台等场景</span></span><br><span class="line"><span class="comment">//仅 @Entry 修饰的自定义组件生效</span></span><br><span class="line"><span class="title function_">onPageShow</span>()</span><br><span class="line"><span class="comment">//页面消失时触发一次，包括路由过程、应用进入前后台等场景</span></span><br><span class="line"><span class="comment">//仅 @Entry 修饰的自定义组件生效</span></span><br><span class="line"><span class="title function_">onPageHide</span>()</span><br><span class="line"><span class="comment">//当用户点击返回按钮时触发</span></span><br><span class="line"><span class="comment">//仅 @Entry 修饰的自定义组件生效</span></span><br><span class="line"><span class="comment">//返回 true 表示页面自己处理返回逻辑, 不进行页面路由</span></span><br><span class="line"><span class="comment">//返回 false 表示使用默认的返回逻辑</span></span><br><span class="line"><span class="comment">//不返回值会作为 false 处理</span></span><br><span class="line"><span class="title function_">onBackPress</span>()</span><br></pre></td></tr></table></figure>
+<h1>系统组件、自定义组件、页面的对比</h1>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onAppear</td>
+<td>系统组件独有的方法，组件从组件树上挂载的回调</td>
+</tr>
+<tr>
+<td>onDisAppear</td>
+<td>系统组件独有的方法，组件从组件树上卸载的回调</td>
+</tr>
+<tr>
+<td>aboutToAppear</td>
+<td>函数在创建自定义组件的新实例后，在执行其 build() 函数之前执行。允许在该函数中改变状态变量，更改将在后续执行 build() 函数中生效</td>
+</tr>
+<tr>
+<td>aboutToDisappear</td>
+<td>函数在自定义组件析构消耗之前执行。不允许在该函数中改变状态变量，特别是 @Link 变量的修改可能会导致应用程序行为不稳定</td>
+</tr>
+<tr>
+<td>onPageShow</td>
+<td>页面显示时触发该回调，包括路由过程、应用进入前后台等场景。仅 @Entry 修饰的自定义组件生效</td>
+</tr>
+<tr>
+<td>onPageHide</td>
+<td>页面消失时触发该回调，包括路由过程、应用进入前后台等场景。仅 @Entry 修饰的自定义组件生效</td>
+</tr>
+<tr>
+<td>onBackPress</td>
+<td>当用户点击返回按钮时触发，该方法返回 boolean 类型，true：表示页面自己处理返回逻辑, 不进行页面路由。false：表示使用默认的返回逻辑。不返回值会作为 false 处理。仅 @Entry 修饰的自定义组件生效</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>上面的回调函数是私有的，在运行时由开发框架在特定的时间进行调用，不能从应用程序中手动调用这些回调函数</li>
+<li>允许在生命周期函数中使用 Promise 和异步回调函数，比如网络资源获取，定时器设置等</li>
+<li>不允许在生命周期函数中使用 async await</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony网络相关</title>
+    <url>/posts/cf3a/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>Get方式</h1>
+<h2 id="根据JSON内容设置接口">根据JSON内容设置接口</h2>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="获取">获取</h2>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用">使用</h2>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客所用插件记录</title>
     <url>/posts/1495/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
@@ -568,20 +582,6 @@ See the section on <a href="#code"><code>code</code></a>.</p>
 <h2 id="鼠标光标">鼠标光标</h2>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 特效绘制合并</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 ]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony网络相关</title>
-    <url>/posts/cf3a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>Get方式</h1>
-<h2 id="根据JSON内容设置接口">根据JSON内容设置接口</h2>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="获取">获取</h2>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用">使用</h2>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -661,6 +661,25 @@ View组件：通过@ObjectLink attr，观察和修改a的属性attr<br>
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start">Quick Start</h2>
+<h3 id="Create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Harmony小技巧</title>
     <url>/posts/ca8a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>语法</h1>
@@ -708,24 +727,5 @@ View组件：通过@ObjectLink attr，观察和修改a的属性attr<br>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
