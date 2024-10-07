@@ -270,6 +270,27 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony小技巧(2)——组件</title>
+    <url>/posts/60c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="使用开源组件"><a href="#使用开源组件" class="headerlink" title="使用开源组件"></a>使用开源组件</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//安装</span></span><br><span class="line">ohpm install lite_chart</span><br><span class="line"><span class="comment">//引用</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">LiteChart</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;lite_chart&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="aspectRatio-m-n"><a href="#aspectRatio-m-n" class="headerlink" title="aspectRatio(m&#x2F;n)"></a>aspectRatio(m&#x2F;n)</h2><p>m&#x2F;n为宽高比</p>
+<h2 id="布局调整"><a href="#布局调整" class="headerlink" title="布局调整"></a>布局调整</h2><h3 id="layoutWeight-n"><a href="#layoutWeight-n" class="headerlink" title="layoutWeight(n)"></a>layoutWeight(n)</h3><p>n为占据的份额。可用于底部，这样底部上方的内容不会把底部挤掉</p>
+<h3 id="margin"><a href="#margin" class="headerlink" title=".margin({})"></a>.margin({})</h3><h3 id="padding"><a href="#padding" class="headerlink" title=".padding({})"></a>.padding({})</h3><h2 id="stateStyles"><a href="#stateStyles" class="headerlink" title="stateStyles"></a>stateStyles</h2><p>里面只能使用通用属性</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">stateStyles</span>(&#123;</span><br><span class="line">	<span class="attr">normal</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">130</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">130</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">pressed</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>((<span class="number">180</span>))</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">180</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	 <span class="attr">disabled</span>:&#123;</span><br><span class="line">		.<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Green</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">selected</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	focused    :&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="zIndex-n"><a href="#zIndex-n" class="headerlink" title=".zIndex(n)"></a>.zIndex(n)</h2><p>在父容器中的层级，n越高层级越高</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Harmony基本原理(3)——生命周期</title>
     <url>/posts/bfed/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><ul>
@@ -358,27 +379,6 @@
       <tags>
         <tag>鸿蒙基础</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony小技巧(2)——组件</title>
-    <url>/posts/60c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="使用开源组件"><a href="#使用开源组件" class="headerlink" title="使用开源组件"></a>使用开源组件</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//安装</span></span><br><span class="line">ohpm install lite_chart</span><br><span class="line"><span class="comment">//引用</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">LiteChart</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;lite_chart&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="aspectRatio-m-n"><a href="#aspectRatio-m-n" class="headerlink" title="aspectRatio(m&#x2F;n)"></a>aspectRatio(m&#x2F;n)</h2><p>m&#x2F;n为宽高比</p>
-<h2 id="布局调整"><a href="#布局调整" class="headerlink" title="布局调整"></a>布局调整</h2><h3 id="layoutWeight-n"><a href="#layoutWeight-n" class="headerlink" title="layoutWeight(n)"></a>layoutWeight(n)</h3><p>n为占据的份额。可用于底部，这样底部上方的内容不会把底部挤掉</p>
-<h3 id="margin"><a href="#margin" class="headerlink" title=".margin({})"></a>.margin({})</h3><h3 id="padding"><a href="#padding" class="headerlink" title=".padding({})"></a>.padding({})</h3><h2 id="stateStyles"><a href="#stateStyles" class="headerlink" title="stateStyles"></a>stateStyles</h2><p>里面只能使用通用属性</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">stateStyles</span>(&#123;</span><br><span class="line">	<span class="attr">normal</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">130</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">130</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">pressed</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>((<span class="number">180</span>))</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">180</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	 <span class="attr">disabled</span>:&#123;</span><br><span class="line">		.<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Green</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">selected</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	focused    :&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="zIndex-n"><a href="#zIndex-n" class="headerlink" title=".zIndex(n)"></a>.zIndex(n)</h2><p>在父容器中的层级，n越高层级越高</p>
-]]></content>
   </entry>
   <entry>
     <title>Harmony路由</title>
@@ -488,6 +488,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony网络相关</title>
+    <url>/posts/cf3a/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客所用插件记录</title>
     <url>/posts/1495/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
@@ -532,17 +543,6 @@
 <h2 id="组件内容填充"><a href="#组件内容填充" class="headerlink" title="组件内容填充"></a>组件内容填充</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 事件独占</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 <h2 id="鼠标光标"><a href="#鼠标光标" class="headerlink" title="鼠标光标"></a>鼠标光标</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 特效绘制合并</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 ]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony网络相关</title>
-    <url>/posts/cf3a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -620,6 +620,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony国际化</title>
+    <url>/posts/8fe/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="配置路径"><a href="#配置路径" class="headerlink" title="配置路径"></a>配置路径</h1><p>resources&#x2F;base&#x2F;element&#x2F;string.json<br>resources&#x2F;zh-CN&#x2F;element&#x2F;string.jsonresources&#x2F;base&#x2F;</p>
+<h1 id="添加条目"><a href="#添加条目" class="headerlink" title="添加条目"></a>添加条目</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;module_desc&quot;</span>,</span><br><span class="line">  <span class="string">&quot;value&quot;</span>: <span class="string">&quot;module description&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Text</span>($r(<span class="string">&quot;app.string.calculator&quot;</span>))</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/posts/3eeb/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
@@ -637,16 +648,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Harmony国际化</title>
-    <url>/posts/8fe/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="配置路径"><a href="#配置路径" class="headerlink" title="配置路径"></a>配置路径</h1><p>resources&#x2F;base&#x2F;element&#x2F;string.json<br>resources&#x2F;zh-CN&#x2F;element&#x2F;string.jsonresources&#x2F;base&#x2F;</p>
-<h1 id="添加条目"><a href="#添加条目" class="headerlink" title="添加条目"></a>添加条目</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;module_desc&quot;</span>,</span><br><span class="line">  <span class="string">&quot;value&quot;</span>: <span class="string">&quot;module description&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Text</span>($r(<span class="string">&quot;app.string.calculator&quot;</span>))</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
   </entry>
 </search>
