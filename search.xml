@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>设计模式</title>
+    <url>/posts/d104/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>计算机基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony案例分析(1)——美团购物</title>
+    <url>/posts/98cf/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
+<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
+<li>理解UI刷新原理</li>
+<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
+<li>掌握持久化方法</li>
+</ol>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
+<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
+<li>将商品写成对象数组通过@Link传递</li>
+<li>商品数量令用一个number数组存储到AppStorage上</li>
+</ol>
+<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加入商品数组的会有重复</td>
+<td>写一个面对对象数组的去重函数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
+<li>对商品数组和商品数量数组做持久化</li>
+</ol>
+<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
+<ol>
+<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙案例</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony案例分析(2)——开眼App</title>
     <url>/posts/9b25/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据所给接口，仿照“开眼”APP开发UI界面，并实现页面路由、发帖、评论等APP基础功能</p>
@@ -55,14 +108,6 @@
       </tags>
   </entry>
   <entry>
-    <title>设计模式</title>
-    <url>/posts/d104/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>计算机基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony常用组件(1)——布局</title>
     <url>/posts/70e0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
@@ -92,48 +137,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony案例分析(1)——美团购物</title>
-    <url>/posts/98cf/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
-<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
-<li>理解UI刷新原理</li>
-<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
-<li>掌握持久化方法</li>
-</ol>
-<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
-<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
-<li>将商品写成对象数组通过@Link传递</li>
-<li>商品数量令用一个number数组存储到AppStorage上</li>
-</ol>
-<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加入商品数组的会有重复</td>
-<td>写一个面对对象数组的去重函数</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
-<li>对商品数组和商品数量数组做持久化</li>
-</ol>
-<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
-<ol>
-<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
+    <title>Harmony媒体相关</title>
+    <url>/posts/86c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>鸿蒙案例</tag>
+        <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
@@ -185,10 +194,17 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony媒体相关</title>
-    <url>/posts/86c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -282,14 +298,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony常用组件(2)——其他</title>
     <url>/posts/e93f/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="遍历组件"><a href="#遍历组件" class="headerlink" title="遍历组件"></a>遍历组件</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">ForEach</span>(<span class="variable language_">this</span>.<span class="property">list</span>,(<span class="attr">item</span>:<span class="title class_">Type</span>,idx)=&#123;</span><br><span class="line">	<span class="title function_">myComponent</span>(&#123;<span class="attr">myVal</span>:item&#125;) </span><br><span class="line">&#125;)</span><br><span class="line">struct myComponet&#123;</span><br><span class="line">	<span class="attr">myVal</span>:<span class="variable constant_">TYPE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -367,14 +375,6 @@
 <li>可根据事件在控件上按下时发生的位置，输入源等事件信息决定控件上的HitTestMode属性<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onTouchIntercept</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">TouchEvent</span>, <span class="title class_">HitTestMode</span>&gt;)</span><br></pre></td></tr></table></figure></li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
   </entry>
   <entry>
     <title>Harmony基本原理(3)——生命周期</title>
@@ -509,6 +509,14 @@
 ]]></content>
   </entry>
   <entry>
+    <title>博客所用插件记录</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown示例</title>
     <url>/posts/ed04/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!-- 标题 -->
@@ -587,14 +595,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客所用插件记录</title>
-    <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony通用信息(1)——通用属性</title>
     <url>/posts/bbc6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="通用属性"><a href="#通用属性" class="headerlink" title="通用属性"></a>通用属性</h1><h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//缺省时使用元素自身内容需要的宽/高</span></span><br><span class="line"><span class="comment">//若子组件的宽/高大于父组件的宽/高，则会画出父组件的范围</span></span><br><span class="line"><span class="comment">//从API version 10开始，该接口支持calc计算特性</span></span><br><span class="line"><span class="title function_">width</span>(<span class="attr">value</span>: <span class="title class_">Length</span>)</span><br><span class="line"><span class="title function_">height</span>(<span class="attr">value</span>: <span class="title class_">Length</span>)</span><br><span class="line"><span class="comment">//从API version 10开始，该接口支持calc计算特性</span></span><br><span class="line"><span class="title function_">size</span>(<span class="attr">value</span>: <span class="title class_">SizeOptions</span>)</span><br><span class="line"><span class="comment">//从API version 10开始，该接口支持calc计算特性</span></span><br><span class="line"><span class="title function_">padding</span>(<span class="attr">value</span>: <span class="title class_">Padding</span> | <span class="title class_">Length</span> | <span class="title class_">LocalizedPadding</span>)</span><br><span class="line"><span class="title function_">margin</span>(<span class="attr">value</span>: <span class="title class_">Margin</span> | <span class="title class_">Length</span> | <span class="title class_">LocalizedMargin</span>)</span><br><span class="line"><span class="comment">//对子组件进行重新布局</span></span><br><span class="line"><span class="comment">//子元素与兄弟元素占主轴尺寸按照权重进行分配</span></span><br><span class="line"><span class="comment">//忽略元素本身尺寸设置</span></span><br><span class="line"><span class="comment">//表示自适应占满剩余空间</span></span><br><span class="line"><span class="title function_">layoutWeight</span>(<span class="attr">value</span>: <span class="built_in">number</span> | <span class="built_in">string</span>)</span><br><span class="line"><span class="comment">//设置约束尺寸，组件布局时，进行尺寸范围限制</span></span><br><span class="line"><span class="comment">//优先级高于Width和Height</span></span><br><span class="line"><span class="title function_">constraintSize</span>(<span class="attr">value</span>: <span class="title class_">ConstraintSizeOptions</span>)</span><br><span class="line"><span class="title function_">constraintSize</span>(minWidth/maxWidth/minHeight/maxHeight)</span><br></pre></td></tr></table></figure>
@@ -631,6 +631,17 @@
 <h2 id="组件内容填充"><a href="#组件内容填充" class="headerlink" title="组件内容填充"></a>组件内容填充</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 事件独占</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 <h2 id="鼠标光标"><a href="#鼠标光标" class="headerlink" title="鼠标光标"></a>鼠标光标</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 特效绘制合并</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony网络相关</title>
+    <url>/posts/cf3a/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -681,17 +692,6 @@
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; preferences &#125;<span class="keyword">from</span> <span class="string">&#x27;@kit.ArkData&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Context</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@ohos.arkui.uIcontext&#x27;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PreferencesUtil</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="attr">storeName</span>:<span class="built_in">string</span> =<span class="string">&quot;DEFAULT&quot;</span></span><br><span class="line">    <span class="comment">//async代表该函数异步</span></span><br><span class="line">    <span class="comment">//await与async同时出现</span></span><br><span class="line">    <span class="comment">//获取仓库</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">async</span> <span class="title function_">getPreferenInstance</span>(<span class="params"><span class="attr">context</span>:<span class="title class_">Context</span>, storeName?:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> store = storeName != <span class="literal">undefined</span> ? storeName : <span class="title class_">PrefrencesUtil</span>.<span class="property">storeName</span></span><br><span class="line">        <span class="comment">//await 等待这个函数执行完毕 拿到结果</span></span><br><span class="line">        <span class="keyword">let</span> preferences = avait preferences.<span class="title function_">getPreferences</span>(context,store)</span><br><span class="line">        <span class="keyword">return</span> preferences</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//给仓库设置值</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">async</span> <span class="title function_">putInfo</span>(<span class="params"><span class="attr">context</span>: context, <span class="attr">key</span>: <span class="built_in">string</span>, <span class="attr">value</span>: <span class="built_in">string</span>, storeName?:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> preferences = <span class="keyword">await</span> preferencesUtil.<span class="title function_">getPreferenInstance</span>(context, storeName)</span><br><span class="line">        preferences.<span class="title function_">putsync</span>(key,value)</span><br><span class="line">        <span class="keyword">await</span> preferences.<span class="title function_">flush</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">result</span> = <span class="keyword">await</span> <span class="title class_">PreferencesUtil</span>.<span class="title function_">getInfo</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>),<span class="variable language_">this</span>.<span class="property">key_name</span>) <span class="keyword">as</span> <span class="built_in">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>单例模式</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; preferences &#125;<span class="keyword">from</span> <span class="string">&#x27;@kit.ArkData&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Context</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@ohos.arkui.uIcontext&#x27;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Prefrencesutils</span> &#123;</span><br><span class="line"><span class="comment">//获取仓库对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="attr">pre</span>: preferences.<span class="property">ValueType</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">getInstances</span>(<span class="params"><span class="attr">context</span>:<span class="title class_">Context</span></span>)&#123;</span><br><span class="line">        <span class="comment">//保证程序里面只有一个preferences 对象</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span>!=<span class="literal">undefined</span> ll <span class="title class_">Prefrencesutils</span>.<span class="property">pre</span>!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span> = preferences.<span class="title function_">getPreferences</span>(context, <span class="string">&quot;DEFAULT&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">putInfo</span>(<span class="params"><span class="attr">context</span>: <span class="title class_">Context</span>, <span class="attr">key</span>: <span class="built_in">string</span>, <span class="attr">value</span>: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> prefrences = <span class="keyword">await</span> <span class="title class_">PrefrencesUtils</span>.<span class="title function_">getInstances</span>(context)</span><br><span class="line">        prefrences.<span class="title function_">putsync</span>(key,value)</span><br><span class="line">        prefrences.<span class="title function_">flush</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony网络相关</title>
-    <url>/posts/cf3a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
