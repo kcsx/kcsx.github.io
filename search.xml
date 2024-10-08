@@ -9,72 +9,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony案例分析(1)——美团购物</title>
-    <url>/posts/98cf/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>任务背景</h1>
-<h2 id="任务描述">任务描述</h2>
-<p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
-<h2 id="训练目标">训练目标</h2>
-<ol>
-<li>理解UI刷新原理</li>
-<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
-<li>掌握持久化方法</li>
-</ol>
-<h1>实现思路</h1>
-<h2 id="布局">布局</h2>
-<p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
-<h2 id="传值">传值</h2>
-<ol>
-<li>将商品写成对象数组通过@Link传递</li>
-<li>商品数量令用一个number数组存储到AppStorage上</li>
-</ol>
-<h1>问题与解决方案</h1>
-<table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>加入商品数组的会有重复</td>
-<td>写一个面对对象数组的去重函数</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h1>优化</h1>
-<h2 id="待优化方向">待优化方向</h2>
-<ol>
-<li>对商品数组和商品数量数组做持久化</li>
-</ol>
-<h2 id="具体优化思路">具体优化思路</h2>
-<h1>参考答案分析</h1>
-<h1>总结</h1>
-<p>有点麻烦，但没啥难度。收获不少，如下：</p>
-<ol>
-<li>对象数组的去重</li>
-</ol>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>传值<br>
-@Link</li>
-</ol>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>@ObjectLink与@Observed</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>@AppStorage</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>鸿蒙案例</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony案例分析(2)——开眼App</title>
     <url>/posts/9b25/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>任务背景</h1>
@@ -140,6 +74,84 @@
 <li>Video的使用</li>
 <li>小技巧Swiper() .index(&amp;&amp;this.idx)</li>
 </ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙案例</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony安全区设置</title>
+    <url>/posts/8f12/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>设置安全区</h1>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">    win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">        .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br></pre></td></tr></table></figure>
+<h1>获取安全区高度、宽度</h1>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">   <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">   win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">   <span class="comment">//顶部高度window.AvoidAreaType.TYPE_SYSTEM</span></span><br><span class="line">   <span class="comment">//底部window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR</span></span><br><span class="line">   <span class="comment">//需要用px2vp转换px</span></span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">topHeight</span> = <span class="title function_">px2vp</span>(win.<span class="title function_">getWindowAvoidArea</span>(<span class="variable language_">window</span>.<span class="property">AvoidAreaType</span>.<span class="property">TYPE_SYSTEM</span>).<span class="property">topRect</span>.<span class="property">height</span>)</span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">bottomHeight</span> = <span class="title function_">px2vp</span>(win.<span class="title function_">getWindowAvoidArea</span>(<span class="variable language_">window</span>.<span class="property">AvoidAreaType</span>.<span class="property">TYPE_NAVIGATION_INDICATOR</span>).<span class="property">bottomRect</span>.<span class="property">height</span>)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//使用</span></span><br><span class="line"> <span class="title class_">Column</span>()&#123;</span><br><span class="line">   <span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">           .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">           .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">           .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br><span class="line">       &#125;</span><br><span class="line">   .<span class="title function_">padding</span>(&#123;<span class="attr">top</span>:<span class="variable language_">this</span>.<span class="property">topHeight</span>,<span class="attr">bottom</span>:<span class="variable language_">this</span>.<span class="property">bottomHeight</span>&#125;)</span><br><span class="line">   .<span class="title function_">width</span>(<span class="string">&quot;100%&quot;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony案例分析(1)——美团购物</title>
+    <url>/posts/98cf/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>任务背景</h1>
+<h2 id="任务描述">任务描述</h2>
+<p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
+<h2 id="训练目标">训练目标</h2>
+<ol>
+<li>理解UI刷新原理</li>
+<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
+<li>掌握持久化方法</li>
+</ol>
+<h1>实现思路</h1>
+<h2 id="布局">布局</h2>
+<p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
+<h2 id="传值">传值</h2>
+<ol>
+<li>将商品写成对象数组通过@Link传递</li>
+<li>商品数量令用一个number数组存储到AppStorage上</li>
+</ol>
+<h1>问题与解决方案</h1>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加入商品数组的会有重复</td>
+<td>写一个面对对象数组的去重函数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1>优化</h1>
+<h2 id="待优化方向">待优化方向</h2>
+<ol>
+<li>对商品数组和商品数量数组做持久化</li>
+</ol>
+<h2 id="具体优化思路">具体优化思路</h2>
+<h1>参考答案分析</h1>
+<h1>总结</h1>
+<p>有点麻烦，但没啥难度。收获不少，如下：</p>
+<ol>
+<li>对象数组的去重</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>传值<br>
+@Link</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>@ObjectLink与@Observed</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>@AppStorage</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>鸿蒙案例</tag>
@@ -388,6 +400,14 @@ tips:alt+shift+enter</li>
       </tags>
   </entry>
   <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony常用组件(2)——其他</title>
     <url>/posts/e93f/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>其他</h1>
@@ -425,8 +445,8 @@ tips:alt+shift+enter</li>
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -510,14 +530,6 @@ TAB、Shift + TAB  | 通用组件  | 触发进入走焦状态/走焦 | 系统按
 </ul>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onTouchIntercept</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">TouchEvent</span>, <span class="title class_">HitTestMode</span>&gt;)</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
   </entry>
   <entry>
     <title>Harmony基本原理(3)——生命周期</title>
@@ -714,6 +726,17 @@ Navigation有如下属性：</li>
       </tags>
   </entry>
   <entry>
+    <title>文学批评理论(2)——结构主义</title>
+    <url>/posts/c1c6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>历史</h1>
+<h1></h1>
+<h1></h1>
+]]></content>
+      <tags>
+        <tag>文学批评</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文学批评理论(1)——自由人文主义</title>
     <url>/posts/ce1e/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>历史</h1>
@@ -728,17 +751,6 @@ Navigation有如下属性：</li>
 <li>看待文学的态度。优秀的文学超越时间、历史局限性，与永恒人性对话</li>
 <li>文本包含自身的意义</li>
 </ol>
-<h1></h1>
-]]></content>
-      <tags>
-        <tag>文学批评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文学批评理论(2)——结构主义</title>
-    <url>/posts/c1c6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>历史</h1>
-<h1></h1>
 <h1></h1>
 ]]></content>
       <tags>
@@ -856,6 +868,14 @@ See the section on <a href="#code"><code>code</code></a>.</p>
       </tags>
   </entry>
   <entry>
+    <title>博客所用插件记录</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony通用信息(1)——通用属性</title>
     <url>/posts/bbc6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>通用属性</h1>
@@ -941,14 +961,6 @@ See the section on <a href="#code"><code>code</code></a>.</p>
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客所用插件记录</title>
-    <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
