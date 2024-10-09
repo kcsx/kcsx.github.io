@@ -9,51 +9,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony案例分析(1)——美团购物</title>
-    <url>/posts/98cf/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
-<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
-<li>理解UI刷新原理</li>
-<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
-<li>掌握持久化方法</li>
-</ol>
-<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
-<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
-<li>将商品写成对象数组通过@Link传递</li>
-<li>商品数量令用一个number数组存储到AppStorage上</li>
-</ol>
-<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加入商品数组的会有重复</td>
-<td>写一个面对对象数组的去重函数</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
-<li>对商品数组和商品数量数组做持久化</li>
-</ol>
-<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
-<ol>
-<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>鸿蒙案例</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony案例分析(2)——开眼App</title>
     <url>/posts/9b25/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据所给接口，仿照“开眼”APP开发UI界面，并实现页面路由、发帖、评论等APP基础功能</p>
@@ -110,18 +65,48 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony安全区设置</title>
-    <url>/posts/8f12/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="设置安全区"><a href="#设置安全区" class="headerlink" title="设置安全区"></a>设置安全区</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">    win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="comment">//底部若指定高度(如.height(100))会失效</span></span><br><span class="line"><span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">        .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br></pre></td></tr></table></figure>
-
-<h1 id="获取安全区高度、宽度"><a href="#获取安全区高度、宽度" class="headerlink" title="获取安全区高度、宽度"></a>获取安全区高度、宽度</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">   <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">   win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">   <span class="comment">//顶部高度window.AvoidAreaType.TYPE_SYSTEM</span></span><br><span class="line">   <span class="comment">//底部window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR</span></span><br><span class="line">   <span class="comment">//需要用px2vp转换px</span></span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">topHeight</span> = <span class="title function_">px2vp</span>(win.<span class="title function_">getWindowAvoidArea</span>(<span class="variable language_">window</span>.<span class="property">AvoidAreaType</span>.<span class="property">TYPE_SYSTEM</span>).<span class="property">topRect</span>.<span class="property">height</span>)</span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">bottomHeight</span> = <span class="title function_">px2vp</span>(win.<span class="title function_">getWindowAvoidArea</span>(<span class="variable language_">window</span>.<span class="property">AvoidAreaType</span>.<span class="property">TYPE_NAVIGATION_INDICATOR</span>).<span class="property">bottomRect</span>.<span class="property">height</span>)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//使用</span></span><br><span class="line"> <span class="title class_">Column</span>()&#123;</span><br><span class="line">   <span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">           .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">           .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">           .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br><span class="line">       &#125;</span><br><span class="line">   .<span class="title function_">padding</span>(&#123;<span class="attr">top</span>:<span class="variable language_">this</span>.<span class="property">topHeight</span>,<span class="attr">bottom</span>:<span class="variable language_">this</span>.<span class="property">bottomHeight</span>&#125;)</span><br><span class="line">   .<span class="title function_">width</span>(<span class="string">&quot;100%&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="软键盘避让"><a href="#软键盘避让" class="headerlink" title="软键盘避让"></a>软键盘避让</h2><p>弹出键盘时会把屏幕顶出去</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//src/main/ets/entryability/EntryAbility.ets</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">onWindowStageCreate</span>(<span class="attr">windowStage</span>: <span class="variable language_">window</span>.<span class="property">WindowStage</span>): <span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt; &#123;</span><br><span class="line"><span class="comment">// Main window is created, set main page for this ability</span></span><br><span class="line">hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Ability onWindowStageCreate&#x27;</span>);</span><br><span class="line"><span class="comment">// const win = await window.getLastWindow(getContext(this))</span></span><br><span class="line"><span class="comment">// win.setWindowLayoutFullScreen(true)</span></span><br><span class="line"><span class="comment">//注意路径windowStage.loadContent(&#x27;pages/Index&#x27;,</span></span><br><span class="line">windowStage.<span class="title function_">loadContent</span>(<span class="string">&#x27;pages/Index&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//KeyboardAvoidMode是@kit.ArkUI的</span></span><br><span class="line">    windowStage.<span class="title function_">getMainWindowSync</span>().<span class="title function_">getUIContext</span>().<span class="title function_">setKeyboardAvoidMode</span>(<span class="title class_">KeyboardAvoidMode</span>.<span class="property">RESIZE</span>)</span><br><span class="line">    <span class="keyword">if</span> (err.<span class="property">code</span>) &#123;</span><br><span class="line">    hilog.<span class="title function_">error</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;Failed to load the content. Cause: %&#123;public&#125;s&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(err) ?? <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;Succeeded in loading the content.&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//pages/Index.ets</span></span><br><span class="line"><span class="title class_">Column</span>() &#123;</span><br><span class="line">    <span class="title class_">TextInput</span>(&#123;<span class="attr">placeholder</span>:<span class="variable language_">this</span>.<span class="property">message</span>&#125;)</span><br><span class="line">    .<span class="title function_">layoutWeight</span>(<span class="number">1</span>)</span><br><span class="line">    .<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Pink</span>)</span><br><span class="line">    <span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">    .<span class="title function_">height</span>(<span class="string">&#x27;80%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// .padding(&#123;top:this.topHeight,bottom:this.bottomHeight&#125;)</span></span><br><span class="line">.<span class="title function_">width</span>(<span class="string">&quot;100%&quot;</span>)</span><br></pre></td></tr></table></figure>
-
+    <title>Harmony案例分析(1)——美团购物</title>
+    <url>/posts/98cf/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
+<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
+<li>理解UI刷新原理</li>
+<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
+<li>掌握持久化方法</li>
+</ol>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
+<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
+<li>将商品写成对象数组通过@Link传递</li>
+<li>商品数量令用一个number数组存储到AppStorage上</li>
+</ol>
+<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加入商品数组的会有重复</td>
+<td>写一个面对对象数组的去重函数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
+<li>对商品数组和商品数量数组做持久化</li>
+</ol>
+<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
+<ol>
+<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <tags>
-        <tag>鸿蒙</tag>
+        <tag>鸿蒙案例</tag>
       </tags>
   </entry>
   <entry>
@@ -131,6 +116,28 @@
 <li>创建自定义主题色<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//EntryAbility.ets</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">myTheme</span> <span class="keyword">implements</span> <span class="title class_">CustomTheme</span>&#123;</span><br><span class="line">  colors?: <span class="title class_">CustomColors</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"><span class="attr">color</span>: <span class="title class_">CustomColors</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">colors</span> = color</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">onWindowStageCreate</span>(<span class="attr">windowStage</span>: <span class="variable language_">window</span>.<span class="property">WindowStage</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="comment">// Main window is created, set main page for this ability</span></span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Ability onWindowStageCreate&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> theme = <span class="keyword">new</span> <span class="title function_">myTheme</span>()</span><br><span class="line">    <span class="title class_">ThemeControl</span>.<span class="title function_">setDefaultTheme</span>(theme)</span><br><span class="line">    <span class="comment">//····</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>调用<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Index.ets</span></span><br><span class="line"><span class="title function_">onWillApplyTheme</span>(<span class="attr">theme</span>: <span class="title class_">Theme</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">fontColor</span> = theme.<span class="property">colors</span>.<span class="property">fontPrimary</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Text</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br><span class="line">    .<span class="title function_">fontColor</span>(<span class="variable language_">this</span>.<span class="property">fontColor</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony开发工具——DevEco</title>
+    <url>/posts/308c/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><h1 id="生成文档"><a href="#生成文档" class="headerlink" title="生成文档"></a>生成文档</h1><p>ToolS -&gt; Generate ArkTsDoc</p>
+<h1 id="查看构建历史"><a href="#查看构建历史" class="headerlink" title="查看构建历史"></a>查看构建历史</h1><p>Build -&gt; Build Analysis</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Harmony安全区设置</title>
+    <url>/posts/8f12/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="设置安全区"><a href="#设置安全区" class="headerlink" title="设置安全区"></a>设置安全区</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">    win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="comment">//底部若指定高度(如.height(100))会失效</span></span><br><span class="line"><span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">        .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br></pre></td></tr></table></figure>
+
+<h1 id="获取安全区高度、宽度"><a href="#获取安全区高度、宽度" class="headerlink" title="获取安全区高度、宽度"></a>获取安全区高度、宽度</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">   <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">   win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">   <span class="comment">//顶部高度window.AvoidAreaType.TYPE_SYSTEM</span></span><br><span class="line">   <span class="comment">//底部window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR</span></span><br><span class="line">   <span class="comment">//需要用px2vp转换px</span></span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">topHeight</span> = <span class="title function_">px2vp</span>(win.<span class="title function_">getWindowAvoidArea</span>(<span class="variable language_">window</span>.<span class="property">AvoidAreaType</span>.<span class="property">TYPE_SYSTEM</span>).<span class="property">topRect</span>.<span class="property">height</span>)</span><br><span class="line">   <span class="variable language_">this</span>.<span class="property">bottomHeight</span> = <span class="title function_">px2vp</span>(win.<span class="title function_">getWindowAvoidArea</span>(<span class="variable language_">window</span>.<span class="property">AvoidAreaType</span>.<span class="property">TYPE_NAVIGATION_INDICATOR</span>).<span class="property">bottomRect</span>.<span class="property">height</span>)</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//使用</span></span><br><span class="line"> <span class="title class_">Column</span>()&#123;</span><br><span class="line">   <span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">           .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">           .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">           .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br><span class="line">       &#125;</span><br><span class="line">   .<span class="title function_">padding</span>(&#123;<span class="attr">top</span>:<span class="variable language_">this</span>.<span class="property">topHeight</span>,<span class="attr">bottom</span>:<span class="variable language_">this</span>.<span class="property">bottomHeight</span>&#125;)</span><br><span class="line">   .<span class="title function_">width</span>(<span class="string">&quot;100%&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="软键盘避让"><a href="#软键盘避让" class="headerlink" title="软键盘避让"></a>软键盘避让</h2><p>弹出键盘时会把屏幕顶出去</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//src/main/ets/entryability/EntryAbility.ets</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">onWindowStageCreate</span>(<span class="attr">windowStage</span>: <span class="variable language_">window</span>.<span class="property">WindowStage</span>): <span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt; &#123;</span><br><span class="line"><span class="comment">// Main window is created, set main page for this ability</span></span><br><span class="line">hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Ability onWindowStageCreate&#x27;</span>);</span><br><span class="line"><span class="comment">// const win = await window.getLastWindow(getContext(this))</span></span><br><span class="line"><span class="comment">// win.setWindowLayoutFullScreen(true)</span></span><br><span class="line"><span class="comment">//注意路径windowStage.loadContent(&#x27;pages/Index&#x27;,</span></span><br><span class="line">windowStage.<span class="title function_">loadContent</span>(<span class="string">&#x27;pages/Index&#x27;</span>, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//KeyboardAvoidMode是@kit.ArkUI的</span></span><br><span class="line">    windowStage.<span class="title function_">getMainWindowSync</span>().<span class="title function_">getUIContext</span>().<span class="title function_">setKeyboardAvoidMode</span>(<span class="title class_">KeyboardAvoidMode</span>.<span class="property">RESIZE</span>)</span><br><span class="line">    <span class="keyword">if</span> (err.<span class="property">code</span>) &#123;</span><br><span class="line">    hilog.<span class="title function_">error</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;Failed to load the content. Cause: %&#123;public&#125;s&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(err) ?? <span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;Succeeded in loading the content.&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//pages/Index.ets</span></span><br><span class="line"><span class="title class_">Column</span>() &#123;</span><br><span class="line">    <span class="title class_">TextInput</span>(&#123;<span class="attr">placeholder</span>:<span class="variable language_">this</span>.<span class="property">message</span>&#125;)</span><br><span class="line">    .<span class="title function_">layoutWeight</span>(<span class="number">1</span>)</span><br><span class="line">    .<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Pink</span>)</span><br><span class="line">    <span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">    .<span class="title function_">height</span>(<span class="string">&#x27;80%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">    .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// .padding(&#123;top:this.topHeight,bottom:this.bottomHeight&#125;)</span></span><br><span class="line">.<span class="title function_">width</span>(<span class="string">&quot;100%&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -166,37 +173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony权限</title>
-    <url>/posts/f140/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="应用权限保护的对象"><a href="#应用权限保护的对象" class="headerlink" title="应用权限保护的对象"></a>应用权限保护的对象</h1><h1 id="权限使用基本原则"><a href="#权限使用基本原则" class="headerlink" title="权限使用基本原则"></a>权限使用基本原则</h1><ul>
-<li>应用（包括应用引用的三方库）所需权限必须在应用的配置文件中严格按照权限开发指导逐个声明</li>
-<li>权限申请满足最小化原则，禁止申请非必要的、已废弃的权限</li>
-<li>应用申请敏感权限时，必须填写权限使用理由字段</li>
-<li>应用敏感权限须在对应业务功能执行前动态申请，满足隐私最小化要求</li>
-<li>用户拒绝授予某个权限后，应用与此权限无关的其他业务功能应允许正常使用</li>
-</ul>
-<h1 id="授权方式"><a href="#授权方式" class="headerlink" title="授权方式"></a>授权方式</h1><h2 id="系统授权"><a href="#系统授权" class="headerlink" title="系统授权"></a>系统授权</h2><p>在应用中申请system_grant权限。被允许访问的数据不会涉及到用户或设备的敏感信息，应用被允许执行的操作对系统或者其他应用产生的影响可控</p>
-<h2 id="用户授权"><a href="#用户授权" class="headerlink" title="用户授权"></a>用户授权</h2><h1 id="授权示例"><a href="#授权示例" class="headerlink" title="授权示例"></a>授权示例</h1><h2 id="定位授权"><a href="#定位授权" class="headerlink" title="定位授权"></a>定位授权</h2><ol>
-<li><p>在src&#x2F;main&#x2F;resources&#x2F;module.json5中配置申请</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;requestPermissions&quot;</span>: [&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.INTERNET&quot;</span>&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">  <span class="comment">//模式串需在resources/base/element/string.json中配置键值对location_reason</span></span><br><span class="line">  <span class="comment">//再按如下方式在&quot;reason&quot;中进行引用</span></span><br><span class="line">  <span class="string">&quot;reason&quot;</span> : <span class="string">&quot;$string:location_reason&quot;</span>,</span><br><span class="line">  <span class="string">&quot;usedScene&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;abilities&quot;</span>: [<span class="string">&quot;EntryAbility&quot;</span>],</span><br><span class="line">    <span class="string">&quot;when&quot;</span>: <span class="string">&quot;always&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span>,</span><br><span class="line">    <span class="string">&quot;reason&quot;</span> : <span class="string">&quot;$string:location_reason&quot;</span>,</span><br><span class="line">    <span class="string">&quot;usedScene&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;abilities&quot;</span>: [<span class="string">&quot;EntryAbility&quot;</span>],</span><br><span class="line">      <span class="string">&quot;when&quot;</span>: <span class="string">&quot;always&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure></li>
-<li><p>在模拟器设置中打开“系统”——“日期和时间”——“定位服务”——“访问我的位置”</p>
-</li>
-<li><p>右侧边栏中打开GPS配置GPS模拟</p>
-</li>
-<li><p>编写获取位置代码</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; abilityAccessCtrl, bundleManager, common &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.AbilityKit&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; geoLocationManager &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.LocationKit&#x27;</span>;</span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">getLocation</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> manager = abilityAccessCtrl.<span class="title function_">createAtManager</span>()</span><br><span class="line">    <span class="comment">//上下文获取</span></span><br><span class="line">    <span class="comment">//1. page中getContext</span></span><br><span class="line">    <span class="comment">//2. Ability中this.context</span></span><br><span class="line">    <span class="keyword">await</span> manager.<span class="title function_">requestPermissionsFromUser</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>),[</span><br><span class="line">      <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">      <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span></span><br><span class="line">    ])</span><br><span class="line">    <span class="keyword">const</span> bundleInfo = bundleManager.<span class="title function_">getBundleInfoForSelfSync</span>(bundleManager.<span class="property">BundleFlag</span>.<span class="property">GET_BUNDLE_INFO_WITH_APPLICATION</span>)</span><br><span class="line">    <span class="keyword">const</span> accTokenId = bundleInfo.<span class="property">appInfo</span>.<span class="property">accessTokenId</span></span><br><span class="line">    <span class="keyword">const</span> state = manager.<span class="title function_">checkAccessTokenSync</span>(accTokenId,<span class="string">&quot;ohos.permission.LOCATION&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span>(state == abilityAccessCtrl.<span class="property">GrantStatus</span>.<span class="property">PERMISSION_DENIED</span>)&#123;</span><br><span class="line">      <span class="keyword">let</span> abilityContext = <span class="title function_">getContext</span>(<span class="variable language_">this</span>) <span class="keyword">as</span> common.<span class="property">UIAbilityContext</span></span><br><span class="line">      abilityContext.<span class="title function_">startAbility</span>(&#123;</span><br><span class="line">        <span class="attr">bundleName</span>:<span class="string">&#x27;com.huawei.hmos.settings&#x27;</span>,</span><br><span class="line">        <span class="attr">abilityName</span>:<span class="string">&#x27;com.huawei.hmos.settings.MainAbility&#x27;</span>,</span><br><span class="line">        <span class="attr">uri</span>:<span class="string">&#x27;application_info_entry&#x27;</span>,</span><br><span class="line">        <span class="attr">parameters</span>:&#123;</span><br><span class="line">          <span class="attr">pushParams</span>:bundleInfo.<span class="property">name</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="title class_">AlertDialog</span>.<span class="title function_">show</span>(&#123;<span class="attr">message</span>:<span class="string">&quot;agree&quot;</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>获取位置信息</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; geoLocationManager &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.LocationKit&#x27;</span>;</span><br><span class="line">geoLocationManager.<span class="title function_">getCurrentLocation</span>()</span><br><span class="line">            .<span class="title function_">then</span>(<span class="function">(<span class="params">val</span>)=&gt;</span>&#123;</span><br><span class="line">              <span class="title class_">AlertDialog</span>.<span class="title function_">show</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;$&#123;JSON.stringify(val)&#125;&#x27;</span> &#125;)</span><br><span class="line">            &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>封装工具类<br>tips:alt+shift+enter</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//RequestPermisssionUtils</span></span><br><span class="line"><span class="keyword">import</span> &#123; abilityAccessCtrl, bundleManager, common, <span class="title class_">Permissions</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.AbilityKit&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getLocation</span>(<span class="params"><span class="attr">context</span>: <span class="title class_">Context</span>, <span class="attr">callback</span>: () =&gt; <span class="built_in">void</span>, <span class="attr">permission</span>: <span class="title class_">Permissions</span>[]</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> manager = abilityAccessCtrl.<span class="title function_">createAtManager</span>()</span><br><span class="line">  <span class="comment">//上下文获取</span></span><br><span class="line">  <span class="comment">//1. page中getContext</span></span><br><span class="line">  <span class="comment">//2. Ability中this.context</span></span><br><span class="line">  <span class="keyword">await</span> manager.<span class="title function_">requestPermissionsFromUser</span>(context,[</span><br><span class="line">    <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span></span><br><span class="line">  ])</span><br><span class="line">  <span class="keyword">const</span> bundleInfo = bundleManager.<span class="title function_">getBundleInfoForSelfSync</span>(bundleManager.<span class="property">BundleFlag</span>.<span class="property">GET_BUNDLE_INFO_WITH_APPLICATION</span>)</span><br><span class="line">  <span class="keyword">const</span> accTokenId = bundleInfo.<span class="property">appInfo</span>.<span class="property">accessTokenId</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> state = manager.<span class="title function_">checkAccessTokenSync</span>(accTokenId,permission[<span class="number">0</span>])</span><br><span class="line">  <span class="keyword">if</span>(state == abilityAccessCtrl.<span class="property">GrantStatus</span>.<span class="property">PERMISSION_DENIED</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> abilityContext = context <span class="keyword">as</span> common.<span class="property">UIAbilityContext</span></span><br><span class="line">    abilityContext.<span class="title function_">startAbility</span>(&#123;</span><br><span class="line">      <span class="attr">bundleName</span>:<span class="string">&#x27;com.huawei.hmos.settings&#x27;</span>,</span><br><span class="line">      <span class="attr">abilityName</span>:<span class="string">&#x27;com.huawei.hmos.settings.MainAbility&#x27;</span>,</span><br><span class="line">      <span class="attr">uri</span>:<span class="string">&#x27;application_info_entry&#x27;</span>,</span><br><span class="line">      <span class="attr">parameters</span>:&#123;</span><br><span class="line">        <span class="attr">pushParams</span>:bundleInfo.<span class="property">name</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_">callback</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony性能优化</title>
     <url>/posts/21b1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h1><p>使用LazyForEach而不是ForEach。</p>
@@ -210,7 +186,43 @@
   <entry>
     <title>Harmony基本原理(1)——框架结构</title>
     <url>/posts/fdb3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="OpenHarmony框架"><a href="#OpenHarmony框架" class="headerlink" title="OpenHarmony框架"></a>OpenHarmony框架</h1><p><img src="/source/Harmony/OH_Frame.png" alt="OpenHarmony框架" title="OpenHarmony框架"></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="系统能力-SysCap"><a href="#系统能力-SysCap" class="headerlink" title="系统能力(SysCap)"></a>系统能力(SysCap)</h1><ul>
+<li>SysCap5指OS每个独立的特性，如蓝牙、WIFI。</li>
+<li>每个系统能力对应多个API</li>
+<li>随目标设备是否支持该系统能力而共同存在或消失，也会随着DevEco Studio一起提供给开发者做联想</li>
+</ul>
+<h2 id="重要的系统能力"><a href="#重要的系统能力" class="headerlink" title="重要的系统能力"></a>重要的系统能力</h2><table>
+<thead>
+<tr>
+<th>能力集</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>支持能力集</td>
+<td>设备<br>SDK将设备分为两组，典型设备和自定义设备，典型设备的支持能力集由HarmonyOS来定义，自定义设备由设备厂商给出</td>
+</tr>
+<tr>
+<td>应用能力集</td>
+<td>应用</td>
+</tr>
+<tr>
+<td>联想能力集</td>
+<td>DevEco Studio可联想的APIDevEco Studio可联想的API</td>
+</tr>
+</tbody></table>
+<ul>
+<li>SDK向DevEco Studio提供全量API，DevEco Studio识别开发者项目中选择的设备形态，找到该设备的支持能力集，筛选支持能力集包含的API并提供API联想</li>
+<li>单设备：默认应用的联想能力集，要求系统能力集和设备的支持系统能力集相等</li>
+<li>多设备：默认应用的联想能力集是多个设备支持能力集的并集，要求能力集则是交集</li>
+</ul>
+<h2 id="自定义syscap"><a href="#自定义syscap" class="headerlink" title="自定义syscap"></a>自定义syscap</h2><p>需要的能力超出工程默认设备定义的能力集范围，需要额外配置自定义的syscap</p>
+<ol>
+<li>&#x2F;src&#x2F;main目录下，手动创建syscap.json文件，并写入如下内容<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;devices&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;general&quot;</span>: [</span><br><span class="line">      <span class="comment">// 每一个典型设备对应一个syscap支持能力集，可配置多个典型设备，应与工程所选择的设备一致</span></span><br><span class="line">      <span class="string">&quot;phone&quot;</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;development&quot;</span>: &#123;</span><br><span class="line">    <span class="comment">// addedSysCaps内的sycap集合与devices中配置的各设备支持的syscap集合的并集共同构成联想能力集。</span></span><br><span class="line">    <span class="string">&quot;addedSysCaps&quot;</span>: [</span><br><span class="line">      <span class="string">&quot;SystemCapability.Communication.NFC.Core&quot;</span>,</span><br><span class="line">      <span class="string">&quot;SystemCapability.Communication.NFC.CardEmulation&quot;</span>,</span><br><span class="line">      <span class="string">&quot;SystemCapability.Communication.NFC.Tag&quot;</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="判断-API-是否可以使用"><a href="#判断-API-是否可以使用" class="headerlink" title="判断 API 是否可以使用"></a>判断 API 是否可以使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//API canIUse</span></span><br><span class="line"><span class="title function_">canIUse</span>(<span class="string">&quot;SystemCapability.ArkUI.ArkUI.Full&quot;</span>)</span><br><span class="line"><span class="comment">//判断geolocationManager是否存在</span></span><br><span class="line"><span class="keyword">import</span> geolocationManager <span class="keyword">from</span> <span class="string">&#x27;@ohos.geoLocationManager&#x27;</span>;</span><br><span class="line">geolocationManager</span><br></pre></td></tr></table></figure>
+
+<h1 id="OpenHarmony框架"><a href="#OpenHarmony框架" class="headerlink" title="OpenHarmony框架"></a>OpenHarmony框架</h1><p><img src="/source/Harmony/OH_Frame.png" alt="OpenHarmony框架" title="OpenHarmony框架"></p>
 <ul>
 <li>系统功能按照“系统 &gt; 子系统 &gt; 组件”逐级展开<table>
 <thead>
@@ -245,6 +257,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony权限</title>
+    <url>/posts/f140/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="应用权限保护的对象"><a href="#应用权限保护的对象" class="headerlink" title="应用权限保护的对象"></a>应用权限保护的对象</h1><h1 id="权限使用基本原则"><a href="#权限使用基本原则" class="headerlink" title="权限使用基本原则"></a>权限使用基本原则</h1><ul>
+<li>应用（包括应用引用的三方库）所需权限必须在应用的配置文件中严格按照权限开发指导逐个声明</li>
+<li>权限申请满足最小化原则，禁止申请非必要的、已废弃的权限</li>
+<li>应用申请敏感权限时，必须填写权限使用理由字段</li>
+<li>应用敏感权限须在对应业务功能执行前动态申请，满足隐私最小化要求</li>
+<li>用户拒绝授予某个权限后，应用与此权限无关的其他业务功能应允许正常使用</li>
+</ul>
+<h1 id="授权方式"><a href="#授权方式" class="headerlink" title="授权方式"></a>授权方式</h1><h2 id="系统授权"><a href="#系统授权" class="headerlink" title="系统授权"></a>系统授权</h2><p>在应用中申请system_grant权限。被允许访问的数据不会涉及到用户或设备的敏感信息，应用被允许执行的操作对系统或者其他应用产生的影响可控</p>
+<h2 id="用户授权"><a href="#用户授权" class="headerlink" title="用户授权"></a>用户授权</h2><h1 id="授权示例"><a href="#授权示例" class="headerlink" title="授权示例"></a>授权示例</h1><h2 id="定位授权"><a href="#定位授权" class="headerlink" title="定位授权"></a>定位授权</h2><ol>
+<li><p>在src&#x2F;main&#x2F;resources&#x2F;module.json5中配置申请</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;requestPermissions&quot;</span>: [&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.INTERNET&quot;</span>&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">  <span class="comment">//模式串需在resources/base/element/string.json中配置键值对location_reason</span></span><br><span class="line">  <span class="comment">//再按如下方式在&quot;reason&quot;中进行引用</span></span><br><span class="line">  <span class="string">&quot;reason&quot;</span> : <span class="string">&quot;$string:location_reason&quot;</span>,</span><br><span class="line">  <span class="string">&quot;usedScene&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;abilities&quot;</span>: [<span class="string">&quot;EntryAbility&quot;</span>],</span><br><span class="line">    <span class="string">&quot;when&quot;</span>: <span class="string">&quot;always&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span>,</span><br><span class="line">    <span class="string">&quot;reason&quot;</span> : <span class="string">&quot;$string:location_reason&quot;</span>,</span><br><span class="line">    <span class="string">&quot;usedScene&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;abilities&quot;</span>: [<span class="string">&quot;EntryAbility&quot;</span>],</span><br><span class="line">      <span class="string">&quot;when&quot;</span>: <span class="string">&quot;always&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">],</span><br></pre></td></tr></table></figure></li>
+<li><p>在模拟器设置中打开“系统”——“日期和时间”——“定位服务”——“访问我的位置”</p>
+</li>
+<li><p>右侧边栏中打开GPS配置GPS模拟</p>
+</li>
+<li><p>编写获取位置代码</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; abilityAccessCtrl, bundleManager, common &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.AbilityKit&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; geoLocationManager &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.LocationKit&#x27;</span>;</span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">getLocation</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> manager = abilityAccessCtrl.<span class="title function_">createAtManager</span>()</span><br><span class="line">    <span class="comment">//上下文获取</span></span><br><span class="line">    <span class="comment">//1. page中getContext</span></span><br><span class="line">    <span class="comment">//2. Ability中this.context</span></span><br><span class="line">    <span class="keyword">await</span> manager.<span class="title function_">requestPermissionsFromUser</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>),[</span><br><span class="line">      <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">      <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span></span><br><span class="line">    ])</span><br><span class="line">    <span class="keyword">const</span> bundleInfo = bundleManager.<span class="title function_">getBundleInfoForSelfSync</span>(bundleManager.<span class="property">BundleFlag</span>.<span class="property">GET_BUNDLE_INFO_WITH_APPLICATION</span>)</span><br><span class="line">    <span class="keyword">const</span> accTokenId = bundleInfo.<span class="property">appInfo</span>.<span class="property">accessTokenId</span></span><br><span class="line">    <span class="keyword">const</span> state = manager.<span class="title function_">checkAccessTokenSync</span>(accTokenId,<span class="string">&quot;ohos.permission.LOCATION&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span>(state == abilityAccessCtrl.<span class="property">GrantStatus</span>.<span class="property">PERMISSION_DENIED</span>)&#123;</span><br><span class="line">      <span class="keyword">let</span> abilityContext = <span class="title function_">getContext</span>(<span class="variable language_">this</span>) <span class="keyword">as</span> common.<span class="property">UIAbilityContext</span></span><br><span class="line">      abilityContext.<span class="title function_">startAbility</span>(&#123;</span><br><span class="line">        <span class="attr">bundleName</span>:<span class="string">&#x27;com.huawei.hmos.settings&#x27;</span>,</span><br><span class="line">        <span class="attr">abilityName</span>:<span class="string">&#x27;com.huawei.hmos.settings.MainAbility&#x27;</span>,</span><br><span class="line">        <span class="attr">uri</span>:<span class="string">&#x27;application_info_entry&#x27;</span>,</span><br><span class="line">        <span class="attr">parameters</span>:&#123;</span><br><span class="line">          <span class="attr">pushParams</span>:bundleInfo.<span class="property">name</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="title class_">AlertDialog</span>.<span class="title function_">show</span>(&#123;<span class="attr">message</span>:<span class="string">&quot;agree&quot;</span>&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>获取位置信息</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; geoLocationManager &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.LocationKit&#x27;</span>;</span><br><span class="line">geoLocationManager.<span class="title function_">getCurrentLocation</span>()</span><br><span class="line">            .<span class="title function_">then</span>(<span class="function">(<span class="params">val</span>)=&gt;</span>&#123;</span><br><span class="line">              <span class="title class_">AlertDialog</span>.<span class="title function_">show</span>(&#123; <span class="attr">message</span>: <span class="string">&#x27;$&#123;JSON.stringify(val)&#125;&#x27;</span> &#125;)</span><br><span class="line">            &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装工具类<br>tips:alt+shift+enter</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//RequestPermisssionUtils</span></span><br><span class="line"><span class="keyword">import</span> &#123; abilityAccessCtrl, bundleManager, common, <span class="title class_">Permissions</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.AbilityKit&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getLocation</span>(<span class="params"><span class="attr">context</span>: <span class="title class_">Context</span>, <span class="attr">callback</span>: () =&gt; <span class="built_in">void</span>, <span class="attr">permission</span>: <span class="title class_">Permissions</span>[]</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> manager = abilityAccessCtrl.<span class="title function_">createAtManager</span>()</span><br><span class="line">  <span class="comment">//上下文获取</span></span><br><span class="line">  <span class="comment">//1. page中getContext</span></span><br><span class="line">  <span class="comment">//2. Ability中this.context</span></span><br><span class="line">  <span class="keyword">await</span> manager.<span class="title function_">requestPermissionsFromUser</span>(context,[</span><br><span class="line">    <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span></span><br><span class="line">  ])</span><br><span class="line">  <span class="keyword">const</span> bundleInfo = bundleManager.<span class="title function_">getBundleInfoForSelfSync</span>(bundleManager.<span class="property">BundleFlag</span>.<span class="property">GET_BUNDLE_INFO_WITH_APPLICATION</span>)</span><br><span class="line">  <span class="keyword">const</span> accTokenId = bundleInfo.<span class="property">appInfo</span>.<span class="property">accessTokenId</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> state = manager.<span class="title function_">checkAccessTokenSync</span>(accTokenId,permission[<span class="number">0</span>])</span><br><span class="line">  <span class="keyword">if</span>(state == abilityAccessCtrl.<span class="property">GrantStatus</span>.<span class="property">PERMISSION_DENIED</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> abilityContext = context <span class="keyword">as</span> common.<span class="property">UIAbilityContext</span></span><br><span class="line">    abilityContext.<span class="title function_">startAbility</span>(&#123;</span><br><span class="line">      <span class="attr">bundleName</span>:<span class="string">&#x27;com.huawei.hmos.settings&#x27;</span>,</span><br><span class="line">      <span class="attr">abilityName</span>:<span class="string">&#x27;com.huawei.hmos.settings.MainAbility&#x27;</span>,</span><br><span class="line">      <span class="attr">uri</span>:<span class="string">&#x27;application_info_entry&#x27;</span>,</span><br><span class="line">      <span class="attr">parameters</span>:&#123;</span><br><span class="line">        <span class="attr">pushParams</span>:bundleInfo.<span class="property">name</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_">callback</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony媒体相关</title>
     <url>/posts/86c4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
@@ -266,6 +309,22 @@
 <li>可以包含源代码、资源文件、第三方库、配置文件等</li>
 <li>Module可以独立编译，实现特定的功能</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Module类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ability类型</td>
+<td>1. 每一个Ability类型的Module编译后，会生成一个以.hap为后缀的文件<br>2. HAP包可以独立安装和运行，是应用安装的基本单位，一个应用中可以包含一个或多个HAP包<br> 3.1. entry类型的Module：编译后生成entry类型的HAP。每一个应用分发到同一类型的设备上的应用程序包，只能包含唯一一个entry类型的HAP<br> 3.2. 编译后生成feature类型的HAP。一个应用中可以包含一个或多个feature类型的HAP，也可以不包含。</td>
+</tr>
+<tr>
+<td>Library类型的Module</td>
+<td>1. 实现代码和资源的共享<br>2.1 Static Library：静态共享库。编译后会生成一个以.har为后缀的文件，即静态共享包HAR（Harmony Archive）<br>2.2 Shared Library：动态共享库。编译后会生成一个以.hsp为后缀的文件，即动态共享包HSP（Harmony Shared Package）</td>
+</tr>
+</tbody></table>
 <h2 id="多设备适配"><a href="#多设备适配" class="headerlink" title="多设备适配"></a>多设备适配</h2><h1 id="Stage模型概述"><a href="#Stage模型概述" class="headerlink" title="Stage模型概述"></a>Stage模型概述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Stage模型是</p>
 <blockquote>
 <ol>
@@ -352,6 +411,14 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony常用组件(2)——其他</title>
     <url>/posts/e93f/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="遍历组件"><a href="#遍历组件" class="headerlink" title="遍历组件"></a>遍历组件</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">ForEach</span>(<span class="variable language_">this</span>.<span class="property">list</span>,(<span class="attr">item</span>:<span class="title class_">Type</span>,idx)=&#123;</span><br><span class="line">	<span class="title function_">myComponent</span>(&#123;<span class="attr">myVal</span>:item&#125;) </span><br><span class="line">&#125;)</span><br><span class="line">struct myComponet&#123;</span><br><span class="line">	<span class="attr">myVal</span>:<span class="variable constant_">TYPE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -376,8 +443,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -541,14 +608,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony路由</title>
     <url>/posts/420d/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Harmony路由原理"><a href="#Harmony路由原理" class="headerlink" title="Harmony路由原理"></a>Harmony路由原理</h1><p>一个Ability里面的多个page可通过router进行切换。</p>
@@ -683,28 +742,72 @@
   <entry>
     <title>Harmony小技巧(3)——快捷键</title>
     <url>/posts/ae08/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><table>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h1><table>
 <thead>
 <tr>
-<th>快捷键</th>
 <th>功能</th>
+<th>快捷键</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Alt+Shift+Enter</td>
+<td>根据父类模板快速生成子类(extends继承) 方法</td>
+<td>Ctrl+O</td>
+</tr>
+<tr>
+<td>为类快速生成一个对应的构造函数</td>
+<td>Alt+Insert</td>
+</tr>
+</tbody></table>
+<h1 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h1><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>快速生成注释信息</td>
+<td>“&#x2F;**”+回车键</td>
+</tr>
+<tr>
+<td>搜索工程里的所有内容</td>
+<td>连击2次shift</td>
+</tr>
+<tr>
+<td>查看变量赋值、引用情况</td>
+<td>点击对象+Alt+F7</td>
+</tr>
+<tr>
+<td>清除未使用的import</td>
+<td>Ctrl+Alt+O</td>
+</tr>
+<tr>
+<td>查看接口&#x2F;类的继承关系结构</td>
+<td>Ctrl+H</td>
+</tr>
+<tr>
+<td>代码结构树</td>
+<td>Alt+7或Ctrl+F12</td>
+</tr>
+<tr>
 <td>快速导入包</td>
+<td>Alt+Shift+Enter</td>
 </tr>
 <tr>
-<td>Ctrl+&#x2F;</td>
-<td>注释</td>
-</tr>
-<tr>
-<td>Shift+Tab</td>
 <td>取消缩进</td>
+<td>Shift+Tab</td>
 </tr>
 <tr>
-<td>Ctrl+Alt+L</td>
+<td>注释</td>
+<td>Ctrl+&#x2F;</td>
+</tr>
+<tr>
 <td>代码格式化</td>
+<td>Ctrl+Alt+L <br>代码块前增加“&#x2F;&#x2F;@formatter:off”，并在该代码块的最后增加“&#x2F;&#x2F;@formatter:on”，即表示对该范围的代码块不需要进行格式化操作</td>
+</tr>
+<tr>
+<td>跳转查看类型详情</td>
+<td>Ctrl+B</td>
 </tr>
 </tbody></table>
 ]]></content>
@@ -795,14 +898,6 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>文学批评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客所用插件记录</title>
-    <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -925,6 +1020,14 @@
       </tags>
   </entry>
   <entry>
+    <title>博客所用插件记录</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony网络相关</title>
     <url>/posts/cf3a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -960,36 +1063,6 @@
       <tags>
         <tag>鸿蒙</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Harmony国际化</title>
-    <url>/posts/8fe/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="配置路径"><a href="#配置路径" class="headerlink" title="配置路径"></a>配置路径</h1><p>resources&#x2F;base&#x2F;element&#x2F;string.json<br>resources&#x2F;zh-CN&#x2F;element&#x2F;string.jsonresources&#x2F;base&#x2F;</p>
-<h1 id="添加条目"><a href="#添加条目" class="headerlink" title="添加条目"></a>添加条目</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;module_desc&quot;</span>,</span><br><span class="line">  <span class="string">&quot;value&quot;</span>: <span class="string">&quot;module description&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Text</span>($r(<span class="string">&quot;app.string.calculator&quot;</span>))</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>Harmony状态管理</title>
@@ -1037,6 +1110,36 @@
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; preferences &#125;<span class="keyword">from</span> <span class="string">&#x27;@kit.ArkData&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Context</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@ohos.arkui.uIcontext&#x27;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PreferencesUtil</span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="attr">storeName</span>:<span class="built_in">string</span> =<span class="string">&quot;DEFAULT&quot;</span></span><br><span class="line">    <span class="comment">//async代表该函数异步</span></span><br><span class="line">    <span class="comment">//await与async同时出现</span></span><br><span class="line">    <span class="comment">//获取仓库</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">async</span> <span class="title function_">getPreferenInstance</span>(<span class="params"><span class="attr">context</span>:<span class="title class_">Context</span>, storeName?:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> store = storeName != <span class="literal">undefined</span> ? storeName : <span class="title class_">PrefrencesUtil</span>.<span class="property">storeName</span></span><br><span class="line">        <span class="comment">//await 等待这个函数执行完毕 拿到结果</span></span><br><span class="line">        <span class="keyword">let</span> preferences = avait preferences.<span class="title function_">getPreferences</span>(context,store)</span><br><span class="line">        <span class="keyword">return</span> preferences</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//给仓库设置值</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">async</span> <span class="title function_">putInfo</span>(<span class="params"><span class="attr">context</span>: context, <span class="attr">key</span>: <span class="built_in">string</span>, <span class="attr">value</span>: <span class="built_in">string</span>, storeName?:<span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> preferences = <span class="keyword">await</span> preferencesUtil.<span class="title function_">getPreferenInstance</span>(context, storeName)</span><br><span class="line">        preferences.<span class="title function_">putsync</span>(key,value)</span><br><span class="line">        <span class="keyword">await</span> preferences.<span class="title function_">flush</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">result</span> = <span class="keyword">await</span> <span class="title class_">PreferencesUtil</span>.<span class="title function_">getInfo</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>),<span class="variable language_">this</span>.<span class="property">key_name</span>) <span class="keyword">as</span> <span class="built_in">string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>单例模式</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; preferences &#125;<span class="keyword">from</span> <span class="string">&#x27;@kit.ArkData&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Context</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@ohos.arkui.uIcontext&#x27;</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Prefrencesutils</span> &#123;</span><br><span class="line"><span class="comment">//获取仓库对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="attr">pre</span>: preferences.<span class="property">ValueType</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">getInstances</span>(<span class="params"><span class="attr">context</span>:<span class="title class_">Context</span></span>)&#123;</span><br><span class="line">        <span class="comment">//保证程序里面只有一个preferences 对象</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span>!=<span class="literal">undefined</span> ll <span class="title class_">Prefrencesutils</span>.<span class="property">pre</span>!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span> = preferences.<span class="title function_">getPreferences</span>(context, <span class="string">&quot;DEFAULT&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">PrefrencesUtils</span>.<span class="property">pre</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">async</span> <span class="title function_">putInfo</span>(<span class="params"><span class="attr">context</span>: <span class="title class_">Context</span>, <span class="attr">key</span>: <span class="built_in">string</span>, <span class="attr">value</span>: <span class="built_in">string</span></span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> prefrences = <span class="keyword">await</span> <span class="title class_">PrefrencesUtils</span>.<span class="title function_">getInstances</span>(context)</span><br><span class="line">        prefrences.<span class="title function_">putsync</span>(key,value)</span><br><span class="line">        prefrences.<span class="title function_">flush</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Harmony国际化</title>
+    <url>/posts/8fe/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="配置路径"><a href="#配置路径" class="headerlink" title="配置路径"></a>配置路径</h1><p>resources&#x2F;base&#x2F;element&#x2F;string.json<br>resources&#x2F;zh-CN&#x2F;element&#x2F;string.jsonresources&#x2F;base&#x2F;</p>
+<h1 id="添加条目"><a href="#添加条目" class="headerlink" title="添加条目"></a>添加条目</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;module_desc&quot;</span>,</span><br><span class="line">  <span class="string">&quot;value&quot;</span>: <span class="string">&quot;module description&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Text</span>($r(<span class="string">&quot;app.string.calculator&quot;</span>))</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
