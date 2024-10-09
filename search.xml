@@ -9,6 +9,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony案例分析(1)——美团购物</title>
+    <url>/posts/98cf/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
+<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
+<li>理解UI刷新原理</li>
+<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
+<li>掌握持久化方法</li>
+</ol>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
+<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
+<li>将商品写成对象数组通过@Link传递</li>
+<li>商品数量令用一个number数组存储到AppStorage上</li>
+</ol>
+<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加入商品数组的会有重复</td>
+<td>写一个面对对象数组的去重函数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
+<li>对商品数组和商品数量数组做持久化</li>
+</ol>
+<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
+<ol>
+<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙案例</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony案例分析(2)——开眼App</title>
     <url>/posts/9b25/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据所给接口，仿照“开眼”APP开发UI界面，并实现页面路由、发帖、评论等APP基础功能</p>
@@ -65,51 +110,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony案例分析(1)——美团购物</title>
-    <url>/posts/98cf/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
-<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
-<li>理解UI刷新原理</li>
-<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
-<li>掌握持久化方法</li>
-</ol>
-<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
-<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
-<li>将商品写成对象数组通过@Link传递</li>
-<li>商品数量令用一个number数组存储到AppStorage上</li>
-</ol>
-<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加入商品数组的会有重复</td>
-<td>写一个面对对象数组的去重函数</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
-<li>对商品数组和商品数量数组做持久化</li>
-</ol>
-<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
-<ol>
-<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>鸿蒙案例</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony安全区设置</title>
     <url>/posts/8f12/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="设置安全区"><a href="#设置安全区" class="headerlink" title="设置安全区"></a>设置安全区</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"><span class="keyword">async</span> <span class="title function_">aboutToAppear</span>():<span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> win = <span class="keyword">await</span> <span class="variable language_">window</span>.<span class="title function_">getLastWindow</span>(<span class="title function_">getContext</span>(<span class="variable language_">this</span>))</span><br><span class="line">    win.<span class="title function_">setWindowLayoutFullScreen</span>(<span class="literal">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="comment">//底部若指定高度(如.height(100))会失效</span></span><br><span class="line"><span class="title class_">Image</span>(<span class="string">&#x27;https://pic3.zhimg.com/v2-37617ef484856928d1db445d493a62f7_r.jpg?source=1940ef5c&#x27;</span>)</span><br><span class="line">        .<span class="title function_">height</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">width</span>(<span class="string">&#x27;100%&#x27;</span>)</span><br><span class="line">        .<span class="title function_">expandSafeArea</span>([<span class="title class_">SafeAreaType</span>.<span class="property">SYSTEM</span>],[<span class="title class_">SafeAreaEdge</span>.<span class="property">TOP</span>,<span class="title class_">SafeAreaEdge</span>.<span class="property">BOTTOM</span>])</span><br></pre></td></tr></table></figure>
@@ -131,6 +131,17 @@
 <li>创建自定义主题色<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//EntryAbility.ets</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">myTheme</span> <span class="keyword">implements</span> <span class="title class_">CustomTheme</span>&#123;</span><br><span class="line">  colors?: <span class="title class_">CustomColors</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"><span class="attr">color</span>: <span class="title class_">CustomColors</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">colors</span> = color</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">onWindowStageCreate</span>(<span class="attr">windowStage</span>: <span class="variable language_">window</span>.<span class="property">WindowStage</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="comment">// Main window is created, set main page for this ability</span></span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Ability onWindowStageCreate&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> theme = <span class="keyword">new</span> <span class="title function_">myTheme</span>()</span><br><span class="line">    <span class="title class_">ThemeControl</span>.<span class="title function_">setDefaultTheme</span>(theme)</span><br><span class="line">    <span class="comment">//····</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>调用<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Index.ets</span></span><br><span class="line"><span class="title function_">onWillApplyTheme</span>(<span class="attr">theme</span>: <span class="title class_">Theme</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">fontColor</span> = theme.<span class="property">colors</span>.<span class="property">fontPrimary</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Text</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br><span class="line">    .<span class="title function_">fontColor</span>(<span class="variable language_">this</span>.<span class="property">fontColor</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony性能优化</title>
+    <url>/posts/21b1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h1><p>使用LazyForEach而不是ForEach。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">LazyForEach</span>(<span class="variable language_">this</span>.<span class="property">data</span>, <span class="function">(<span class="params"><span class="attr">item</span>: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">ListItem</span>() &#123;</span><br><span class="line">          <span class="title class_">Row</span>() &#123;</span><br><span class="line">            <span class="title class_">Text</span>(item).<span class="title function_">fontSize</span>(<span class="number">20</span>).<span class="title function_">margin</span>(&#123; <span class="attr">left</span>: <span class="number">10</span> &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">.<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">data</span>.<span class="title function_">pushData</span>(<span class="string">&#x27;item value: &#x27;</span> + <span class="variable language_">this</span>.<span class="property">data</span>.<span class="title function_">totalCount</span>())</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;, <span class="function"><span class="params">item</span> =&gt;</span> item)      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -166,17 +177,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony性能优化</title>
-    <url>/posts/21b1/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h1><p>使用LazyForEach而不是ForEach。</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">LazyForEach</span>(<span class="variable language_">this</span>.<span class="property">data</span>, <span class="function">(<span class="params"><span class="attr">item</span>: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">ListItem</span>() &#123;</span><br><span class="line">          <span class="title class_">Row</span>() &#123;</span><br><span class="line">            <span class="title class_">Text</span>(item).<span class="title function_">fontSize</span>(<span class="number">20</span>).<span class="title function_">margin</span>(&#123; <span class="attr">left</span>: <span class="number">10</span> &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">.<span class="title function_">onClick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">data</span>.<span class="title function_">pushData</span>(<span class="string">&#x27;item value: &#x27;</span> + <span class="variable language_">this</span>.<span class="property">data</span>.<span class="title function_">totalCount</span>())</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;, <span class="function"><span class="params">item</span> =&gt;</span> item)      </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony权限</title>
     <url>/posts/f140/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="应用权限保护的对象"><a href="#应用权限保护的对象" class="headerlink" title="应用权限保护的对象"></a>应用权限保护的对象</h1><h1 id="权限使用基本原则"><a href="#权限使用基本原则" class="headerlink" title="权限使用基本原则"></a>权限使用基本原则</h1><ul>
@@ -202,6 +202,15 @@
 <li><p>封装工具类<br>tips:alt+shift+enter</p>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//RequestPermisssionUtils</span></span><br><span class="line"><span class="keyword">import</span> &#123; abilityAccessCtrl, bundleManager, common, <span class="title class_">Permissions</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.AbilityKit&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getLocation</span>(<span class="params"><span class="attr">context</span>: <span class="title class_">Context</span>, <span class="attr">callback</span>: () =&gt; <span class="built_in">void</span>, <span class="attr">permission</span>: <span class="title class_">Permissions</span>[]</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> manager = abilityAccessCtrl.<span class="title function_">createAtManager</span>()</span><br><span class="line">  <span class="comment">//上下文获取</span></span><br><span class="line">  <span class="comment">//1. page中getContext</span></span><br><span class="line">  <span class="comment">//2. Ability中this.context</span></span><br><span class="line">  <span class="keyword">await</span> manager.<span class="title function_">requestPermissionsFromUser</span>(context,[</span><br><span class="line">    <span class="string">&quot;ohos.permission.LOCATION&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ohos.permission.APPROXIMATELY_LOCATION&quot;</span></span><br><span class="line">  ])</span><br><span class="line">  <span class="keyword">const</span> bundleInfo = bundleManager.<span class="title function_">getBundleInfoForSelfSync</span>(bundleManager.<span class="property">BundleFlag</span>.<span class="property">GET_BUNDLE_INFO_WITH_APPLICATION</span>)</span><br><span class="line">  <span class="keyword">const</span> accTokenId = bundleInfo.<span class="property">appInfo</span>.<span class="property">accessTokenId</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> state = manager.<span class="title function_">checkAccessTokenSync</span>(accTokenId,permission[<span class="number">0</span>])</span><br><span class="line">  <span class="keyword">if</span>(state == abilityAccessCtrl.<span class="property">GrantStatus</span>.<span class="property">PERMISSION_DENIED</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> abilityContext = context <span class="keyword">as</span> common.<span class="property">UIAbilityContext</span></span><br><span class="line">    abilityContext.<span class="title function_">startAbility</span>(&#123;</span><br><span class="line">      <span class="attr">bundleName</span>:<span class="string">&#x27;com.huawei.hmos.settings&#x27;</span>,</span><br><span class="line">      <span class="attr">abilityName</span>:<span class="string">&#x27;com.huawei.hmos.settings.MainAbility&#x27;</span>,</span><br><span class="line">      <span class="attr">uri</span>:<span class="string">&#x27;application_info_entry&#x27;</span>,</span><br><span class="line">      <span class="attr">parameters</span>:&#123;</span><br><span class="line">        <span class="attr">pushParams</span>:bundleInfo.<span class="property">name</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="title function_">callback</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony媒体相关</title>
+    <url>/posts/86c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -242,15 +251,6 @@
 <h1 id="DevEco项目结构"><a href="#DevEco项目结构" class="headerlink" title="DevEco项目结构"></a>DevEco项目结构</h1>]]></content>
       <tags>
         <tag>鸿蒙基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony媒体相关</title>
-    <url>/posts/86c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
@@ -536,10 +536,10 @@
 <li>渲染并绘制界面</li>
 </ol>
 <h1 id="UIAbility生命周期"><a href="#UIAbility生命周期" class="headerlink" title="UIAbility生命周期"></a>UIAbility生命周期</h1><p>演示方法</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//EntryAbility中保持原样</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在父组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; hilog &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.PerformanceAnalysisKit&#x27;</span>;</span><br><span class="line"><span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Father aboutToAppear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">aboutToDisappear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Father aboutToDisappear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//子组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; hilog &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.PerformanceAnalysisKit&#x27;</span>;</span><br><span class="line"><span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Child aboutToAppear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">aboutToDisappear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Child aboutToDisappear&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//EntryAbility中保持原样</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在父组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; hilog &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.PerformanceAnalysisKit&#x27;</span>;</span><br><span class="line"><span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Father aboutToAppear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">aboutToDisappear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Father aboutToDisappear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">  <span class="title function_">onPageShow</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Father onPageShow&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">onPageHide</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Father onPageHide&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//子组件</span></span><br><span class="line"><span class="keyword">import</span> &#123; hilog &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.PerformanceAnalysisKit&#x27;</span>;</span><br><span class="line"><span class="title function_">aboutToAppear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Child aboutToAppear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">aboutToDisappear</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Child aboutToDisappear&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">  <span class="title function_">onPageShow</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Child onPageShow&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">onPageHide</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    hilog.<span class="title function_">info</span>(<span class="number">0x0000</span>, <span class="string">&#x27;testTag&#x27;</span>, <span class="string">&#x27;%&#123;public&#125;s&#x27;</span>, <span class="string">&#x27;Child onPageHide&#x27;</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="实例演示-用testTage过滤log信息"><a href="#实例演示-用testTage过滤log信息" class="headerlink" title="实例演示(用testTage过滤log信息)"></a>实例演示(用testTage过滤log信息)</h2><ol>
-<li>创建<br>Ability onCreate -&gt; Ability onWindowStageCreate -&gt; Ability onForeground -&gt; Succeeded in loading the content. <br><br>-&gt; Father aboutToAppear -&gt; Child aboutToAppear<br>(组件：父到子，Ability：外到内)</li>
-<li>退到后台<br>Ability onBackground</li>
+<li>创建<br>Ability onCreate -&gt; Ability onWindowStageCreate -&gt; Ability onForeground -&gt; Succeeded in loading the content. <br><br>-&gt; Father aboutToAppear -&gt; Child aboutToAppear -&gt; Father onPageShow<br>(组件：父到子，Ability：外到内)</li>
+<li>退到后台<br>Ability onBackground -&gt; Father onPageHide</li>
 <li>返回前台<br>Ability onForeground</li>
 <li>销毁<br>Father aboutToDisappear -&gt; Child aboutToDisappear -&gt; Ability onWindowStageDestroy -&gt; Ability onDestroy<br>(组件：父到子，Ability：内到外)</li>
 </ol>
@@ -560,75 +560,6 @@
 
 <h2 id="zIndex-n"><a href="#zIndex-n" class="headerlink" title=".zIndex(n)"></a>.zIndex(n)</h2><p>在父容器中的层级，n越高层级越高</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>文学批评理论(1)——自由人文主义</title>
-    <url>/posts/ce1e/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><table>
-<thead>
-<tr>
-<th>年代</th>
-<th>人物</th>
-<th>主要思想</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>公元前4世纪</td>
-<td>亚里士多德</td>
-<td>1. 《诗学》中的“悲剧”定义：文学关乎人物，人物体现于行动<br>2. 划分了情节发展的阶段<br>3. “读者中心”批评法，试图描述戏剧对观众的影响</td>
-</tr>
-<tr>
-<td>19世纪</td>
-<td>莫里斯(F.D. Maurice)</td>
-<td>文学是中产阶级特有的财富与观念表达，使人感到自己属于自己的国家</td>
-</tr>
-<tr>
-<td>19世纪</td>
-<td>马修·阿诺德(Matthew Arnold)</td>
-<td>用世俗、语言文化代替宗教</td>
-</tr>
-<tr>
-<td>19世纪</td>
-<td>弗里曼(Edward Freeman)</td>
-<td>文学研究必须和语言研究一起，否则不是学术</td>
-</tr>
-<tr>
-<td>20世纪</td>
-<td>理查兹(Ivor Armstrong Richards)</td>
-<td>1. 语义分析+心理研究-&gt;新批评体系<br>2. 严格区分文学与语言<br>3. 实用批评：将文本从历史、语境中剥离</td>
-</tr>
-<tr>
-<td>20世纪</td>
-<td>燕卜荪(William Empson)，理查兹的学生</td>
-<td>《含混七型》，通过词语分析确定诗歌的七个含混</td>
-</tr>
-<tr>
-<td>20世纪</td>
-<td>艾略特(T.S. Eliot)</td>
-<td></td>
-</tr>
-<tr>
-<td>20世纪</td>
-<td>利维斯()</td>
-<td>利维斯主义</td>
-</tr>
-</tbody></table>
-<h2 id="派系"><a href="#派系" class="headerlink" title="派系"></a>派系</h2><h1 id="自由人文主义准则"><a href="#自由人文主义准则" class="headerlink" title="自由人文主义准则"></a>自由人文主义准则</h1><ol>
-<li>看待文学的态度。优秀的文学超越时间、历史局限性，与永恒人性对话</li>
-<li>on-sight close reading。文本包含自身的意义，无需放入政治、历史、自传性等具体语境中</li>
-<li>to see the object as in itself it really is(阿诺德语)。仅对文本进行细致分析，抛却其他一切</li>
-<li>人性不变</li>
-<li>坚信超验主体，个体本性超越于社会、经验等环境的力量</li>
-<li>文学根本目的是美化生活、宣扬人文。但不可系统化</li>
-<li>形式和内容需融合为有机整体，有其一，则必有其二，否则就是奇技淫巧</li>
-<li>文学要诚挚，即经验的真实、对自我诚实、同情、感受。只能从文本内发现，体现于切身感受、个性色彩描写、低调表白之中</li>
-<li>默默呈现而非直白解说，并让思想通过具体形式呈现而不能流于抽象空洞</li>
-<li>批评即阐释文本，作为读者与文本的中介。自由人文主义者认为所有观念都是被预设的、横亘在人与文本之间的阻碍</li>
-</ol>
-<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><h1 id="阅后总结"><a href="#阅后总结" class="headerlink" title="阅后总结"></a>阅后总结</h1><h2 id="卡塔西斯-Cathaasis-效应"><a href="#卡塔西斯-Cathaasis-效应" class="headerlink" title="卡塔西斯(Cathaasis)效应"></a>卡塔西斯(Cathaasis)效应</h2>]]></content>
-      <tags>
-        <tag>文学批评</tag>
-      </tags>
   </entry>
   <entry>
     <title>Harmony路由</title>
@@ -766,6 +697,75 @@
 ]]></content>
       <tags>
         <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文学批评理论(1)——自由人文主义</title>
+    <url>/posts/ce1e/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><table>
+<thead>
+<tr>
+<th>年代</th>
+<th>人物</th>
+<th>主要思想</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>公元前4世纪</td>
+<td>亚里士多德</td>
+<td>1. 《诗学》中的“悲剧”定义：文学关乎人物，人物体现于行动<br>2. 划分了情节发展的阶段<br>3. “读者中心”批评法，试图描述戏剧对观众的影响</td>
+</tr>
+<tr>
+<td>19世纪</td>
+<td>莫里斯(F.D. Maurice)</td>
+<td>文学是中产阶级特有的财富与观念表达，使人感到自己属于自己的国家</td>
+</tr>
+<tr>
+<td>19世纪</td>
+<td>马修·阿诺德(Matthew Arnold)</td>
+<td>用世俗、语言文化代替宗教</td>
+</tr>
+<tr>
+<td>19世纪</td>
+<td>弗里曼(Edward Freeman)</td>
+<td>文学研究必须和语言研究一起，否则不是学术</td>
+</tr>
+<tr>
+<td>20世纪</td>
+<td>理查兹(Ivor Armstrong Richards)</td>
+<td>1. 语义分析+心理研究-&gt;新批评体系<br>2. 严格区分文学与语言<br>3. 实用批评：将文本从历史、语境中剥离</td>
+</tr>
+<tr>
+<td>20世纪</td>
+<td>燕卜荪(William Empson)，理查兹的学生</td>
+<td>《含混七型》，通过词语分析确定诗歌的七个含混</td>
+</tr>
+<tr>
+<td>20世纪</td>
+<td>艾略特(T.S. Eliot)</td>
+<td></td>
+</tr>
+<tr>
+<td>20世纪</td>
+<td>利维斯()</td>
+<td>利维斯主义</td>
+</tr>
+</tbody></table>
+<h2 id="派系"><a href="#派系" class="headerlink" title="派系"></a>派系</h2><h1 id="自由人文主义准则"><a href="#自由人文主义准则" class="headerlink" title="自由人文主义准则"></a>自由人文主义准则</h1><ol>
+<li>看待文学的态度。优秀的文学超越时间、历史局限性，与永恒人性对话</li>
+<li>on-sight close reading。文本包含自身的意义，无需放入政治、历史、自传性等具体语境中</li>
+<li>to see the object as in itself it really is(阿诺德语)。仅对文本进行细致分析，抛却其他一切</li>
+<li>人性不变</li>
+<li>坚信超验主体，个体本性超越于社会、经验等环境的力量</li>
+<li>文学根本目的是美化生活、宣扬人文。但不可系统化</li>
+<li>形式和内容需融合为有机整体，有其一，则必有其二，否则就是奇技淫巧</li>
+<li>文学要诚挚，即经验的真实、对自我诚实、同情、感受。只能从文本内发现，体现于切身感受、个性色彩描写、低调表白之中</li>
+<li>默默呈现而非直白解说，并让思想通过具体形式呈现而不能流于抽象空洞</li>
+<li>批评即阐释文本，作为读者与文本的中介。自由人文主义者认为所有观念都是被预设的、横亘在人与文本之间的阻碍</li>
+</ol>
+<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><h1 id="阅后总结"><a href="#阅后总结" class="headerlink" title="阅后总结"></a>阅后总结</h1><h2 id="卡塔西斯-Cathaasis-效应"><a href="#卡塔西斯-Cathaasis-效应" class="headerlink" title="卡塔西斯(Cathaasis)效应"></a>卡塔西斯(Cathaasis)效应</h2>]]></content>
+      <tags>
+        <tag>文学批评</tag>
       </tags>
   </entry>
   <entry>
@@ -977,6 +977,25 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Harmony小技巧(1)——语法</title>
     <url>/posts/ca8a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="值传递与引用字面量传递"><a href="#值传递与引用字面量传递" class="headerlink" title="值传递与引用字面量传递"></a>值传递与引用字面量传递</h2><h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//father</span></span><br><span class="line"><span class="title function_">myComponent</span>(<span class="variable language_">this</span>.<span class="property">params</span>)</span><br><span class="line"><span class="comment">//son</span></span><br><span class="line"><span class="meta">@Builder</span> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myComponent</span>(<span class="params">params</span>)&#123;</span><br><span class="line">	params</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1008,24 +1027,5 @@
       <tags>
         <tag>鸿蒙</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
