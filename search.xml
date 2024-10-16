@@ -9,6 +9,83 @@
       </tags>
   </entry>
   <entry>
+    <title>Git快速入门</title>
+    <url>/posts/cc3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="提交规范"><a href="#提交规范" class="headerlink" title="提交规范"></a>提交规范</h1><h2 id="commit信息"><a href="#commit信息" class="headerlink" title="commit信息"></a>commit信息</h2><p>commit message格式:<br><type>(<scope>): <subject></p>
+<ol>
+<li><p>type(必须)<br>用于说明git commit的类别，只允许使用下面的标识。<br>• feat：新功能（feature）。<br>• fix&#x2F;to：修复bug，可以是QA发现的BUG，也可以是研发自己发现的BUG。<br>• fix：产生diff并自动修复此问题。适合于一次提交直接修复问题<br>• to：只产生diff不自动修复此问题。适合于多次提交。最终修复问题提交时使用fix<br>• docs：文档（documentation）。<br>• style：格式（不影响代码运行的变动）。<br>• refactor：重构（即不是新增功能，也不是修改bug的代码变动）。<br>• perf：优化相关，比如提升性能、体验。<br>• test：增加测试。<br>• chore：构建过程或辅助工具的变动。<br>• revert：回滚到上一个版本。<br>• merge：代码合并。<br>• sync：同步主线或分支的Bug。</p>
+</li>
+<li><p>scope(可选)<br>这里是否必须，以及范围是什么内容，可以看实际公司的情况。<br>scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。<br>例如在Angular，可以是location，browser，compile，compile，rootScope， ngHref，ngClick，ngView等。如果你的修改影响了不止一个scope，你可以使用*代替。</p>
+</li>
+<li><p>subject(必须)<br>subject是commit目的的简短描述，不超过50个字符。<br>• 结尾不加句号或其他标点符号。<br>• 根据以上规范git commit message将是如下的格式：<br>fix(DAO):用户查询缺少username属性<br>feat(Controller):用户查询接口开发</p>
+</li>
+</ol>
+<h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><p>V1.0.0.20211028_base</p>
+<p>解读一下这个版本号命名规范：</p>
+<ul>
+<li>第一位：版本前缀（V）<br>V （version）英文版本的缩写</li>
+<li>第二位：主版本号（V1）<br>当功能模块有较大的变动，比如增加模块或是整体架构发生变化。此版本号由项目经理决定是否修改。</li>
+<li>第三位：副版本号（V1.0）<br>当功能有一定的增加或变化，比如增加了对权限控制、增加自定义视图等功能。此版本号由项目经理决定是否修改。</li>
+<li>第四位：修订版本号（V1.0.0）<br>一般是 Bug 修复或是一些小的变动，要经常发布修订版，时间间隔不限，修复一个严重的bug即可发布一个修订版。此版本号由项目经理决定是否修改。</li>
+<li>第五位：日期版本号（V1.0.0.20211028_base）<br>用于记录修改项目的当前日期，每天对项目的修改都需要更改日期版本号。此版本号由开发人员决定是否修改。</li>
+<li>第六位：希腊字母版本号（V1.0.0.20211028_base）<br>希腊字母版本号共有五种，分别为base、alpha、beta 、RC 、 release<br>Base： 此版本表示该软件仅仅是一个假页面链接，通常包括所有的功能和页面布局，但是页面中的功能都没有做完整的实现，只是做为整体网站的一个基础架构。<br>Alpha ： 软件的初级版本，表示该软件在此阶段以实现软件功能为主，通常只在软件开发者 内部交流，一般而言，该版本软件的Bug较多，需要继续修改，是测试版本。测试人员提交Bug经开发人员修改确认之后，发布到测试网址让测试人员测试，此时可将软件版本标注为alpha版。<br>Beta ： 该版本相对于Alpha 版已经有了很大的进步，消除了严重错误，但还需要经过多次测试来进一步消除，此版本主要的修改对象是软件的UI。修改的的Bug 经测试人员测试确认后可发布到外网上，此时可将软件版本标注为 beta版。<br>RC ： 该版本已经相当成熟了，基本上不存在导致错误的Bug，与即将发行的正式版本相差无几。<br>Release： 该版本意味“最终版本”，在前面版本的一系列测试版之后，终归会有一个正式的版本，是最终交付用户使用的一个版本。该版本有时也称标准版。</li>
+</ul>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>配置Git</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//升级</span></span><br><span class="line">git clone <span class="attr">git</span>:<span class="comment">//git.kernel.org/pub/scm/git/git.git</span></span><br><span class="line"><span class="comment">//设置用户信息</span></span><br><span class="line"><span class="comment">// --global 选项，该命令只需要运行一次，之后无论你在该系统上做任何事情， Git 都会使用那些信息</span></span><br><span class="line">git config --<span class="variable language_">global</span> user.<span class="property">name</span> <span class="string">&quot;John Doe&quot;</span></span><br><span class="line">git config --<span class="variable language_">global</span> user.<span class="property">email</span> johndoe<span class="meta">@example</span>.<span class="property">com</span></span><br><span class="line"><span class="comment">//配置默认文本编辑器</span></span><br><span class="line">git config --<span class="variable language_">global</span> core.<span class="property">editor</span> emacs</span><br></pre></td></tr></table></figure>
+
+<p>查看信息</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//查看提交历史</span></span><br><span class="line"><span class="comment">//会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明</span></span><br><span class="line">git log</span><br><span class="line">git -p -数字<span class="comment">//显示每次提交的内容差异，后面的“数字”显示最近n次提交</span></span><br><span class="line">git log -stat<span class="comment">//简略的统计信息</span></span><br><span class="line">git log  --pretty = 格式选项<span class="comment">//指定展示提交历史的格式</span></span><br><span class="line"><span class="comment">//列出所有 Git 当时能找到的配置</span></span><br><span class="line">git config --list</span><br><span class="line"><span class="comment">//检查 Git 的某一项配置</span></span><br><span class="line">git config &lt;key&gt;</span><br><span class="line"><span class="comment">//获取帮助</span></span><br><span class="line">git help &lt;verb&gt;</span><br><span class="line">git &lt;verb&gt; --help</span><br><span class="line">man git-&lt;verb&gt;</span><br><span class="line"><span class="comment">//查看状态</span></span><br><span class="line"><span class="comment">//新添加的未跟踪文件前面有 ?? 标记</span></span><br><span class="line"><span class="comment">//新添加到暂存区中的文件前面有 A 标记</span></span><br><span class="line"><span class="comment">//修改过的文件前面有 M 标记</span></span><br><span class="line">git status</span><br><span class="line">git status -s 或 git status--short <span class="comment">//简要</span></span><br><span class="line">git status -v <span class="comment">//详细的修改内容，将你所做的改变的 diff 输出放到编辑器中从而使你知道本次提交具体做了哪些修改</span></span><br><span class="line"><span class="comment">//尚未暂存的文件修改了什么地方</span></span><br><span class="line"><span class="comment">//git diff 本身只显示尚未暂存的改动</span></span><br><span class="line">git diff <span class="comment">//比较的是工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容</span></span><br><span class="line">git diff --cached 或 git diff --staged<span class="comment">//查看已暂存的将要添加到下次提交里的内容。初次创建并add后执行该命令会显示全部内容</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>合作开发</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建一个名为 .git 的子目录</span></span><br><span class="line"><span class="comment">//这个子目录含有初始化的 Git 仓库中所有的必须文件</span></span><br><span class="line"><span class="comment">//但项目里的文件还没有被跟踪</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">//加入跟踪</span></span><br><span class="line">git add</span><br><span class="line"><span class="comment">//unstage</span></span><br><span class="line">git reset</span><br><span class="line"><span class="comment">//提交</span></span><br><span class="line"><span class="comment">//一定要确认还有什么修改过的或新建的文件还没有 gitadd 过，否则提交的时候不会记录这些还没暂存起来的变化</span></span><br><span class="line">git commit</span><br><span class="line">git commit -m <span class="string">&quot;提交信息&quot;</span> <span class="comment">//将提交信息与命令放在同一行</span></span><br><span class="line">git commit -a <span class="comment">//自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤</span></span><br><span class="line"><span class="comment">//克隆的是该 Git 仓库服务器上的几乎所有数据</span></span><br><span class="line"><span class="comment">//默认配置下远程 Git 仓库中的每一个文件的每一个版本都将被拉取下来</span></span><br><span class="line"><span class="comment">//初始化一个 .git 文件夹，从远程仓库拉取下所有数据放入 .git 文件夹，然后从中读取最新版本的文件的拷贝</span></span><br><span class="line">git clone [url]</span><br><span class="line"></span><br><span class="line"><span class="comment">//克隆远程仓库的时候，自定义本地仓库的名字</span></span><br><span class="line"><span class="comment">//支持多种数据传输协议。下面的例子使用的是 https:// 协议，不过你也可以使用 git:// 协议或者使用SSH 传输协议</span></span><br><span class="line">git clone <span class="attr">https</span>:<span class="comment">//github.com/libgit2/libgit2 mylibgit</span></span><br></pre></td></tr></table></figure>
+<p>移除文件</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="配置变量"><a href="#配置变量" class="headerlink" title="配置变量"></a>配置变量</h1><ul>
+<li>git config 的工具来帮助设置控制 Git 外观和行为的配置变量</li>
+<li>配置变量存储在三个不同的位置：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>配置变量</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;etc&#x2F;gitconfig 文件</td>
+<td>1. 系统上每一个用户及他们仓库的通用配置<br>2. 使用带有 –system 选项的git config 时，它会从此文件读写配置变量</td>
+</tr>
+<tr>
+<td>~&#x2F;.gitconfig 或 ~&#x2F;.config&#x2F;git&#x2F;config 文件</td>
+<td>1.针对当前用户<br>传递 –global 选项让 Git读写此文件</td>
+</tr>
+<tr>
+<td>.git&#x2F;config</td>
+<td>针对该仓库</td>
+</tr>
+</tbody></table>
+<p>列表中每下一行都可以覆盖前几行的配置</p>
+<h1 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h1><ol>
+<li>创建.gitignore文件</li>
+<li>在里面写入信息。需满足以下条件：</li>
+</ol>
+<ul>
+<li>所有空行或者以 ＃ 开头的行都会被 Git 忽略。</li>
+<li>可使用标准的 glob 模式(简化的正则表达式)匹配。</li>
+<li>匹配模式可以以（&#x2F;）开头防止递归。如&#x2F;TODO只忽略当前目录的TODO文件</li>
+<li>匹配模式可以以（&#x2F;）结尾指定目录。如build&#x2F;忽略所有build目录下的文件</li>
+<li>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。</li>
+</ul>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><ol>
+<li>每次准备提交前，先用 git status 看下，是不是都已暂存起来了，然后再运行提交命令 git commit。否则提交的时候不会记录这些还没暂存起来的变化，这些修改过的文件只保留在本地磁盘</li>
+</ol>
+<h1 id="顺序"><a href="#顺序" class="headerlink" title="顺序"></a>顺序</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置用户信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化或者克隆</span></span><br><span class="line">git init </span><br><span class="line">git clone</span><br><span class="line"></span><br><span class="line"><span class="comment">//跟踪</span></span><br><span class="line">git add</span><br><span class="line"></span><br><span class="line"><span class="comment">//提交</span></span><br><span class="line">git status</span><br><span class="line">git commit</span><br><span class="line"><span class="comment">//推送</span></span><br><span class="line">git  push</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git原理(2)——Git状态</title>
     <url>/posts/a57b/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="三个工作区域：Git仓库、工作目录以及暂存区域"><a href="#三个工作区域：Git仓库、工作目录以及暂存区域" class="headerlink" title="三个工作区域：Git仓库、工作目录以及暂存区域"></a>三个工作区域：Git仓库、工作目录以及暂存区域</h1><table>
@@ -41,7 +118,7 @@
     B --提交更新--&gt; C[Git仓库(永久存入提交的快照)]
   </pre></div>
 
-<h1 id="三个状态：已提交（committed）、已修改（modified）和已暂存（staged）"><a href="#三个状态：已提交（committed）、已修改（modified）和已暂存（staged）" class="headerlink" title="三个状态：已提交（committed）、已修改（modified）和已暂存（staged）"></a>三个状态：已提交（committed）、已修改（modified）和已暂存（staged）</h1><table>
+<h1 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h1><h2 id="区域相关的三个状态：已提交、已修改和已暂存"><a href="#区域相关的三个状态：已提交、已修改和已暂存" class="headerlink" title="区域相关的三个状态：已提交、已修改和已暂存"></a>区域相关的三个状态：已提交、已修改和已暂存</h2><table>
 <thead>
 <tr>
 <th>状态</th>
@@ -50,11 +127,7 @@
 </thead>
 <tbody><tr>
 <td>已提交（committed）</td>
-<td>数据已经安全的</td>
-</tr>
-<tr>
-<td>保存在本地数据库中</td>
-<td></td>
+<td>数据已经安全的保存在本地数据库中</td>
 </tr>
 <tr>
 <td>已修改（modified）</td>
@@ -65,6 +138,32 @@
 <td>对已修改文件的当前版本做了标记，使之包含在下次提交的快照中</td>
 </tr>
 </tbody></table>
+<h2 id="文件状态"><a href="#文件状态" class="headerlink" title="文件状态"></a>文件状态</h2><h3 id="跟踪-git-add，添加内容到下一次提交"><a href="#跟踪-git-add，添加内容到下一次提交" class="headerlink" title="跟踪(git add，添加内容到下一次提交)"></a>跟踪(git add，添加内容到下一次提交)</h3><ul>
+<li>工作目录下的每一个文件都不外乎这两种状态：已跟踪或未跟踪</li>
+</ul>
+<ol>
+<li>已跟踪：已跟踪的文件是指那些被纳入了版本控制的文件，在上一次快照中有它们的记录</li>
+<li>未跟踪：除已跟踪文件以外的所有其它文件都属于未跟踪文件</li>
+</ol>
+<ul>
+<li>初次克隆某个仓库的时候，工作目录中的所有文件都属于已跟踪文件，并处于未修改状态</li>
+<li>新建文件出现在 Untracked files 下面。未跟踪的文件意味着 Git在之前的快照（提交）中没有这些文件；Git 不会自动将之纳入跟踪范围</li>
+<li>git add 命令使用文件或目录的路径作为参数；如果参数是目录的路径，该命令将递归地跟踪该目录下的所有文件</li>
+<li>还能用于合并时把有冲突的文件标记为已解决状态</li>
+</ul>
+<h3 id="状态变化周期"><a href="#状态变化周期" class="headerlink" title="状态变化周期"></a>状态变化周期</h3><p><strong>Untracked</strong>–add–&gt;<strong>Staged</strong>–remove–&gt;Untracked<br><strong>Umodified</strong>–edit–&gt;<strong>Modified</strong><br><strong>Modified</strong>–&gt;stage–&gt;<strong>Staged</strong>–commit–&gt;<strong>Unmodifiled</strong></p>
+<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><p>提交时记录的是放在暂存区域的快照。任何还未暂存的仍然保持已修改状态，可以在下次提交时纳入版本管理。每一次运行提交操作，都是对你项目作一次快照，以后可以回到这个状态，或者进行比较。</p>
+<h2 id="移除-git-rm，从暂存区域移除并从工作目录中删除指定的文件"><a href="#移除-git-rm，从暂存区域移除并从工作目录中删除指定的文件" class="headerlink" title="移除(git rm，从暂存区域移除并从工作目录中删除指定的文件)"></a>移除(git rm，从暂存区域移除并从工作目录中删除指定的文件)</h2><ol>
+<li>rm FILENAME，该命令仅简单地从工作目录中手工删除文件，但仍会保留在暂存区</li>
+<li>此时再执行git rm，下一次提交时，该文件就不再纳入版本管理了</li>
+<li>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f。这是一种安全特性，用于防止误删还没有添加到快照的数据，这样的数据不能被 Git 恢复</li>
+<li>从暂存区域移除，但仍然希望保留在当前工作目录中：git rm –cached</li>
+<li>后面可接glob模式</li>
+</ol>
+<h2 id="移动-git-mv-源文件-目标文件"><a href="#移动-git-mv-源文件-目标文件" class="headerlink" title="移动(git mv 源文件 目标文件)"></a>移动(git mv 源文件 目标文件)</h2><ul>
+<li>Git 并不显式跟踪文件移动操作。如果在 Git 中重命名了某个文件，仓库中存储的元数据并不会体现出这是一次改名操作。不过 Git 非常聪明，它会推断出究竟发生了什么</li>
+<li>相当于执行了mv、git rm 、git add</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Git</tag>
@@ -87,67 +186,6 @@
 <li>Git 数据库中保存的信息都是以文件内容的哈希值来索引，而不是文件名</li>
 </ul>
 <h1 id="四、一般只添加数据"><a href="#四、一般只添加数据" class="headerlink" title="四、一般只添加数据"></a>四、一般只添加数据</h1><p>Git 操作，几乎只往 Git 数据库中增加数据</p>
-]]></content>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git快速入门</title>
-    <url>/posts/cc3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="提交规范"><a href="#提交规范" class="headerlink" title="提交规范"></a>提交规范</h1><h2 id="commit信息"><a href="#commit信息" class="headerlink" title="commit信息"></a>commit信息</h2><p>commit message格式:<br><type>(<scope>): <subject></p>
-<ol>
-<li><p>type(必须)<br>用于说明git commit的类别，只允许使用下面的标识。<br>• feat：新功能（feature）。<br>• fix&#x2F;to：修复bug，可以是QA发现的BUG，也可以是研发自己发现的BUG。<br>• fix：产生diff并自动修复此问题。适合于一次提交直接修复问题<br>• to：只产生diff不自动修复此问题。适合于多次提交。最终修复问题提交时使用fix<br>• docs：文档（documentation）。<br>• style：格式（不影响代码运行的变动）。<br>• refactor：重构（即不是新增功能，也不是修改bug的代码变动）。<br>• perf：优化相关，比如提升性能、体验。<br>• test：增加测试。<br>• chore：构建过程或辅助工具的变动。<br>• revert：回滚到上一个版本。<br>• merge：代码合并。<br>• sync：同步主线或分支的Bug。</p>
-</li>
-<li><p>scope(可选)<br>这里是否必须，以及范围是什么内容，可以看实际公司的情况。<br>scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。<br>例如在Angular，可以是location，browser，compile，compile，rootScope， ngHref，ngClick，ngView等。如果你的修改影响了不止一个scope，你可以使用*代替。</p>
-</li>
-<li><p>subject(必须)<br>subject是commit目的的简短描述，不超过50个字符。<br>• 结尾不加句号或其他标点符号。<br>• 根据以上规范git commit message将是如下的格式：<br>fix(DAO):用户查询缺少username属性<br>feat(Controller):用户查询接口开发</p>
-</li>
-</ol>
-<h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><p>V1.0.0.20211028_base</p>
-<p>解读一下这个版本号命名规范：</p>
-<ul>
-<li>第一位：版本前缀（V）<br>V （version）英文版本的缩写</li>
-<li>第二位：主版本号（V1）<br>当功能模块有较大的变动，比如增加模块或是整体架构发生变化。此版本号由项目经理决定是否修改。</li>
-<li>第三位：副版本号（V1.0）<br>当功能有一定的增加或变化，比如增加了对权限控制、增加自定义视图等功能。此版本号由项目经理决定是否修改。</li>
-<li>第四位：修订版本号（V1.0.0）<br>一般是 Bug 修复或是一些小的变动，要经常发布修订版，时间间隔不限，修复一个严重的bug即可发布一个修订版。此版本号由项目经理决定是否修改。</li>
-<li>第五位：日期版本号（V1.0.0.20211028_base）<br>用于记录修改项目的当前日期，每天对项目的修改都需要更改日期版本号。此版本号由开发人员决定是否修改。</li>
-<li>第六位：希腊字母版本号（V1.0.0.20211028_base）<br>希腊字母版本号共有五种，分别为base、alpha、beta 、RC 、 release<br>Base： 此版本表示该软件仅仅是一个假页面链接，通常包括所有的功能和页面布局，但是页面中的功能都没有做完整的实现，只是做为整体网站的一个基础架构。<br>Alpha ： 软件的初级版本，表示该软件在此阶段以实现软件功能为主，通常只在软件开发者 内部交流，一般而言，该版本软件的Bug较多，需要继续修改，是测试版本。测试人员提交Bug经开发人员修改确认之后，发布到测试网址让测试人员测试，此时可将软件版本标注为alpha版。<br>Beta ： 该版本相对于Alpha 版已经有了很大的进步，消除了严重错误，但还需要经过多次测试来进一步消除，此版本主要的修改对象是软件的UI。修改的的Bug 经测试人员测试确认后可发布到外网上，此时可将软件版本标注为 beta版。<br>RC ： 该版本已经相当成熟了，基本上不存在导致错误的Bug，与即将发行的正式版本相差无几。<br>Release： 该版本意味“最终版本”，在前面版本的一系列测试版之后，终归会有一个正式的版本，是最终交付用户使用的一个版本。该版本有时也称标准版。</li>
-</ul>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>配置Git</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//升级</span></span><br><span class="line">git clone <span class="attr">git</span>:<span class="comment">//git.kernel.org/pub/scm/git/git.git</span></span><br><span class="line"><span class="comment">//设置用户信息</span></span><br><span class="line"><span class="comment">// --global 选项，该命令只需要运行一次，之后无论你在该系统上做任何事情， Git 都会使用那些信息</span></span><br><span class="line">git config --<span class="variable language_">global</span> user.<span class="property">name</span> <span class="string">&quot;John Doe&quot;</span></span><br><span class="line">git config --<span class="variable language_">global</span> user.<span class="property">email</span> johndoe<span class="meta">@example</span>.<span class="property">com</span></span><br><span class="line"><span class="comment">//配置默认文本编辑器</span></span><br><span class="line">git config --<span class="variable language_">global</span> core.<span class="property">editor</span> emacs</span><br></pre></td></tr></table></figure>
-
-<p>查看信息</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//列出所有 Git 当时能找到的配置</span></span><br><span class="line">git config --list</span><br><span class="line"><span class="comment">//检查 Git 的某一项配置</span></span><br><span class="line">git config &lt;key&gt;</span><br><span class="line"><span class="comment">//获取帮助</span></span><br><span class="line">git help &lt;verb&gt;</span><br><span class="line">git &lt;verb&gt; --help</span><br><span class="line">man git-&lt;verb&gt;</span><br></pre></td></tr></table></figure>
-
-<p>合作开发</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建一个名为 .git 的子目录</span></span><br><span class="line"><span class="comment">//这个子目录含有初始化的 Git 仓库中所有的必须文件</span></span><br><span class="line"><span class="comment">//但项目里的文件还没有被跟踪</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">//加入跟踪</span></span><br><span class="line">git add</span><br><span class="line"><span class="comment">//提交</span></span><br><span class="line">git commit</span><br><span class="line"></span><br><span class="line"><span class="comment">//克隆的是该 Git 仓库服务器上的几乎所有数据</span></span><br><span class="line"><span class="comment">//默认配置下远程 Git 仓库中的每一个文件的每一个版本都将被拉取下来</span></span><br><span class="line"><span class="comment">//初始化一个 .git 文件夹，从远程仓库拉取下所有数据放入 .git 文件夹，然后从中读取最新版本的文件的拷贝</span></span><br><span class="line">git clone [url]</span><br><span class="line"></span><br><span class="line"><span class="comment">//克隆远程仓库的时候，自定义本地仓库的名字</span></span><br><span class="line"><span class="comment">//支持多种数据传输协议。下面的例子使用的是 https:// 协议，不过你也可以使用 git:// 协议或者使用SSH 传输协议</span></span><br><span class="line">git clone <span class="attr">https</span>:<span class="comment">//github.com/libgit2/libgit2 mylibgit</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="配置变量"><a href="#配置变量" class="headerlink" title="配置变量"></a>配置变量</h1><ul>
-<li>git config 的工具来帮助设置控制 Git 外观和行为的配置变量</li>
-<li>配置变量存储在三个不同的位置：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>配置变量</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&#x2F;etc&#x2F;gitconfig 文件</td>
-<td>1. 系统上每一个用户及他们仓库的通用配置<br>2. 使用带有 –system 选项的git config 时，它会从此文件读写配置变量</td>
-</tr>
-<tr>
-<td>~&#x2F;.gitconfig 或 ~&#x2F;.config&#x2F;git&#x2F;config 文件</td>
-<td>1.针对当前用户<br>传递 –global 选项让 Git读写此文件</td>
-</tr>
-<tr>
-<td>.git&#x2F;config</td>
-<td>针对该仓库</td>
-</tr>
-</tbody></table>
-<p>列表中每下一行都可以覆盖前几行的配置</p>
 ]]></content>
       <tags>
         <tag>Git</tag>
@@ -213,6 +251,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony案例分析(1)——美团购物</title>
+    <url>/posts/98cf/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
+<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
+<li>理解UI刷新原理</li>
+<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
+<li>掌握持久化方法</li>
+</ol>
+<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
+<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
+<li>将商品写成对象数组通过@Link传递</li>
+<li>商品数量令用一个number数组存储到AppStorage上</li>
+</ol>
+<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加入商品数组的会有重复</td>
+<td>写一个面对对象数组的去重函数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
+<li>对商品数组和商品数量数组做持久化</li>
+</ol>
+<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
+<ol>
+<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>鸿蒙案例</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Harmony案例分析(2)——开眼App</title>
     <url>/posts/9b25/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据所给接口，仿照“开眼”APP开发UI界面，并实现页面路由、发帖、评论等APP基础功能</p>
@@ -262,51 +345,6 @@
 <li>嵌套CustomDialog的使用</li>
 <li>Video的使用</li>
 <li>小技巧Swiper() .index(&amp;&amp;this.idx)</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>鸿蒙案例</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony案例分析(1)——美团购物</title>
-    <url>/posts/98cf/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><h2 id="任务描述"><a href="#任务描述" class="headerlink" title="任务描述"></a>任务描述</h2><p>根据接口数据和美团APP，仿照美团购物界面进行开发，构建商品与购物车之间的逻辑关系</p>
-<h2 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h2><ol>
-<li>理解UI刷新原理</li>
-<li>掌握组件间传值方法，如@Prop、@Link、@Provide与@Consume</li>
-<li>掌握持久化方法</li>
-</ol>
-<h1 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>用Coloumn、Row进行布局，通过onClick和if-else触发或切换组件</p>
-<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><ol>
-<li>将商品写成对象数组通过@Link传递</li>
-<li>商品数量令用一个number数组存储到AppStorage上</li>
-</ol>
-<h1 id="问题与解决方案"><a href="#问题与解决方案" class="headerlink" title="问题与解决方案"></a>问题与解决方案</h1><table>
-<thead>
-<tr>
-<th>问题</th>
-<th>解决方案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>加入商品数组的会有重复</td>
-<td>写一个面对对象数组的去重函数</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><h2 id="待优化方向"><a href="#待优化方向" class="headerlink" title="待优化方向"></a>待优化方向</h2><ol>
-<li>对商品数组和商品数量数组做持久化</li>
-</ol>
-<h2 id="具体优化思路"><a href="#具体优化思路" class="headerlink" title="具体优化思路"></a>具体优化思路</h2><h1 id="参考答案分析"><a href="#参考答案分析" class="headerlink" title="参考答案分析"></a>参考答案分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>有点麻烦，但没啥难度。收获不少，如下：</p>
-<ol>
-<li>对象数组的去重<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">dedupe</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">newCart</span>:<span class="title class_">Foods</span>[] = []</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="attr">item</span>:<span class="title class_">Foods</span></span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> newCart.<span class="title function_">includes</span>(item)?<span class="string">&#x27;&#x27;</span>:newCart.<span class="title function_">push</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">shoppingCartArr</span> = newCart</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>传值<br>@Link<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@ObjectLink与@Observed<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-@AppStorage<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <tags>
@@ -684,15 +722,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony媒体相关</title>
-    <url>/posts/86c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Harmony权限</title>
     <url>/posts/f140/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="应用权限保护的对象"><a href="#应用权限保护的对象" class="headerlink" title="应用权限保护的对象"></a>应用权限保护的对象</h1><h1 id="权限使用基本原则"><a href="#权限使用基本原则" class="headerlink" title="权限使用基本原则"></a>权限使用基本原则</h1><ul>
@@ -912,9 +941,10 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony最佳实践</title>
-    <url>/posts/e1d9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <title>Harmony媒体相关</title>
+    <url>/posts/86c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="媒体组件"><a href="#媒体组件" class="headerlink" title="媒体组件"></a>媒体组件</h1><h2 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="attr">controller</span>:<span class="title class_">VideoController</span>=<span class="keyword">new</span> <span class="title class_">VideoController</span>()</span><br><span class="line"><span class="title class_">Video</span>(&#123;<span class="attr">src</span>:<span class="string">&#x27;&#x27;</span>,<span class="attr">currentProgressRate</span>:<span class="variable language_">this</span>.<span class="property">speed</span>,<span class="attr">controller</span>:<span class="variable language_">this</span>.<span class="property">controller</span>&#125;)</span><br><span class="line">    .<span class="title function_">controls</span>(<span class="literal">false</span>)</span><br><span class="line">    .<span class="title function_">onPrepared</span>(<span class="function">(<span class="params">value</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">currentPlayIndex</span>==<span class="variable language_">this</span>.<span class="property">currentIndex</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">start</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">controller</span>.<span class="title function_">pause</span>()</span><br></pre></td></tr></table></figure>
+]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -944,63 +974,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Harmony通用信息(2)——通用事件</title>
-    <url>/posts/68be/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="通用事件"><a href="#通用事件" class="headerlink" title="通用事件"></a>通用事件</h1><h2 id="点击"><a href="#点击" class="headerlink" title="点击"></a>点击</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//distanceThreshold参数作为点击事件移动阈值，当手指的移动距离超出所设置的点击手势移动阈值时，点击手势识别失败</span></span><br><span class="line"><span class="comment">//distanceThreshold默认值：2^31-1</span></span><br><span class="line"><span class="title function_">onClick</span>(<span class="attr">event</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">ClickEvent</span>&gt;, <span class="attr">distanceThreshold</span>: <span class="built_in">number</span>): T</span><br></pre></td></tr></table></figure>
-<h2 id="触摸"><a href="#触摸" class="headerlink" title="触摸"></a>触摸</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当手指在组件上按下、滑动、抬起时触发。</span></span><br><span class="line"><span class="title function_">onTouch</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">TouchEvent</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"><span class="comment">//该接口只能在TouchEvent中调用</span></span><br><span class="line"><span class="comment">//通过该接口获取触发onTouch时当前帧历史点的相关信息。</span></span><br><span class="line"><span class="comment">//onTouch一帧只会调用一次，若当前帧收到的TouchEvent大于1，会将该帧最后一个点通过onTouch返还，剩余点作为历史点</span></span><br><span class="line"><span class="title function_">getHistoricalPoints</span>(): <span class="title class_">Array</span>&lt;<span class="title class_">HistoricalPoint</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="挂载卸载"><a href="#挂载卸载" class="headerlink" title="挂载卸载"></a>挂载卸载</h2><p>组件从组件树上挂载、卸载时触发的事件。</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件挂载至组件树时触发此回调。</span></span><br><span class="line"><span class="comment">//回调的调用时机一定在组件布局渲染之前</span></span><br><span class="line"><span class="comment">//不允许在回调中对组件树进行变更</span></span><br><span class="line"><span class="comment">//T表示返回当前组件。</span></span><br><span class="line"><span class="title function_">onAttach</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="built_in">void</span>&gt;): T</span><br><span class="line"><span class="comment">//组件从组件树卸载时触发此回调</span></span><br><span class="line"><span class="title function_">onDetach</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="built_in">void</span>&gt;): T</span><br><span class="line"><span class="comment">//组件挂载显示后触发此回调</span></span><br><span class="line"><span class="comment">//回调的调用时机有可能发生在组件布局渲染后</span></span><br><span class="line"><span class="title function_">onAppear</span>(<span class="attr">event</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"><span class="comment">//组件卸载消失时触发此回调。</span></span><br><span class="line"><span class="title function_">onDisAppear</span>(<span class="attr">event</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2><p>可通过将draggable属性设置为true达成拖拽功能的组件有：</p>
-<ul>
-<li>默认支持拖出能力的组件（可从组件上拖出数据）：Search、TextInput、TextArea、RichEditor、Text、Image、Hyperlink</li>
-<li>默认支持拖入能力的组件（目标组件可响应拖入数据）：Search、TextInput、TextArea、Video<br>其他组件需要开发者将draggable属性设置为true，并在onDragStart等接口中实现数据传输相关内容，才能正确处理拖拽<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//第一次拖拽此事件绑定的组件时，长按时间 &gt;= 500ms，然后手指移动距离 &gt;= 10vp，触发回调</span></span><br><span class="line"><span class="title function_">onDragStart</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="title class_">CustomBuilder</span> | <span class="title class_">DragItemInfo</span>)</span><br><span class="line"><span class="comment">//拖拽进入组件范围内时，触发回调，当监听了onDrop事件时，此事件才有效</span></span><br><span class="line"><span class="title function_">onDragEnter</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//拖拽在组件范围内移动时，触发回调，当监听了onDrop事件时，此事件才有效</span></span><br><span class="line"><span class="title function_">onDragMove</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//拖拽离开组件范围内时，触发回调，当监听了onDrop事件时，此事件才有效</span></span><br><span class="line"><span class="title function_">onDragLeave</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//在本组件范围内停止拖拽行为时，触发回调</span></span><br><span class="line"><span class="title function_">onDrop</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//绑定此事件的组件触发的拖拽结束后，触发回调</span></span><br><span class="line"><span class="title function_">onDragEnd</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//绑定此事件的组件，当触发拖拽发起前的不同阶段时，触发回调</span></span><br><span class="line"><span class="title function_">onPreDrag</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">preDragStatus</span>: <span class="title class_">PreDragStatus</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="按键"><a href="#按键" class="headerlink" title="按键"></a>按键</h2><p>按键事件指组件与键盘、遥控器等按键设备交互时触发的事件</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//绑定该方法的组件获焦后，按键动作触发该回调</span></span><br><span class="line"><span class="title function_">onKeyEvent</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">KeyEvent</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"><span class="comment">//绑定该方法的组件获焦后，按键动作优先触发该回调</span></span><br><span class="line"><span class="comment">//回调的返回值为true时，视作该按键事件已被消费，后续的事件回调（keyboardShortcut、输入法事件、onKeyEvent）会被拦截，不再触发</span></span><br><span class="line"><span class="title function_">onKeyPreIme</span>(<span class="attr">event</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">KeyEvent</span>, <span class="built_in">boolean</span>&gt;): T</span><br></pre></td></tr></table></figure>
-<h2 id="焦点"><a href="#焦点" class="headerlink" title="焦点"></a>焦点</h2><p>焦点事件指页面焦点在可获焦组件间移动时触发的事件</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当前组件获取焦点时触发的回调</span></span><br><span class="line"><span class="title function_">onFocus</span>(<span class="attr">event</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//当前组件失去焦点时触发的回调</span></span><br><span class="line"><span class="title function_">onBlur</span>(<span class="attr">event</span>:<span class="function">() =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="鼠标"><a href="#鼠标" class="headerlink" title="鼠标"></a>鼠标</h2><p>在鼠标的单个动作触发多个事件时，事件的顺序是固定的，鼠标事件默认透传</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当前组件被鼠标按键点击时或者鼠标在组件上悬浮移动时，触发该回调</span></span><br><span class="line"><span class="title function_">onMouse</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">MouseEvent</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="悬浮"><a href="#悬浮" class="headerlink" title="悬浮"></a>悬浮</h2><p>鼠标滑动，或者手写笔在屏幕上悬浮移动扫过组件时触发</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//鼠标或手写笔进入或退出组件时触发hover事件</span></span><br><span class="line"><span class="title function_">onHover</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">isHover</span>: <span class="built_in">boolean</span>, <span class="attr">event</span>: <span class="title class_">HoverEvent</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure>
-<h2 id="无障碍悬浮"><a href="#无障碍悬浮" class="headerlink" title="无障碍悬浮"></a>无障碍悬浮</h2><p>开启无障碍模式后，Touch事件会转换为无障碍悬浮事件</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//开启无障碍模式后，单指触摸绑定该回调的组件时触发该回调</span></span><br><span class="line"><span class="title function_">onAccessibilityHover</span>(<span class="attr">callback</span>: <span class="title class_">AccessibilityCallback</span>): T</span><br><span class="line"><span class="comment">//提供开启无障碍模式后的无障碍悬浮回调事件类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AccessibilityCallback</span> = <span class="function">(<span class="params"><span class="attr">isHover</span>: <span class="built_in">boolean</span>, <span class="attr">event</span>: <span class="title class_">AccessibilityHoverEvent</span></span>) =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
-<h2 id="组件区域变化"><a href="#组件区域变化" class="headerlink" title="组件区域变化"></a>组件区域变化</h2><p>组件区域变化事件指组件显示的尺寸、位置等发生变化时触发的事件</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件区域变化时触发该回调</span></span><br><span class="line"><span class="comment">//仅会响应由布局变化所导致的组件大小、位置发生变化时的回调</span></span><br><span class="line"><span class="title function_">onAreaChange</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">oldValue</span>: <span class="title class_">Area</span>, <span class="attr">newValue</span>: <span class="title class_">Area</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure>
-<h2 id="组件尺寸变化"><a href="#组件尺寸变化" class="headerlink" title="组件尺寸变化"></a>组件尺寸变化</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件区域变化时触发该回调。仅会响应由布局变化所导致的组件尺寸发生变化时的回调</span></span><br><span class="line"><span class="title function_">onSizeChange</span>(<span class="attr">event</span>: <span class="title class_">SizeChangeCallback</span>): T</span><br><span class="line"><span class="comment">//组件区域变化时的回调类型</span></span><br><span class="line"><span class="title class_">SizeChangeCallback</span> = <span class="function">(<span class="params"><span class="attr">oldValue</span>: <span class="title class_">SizeOptions</span>, <span class="attr">newValue</span>: <span class="title class_">SizeOptions</span></span>) =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
-<h2 id="组件可见区域变化"><a href="#组件可见区域变化" class="headerlink" title="组件可见区域变化"></a>组件可见区域变化</h2><ul>
-<li>组件在屏幕中的显示区域面积变化时触发的事件</li>
-<li>提供了判断组件是否完全或部分显示在屏幕中的能力，适用于广告曝光埋点之类的场景<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件可见区域变化时触发该回调</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="title function_">onVisibleAreaChange</span>(<span class="attr">ratios</span>: <span class="title class_">Array</span>&lt;<span class="built_in">number</span>&gt;, <span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">isVisible</span>: <span class="built_in">boolean</span>, <span class="attr">currentRatio</span>: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="组件快捷键"><a href="#组件快捷键" class="headerlink" title="组件快捷键"></a>组件快捷键</h2><ul>
-<li>设置组合键的同时可以设置自定义事件，组合键按下时，触发该自定义事件</li>
-<li>若没有设置自定义事件，则组合键行为与click行为一致<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置组件的自定义组合键</span></span><br><span class="line"><span class="title function_">keyboardShortcut</span>(<span class="attr">value</span>: <span class="built_in">string</span> | <span class="title class_">FunctionKey</span>, <span class="attr">keys</span>: <span class="title class_">Array</span>&lt;<span class="title class_">ModifierKey</span>&gt;, action?: <span class="function">() =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure>
-系统已存在的按键事件<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>获焦组件</th>
-<th>用途</th>
-<th>事件处理类别</th>
-</tr>
-</thead>
-</table>
-</li>
-</ul>
-<p>方向键、Shift + 方向键  | 输入框组件 | 移动光标  | 输入法<br>方向键、Shift + 方向键 | 通用组件  | 系统处于走焦状态时，用于方向走焦 | 系统按键<br>TAB、Shift + TAB  | 通用组件  | 触发进入走焦状态&#x2F;走焦 | 系统按键</p>
-<h2 id="自定义事件分发"><a href="#自定义事件分发" class="headerlink" title="自定义事件分发"></a>自定义事件分发</h2><ul>
-<li>ArkUI在处理触屏事件时，会在触屏事件触发前进行按压点和组件区域的触摸测试，来收集需要响应触屏事件的组件，再基于触摸测试结果分发相应的触屏事件</li>
-<li>可以通过onChildTouchTest决定如何让子节点去做触摸测试，影响子组件的触摸测试，最终影响后续的触屏事件分发<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当前组件可通过设置回调来自定义子节点如何去做触摸测试</span></span><br><span class="line"><span class="title function_">onChildTouchTest</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">value</span>: <span class="title class_">Array</span>&lt;<span class="title class_">TouchTestInfo</span>&gt;</span>) =&gt;</span> <span class="title class_">TouchResult</span>): T</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="自定义事件拦截"><a href="#自定义事件拦截" class="headerlink" title="自定义事件拦截"></a>自定义事件拦截</h2><ul>
-<li>为组件提供自定义的事件拦截能力</li>
-<li>可根据事件在控件上按下时发生的位置，输入源等事件信息决定控件上的HitTestMode属性<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onTouchIntercept</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">TouchEvent</span>, <span class="title class_">HitTestMode</span>&gt;)</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Harmony编年史</title>
-    <url>/posts/88b0/</url>
+    <title>Harmony最佳实践</title>
+    <url>/posts/e1d9/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
         <tag>鸿蒙</tag>
@@ -1107,6 +1082,61 @@
       <tags>
         <tag>鸿蒙基础</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Harmony通用信息(2)——通用事件</title>
+    <url>/posts/68be/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="通用事件"><a href="#通用事件" class="headerlink" title="通用事件"></a>通用事件</h1><h2 id="点击"><a href="#点击" class="headerlink" title="点击"></a>点击</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//distanceThreshold参数作为点击事件移动阈值，当手指的移动距离超出所设置的点击手势移动阈值时，点击手势识别失败</span></span><br><span class="line"><span class="comment">//distanceThreshold默认值：2^31-1</span></span><br><span class="line"><span class="title function_">onClick</span>(<span class="attr">event</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">ClickEvent</span>&gt;, <span class="attr">distanceThreshold</span>: <span class="built_in">number</span>): T</span><br></pre></td></tr></table></figure>
+<h2 id="触摸"><a href="#触摸" class="headerlink" title="触摸"></a>触摸</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当手指在组件上按下、滑动、抬起时触发。</span></span><br><span class="line"><span class="title function_">onTouch</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">TouchEvent</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"><span class="comment">//该接口只能在TouchEvent中调用</span></span><br><span class="line"><span class="comment">//通过该接口获取触发onTouch时当前帧历史点的相关信息。</span></span><br><span class="line"><span class="comment">//onTouch一帧只会调用一次，若当前帧收到的TouchEvent大于1，会将该帧最后一个点通过onTouch返还，剩余点作为历史点</span></span><br><span class="line"><span class="title function_">getHistoricalPoints</span>(): <span class="title class_">Array</span>&lt;<span class="title class_">HistoricalPoint</span>&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="挂载卸载"><a href="#挂载卸载" class="headerlink" title="挂载卸载"></a>挂载卸载</h2><p>组件从组件树上挂载、卸载时触发的事件。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件挂载至组件树时触发此回调。</span></span><br><span class="line"><span class="comment">//回调的调用时机一定在组件布局渲染之前</span></span><br><span class="line"><span class="comment">//不允许在回调中对组件树进行变更</span></span><br><span class="line"><span class="comment">//T表示返回当前组件。</span></span><br><span class="line"><span class="title function_">onAttach</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="built_in">void</span>&gt;): T</span><br><span class="line"><span class="comment">//组件从组件树卸载时触发此回调</span></span><br><span class="line"><span class="title function_">onDetach</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="built_in">void</span>&gt;): T</span><br><span class="line"><span class="comment">//组件挂载显示后触发此回调</span></span><br><span class="line"><span class="comment">//回调的调用时机有可能发生在组件布局渲染后</span></span><br><span class="line"><span class="title function_">onAppear</span>(<span class="attr">event</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"><span class="comment">//组件卸载消失时触发此回调。</span></span><br><span class="line"><span class="title function_">onDisAppear</span>(<span class="attr">event</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2><p>可通过将draggable属性设置为true达成拖拽功能的组件有：</p>
+<ul>
+<li>默认支持拖出能力的组件（可从组件上拖出数据）：Search、TextInput、TextArea、RichEditor、Text、Image、Hyperlink</li>
+<li>默认支持拖入能力的组件（目标组件可响应拖入数据）：Search、TextInput、TextArea、Video<br>其他组件需要开发者将draggable属性设置为true，并在onDragStart等接口中实现数据传输相关内容，才能正确处理拖拽<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//第一次拖拽此事件绑定的组件时，长按时间 &gt;= 500ms，然后手指移动距离 &gt;= 10vp，触发回调</span></span><br><span class="line"><span class="title function_">onDragStart</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="title class_">CustomBuilder</span> | <span class="title class_">DragItemInfo</span>)</span><br><span class="line"><span class="comment">//拖拽进入组件范围内时，触发回调，当监听了onDrop事件时，此事件才有效</span></span><br><span class="line"><span class="title function_">onDragEnter</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//拖拽在组件范围内移动时，触发回调，当监听了onDrop事件时，此事件才有效</span></span><br><span class="line"><span class="title function_">onDragMove</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//拖拽离开组件范围内时，触发回调，当监听了onDrop事件时，此事件才有效</span></span><br><span class="line"><span class="title function_">onDragLeave</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//在本组件范围内停止拖拽行为时，触发回调</span></span><br><span class="line"><span class="title function_">onDrop</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//绑定此事件的组件触发的拖拽结束后，触发回调</span></span><br><span class="line"><span class="title function_">onDragEnd</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">DragEvent</span>, extraParams?: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//绑定此事件的组件，当触发拖拽发起前的不同阶段时，触发回调</span></span><br><span class="line"><span class="title function_">onPreDrag</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">preDragStatus</span>: <span class="title class_">PreDragStatus</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="按键"><a href="#按键" class="headerlink" title="按键"></a>按键</h2><p>按键事件指组件与键盘、遥控器等按键设备交互时触发的事件</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//绑定该方法的组件获焦后，按键动作触发该回调</span></span><br><span class="line"><span class="title function_">onKeyEvent</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">KeyEvent</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br><span class="line"><span class="comment">//绑定该方法的组件获焦后，按键动作优先触发该回调</span></span><br><span class="line"><span class="comment">//回调的返回值为true时，视作该按键事件已被消费，后续的事件回调（keyboardShortcut、输入法事件、onKeyEvent）会被拦截，不再触发</span></span><br><span class="line"><span class="title function_">onKeyPreIme</span>(<span class="attr">event</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">KeyEvent</span>, <span class="built_in">boolean</span>&gt;): T</span><br></pre></td></tr></table></figure>
+<h2 id="焦点"><a href="#焦点" class="headerlink" title="焦点"></a>焦点</h2><p>焦点事件指页面焦点在可获焦组件间移动时触发的事件</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当前组件获取焦点时触发的回调</span></span><br><span class="line"><span class="title function_">onFocus</span>(<span class="attr">event</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"><span class="comment">//当前组件失去焦点时触发的回调</span></span><br><span class="line"><span class="title function_">onBlur</span>(<span class="attr">event</span>:<span class="function">() =&gt;</span> <span class="built_in">void</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="鼠标"><a href="#鼠标" class="headerlink" title="鼠标"></a>鼠标</h2><p>在鼠标的单个动作触发多个事件时，事件的顺序是固定的，鼠标事件默认透传</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当前组件被鼠标按键点击时或者鼠标在组件上悬浮移动时，触发该回调</span></span><br><span class="line"><span class="title function_">onMouse</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">event</span>: <span class="title class_">MouseEvent</span></span>) =&gt;</span> <span class="built_in">void</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="悬浮"><a href="#悬浮" class="headerlink" title="悬浮"></a>悬浮</h2><p>鼠标滑动，或者手写笔在屏幕上悬浮移动扫过组件时触发</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//鼠标或手写笔进入或退出组件时触发hover事件</span></span><br><span class="line"><span class="title function_">onHover</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">isHover</span>: <span class="built_in">boolean</span>, <span class="attr">event</span>: <span class="title class_">HoverEvent</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure>
+<h2 id="无障碍悬浮"><a href="#无障碍悬浮" class="headerlink" title="无障碍悬浮"></a>无障碍悬浮</h2><p>开启无障碍模式后，Touch事件会转换为无障碍悬浮事件</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//开启无障碍模式后，单指触摸绑定该回调的组件时触发该回调</span></span><br><span class="line"><span class="title function_">onAccessibilityHover</span>(<span class="attr">callback</span>: <span class="title class_">AccessibilityCallback</span>): T</span><br><span class="line"><span class="comment">//提供开启无障碍模式后的无障碍悬浮回调事件类型</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">AccessibilityCallback</span> = <span class="function">(<span class="params"><span class="attr">isHover</span>: <span class="built_in">boolean</span>, <span class="attr">event</span>: <span class="title class_">AccessibilityHoverEvent</span></span>) =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
+<h2 id="组件区域变化"><a href="#组件区域变化" class="headerlink" title="组件区域变化"></a>组件区域变化</h2><p>组件区域变化事件指组件显示的尺寸、位置等发生变化时触发的事件</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件区域变化时触发该回调</span></span><br><span class="line"><span class="comment">//仅会响应由布局变化所导致的组件大小、位置发生变化时的回调</span></span><br><span class="line"><span class="title function_">onAreaChange</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">oldValue</span>: <span class="title class_">Area</span>, <span class="attr">newValue</span>: <span class="title class_">Area</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure>
+<h2 id="组件尺寸变化"><a href="#组件尺寸变化" class="headerlink" title="组件尺寸变化"></a>组件尺寸变化</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件区域变化时触发该回调。仅会响应由布局变化所导致的组件尺寸发生变化时的回调</span></span><br><span class="line"><span class="title function_">onSizeChange</span>(<span class="attr">event</span>: <span class="title class_">SizeChangeCallback</span>): T</span><br><span class="line"><span class="comment">//组件区域变化时的回调类型</span></span><br><span class="line"><span class="title class_">SizeChangeCallback</span> = <span class="function">(<span class="params"><span class="attr">oldValue</span>: <span class="title class_">SizeOptions</span>, <span class="attr">newValue</span>: <span class="title class_">SizeOptions</span></span>) =&gt;</span> <span class="built_in">void</span></span><br></pre></td></tr></table></figure>
+<h2 id="组件可见区域变化"><a href="#组件可见区域变化" class="headerlink" title="组件可见区域变化"></a>组件可见区域变化</h2><ul>
+<li>组件在屏幕中的显示区域面积变化时触发的事件</li>
+<li>提供了判断组件是否完全或部分显示在屏幕中的能力，适用于广告曝光埋点之类的场景<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//组件可见区域变化时触发该回调</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="title function_">onVisibleAreaChange</span>(<span class="attr">ratios</span>: <span class="title class_">Array</span>&lt;<span class="built_in">number</span>&gt;, <span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">isVisible</span>: <span class="built_in">boolean</span>, <span class="attr">currentRatio</span>: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="组件快捷键"><a href="#组件快捷键" class="headerlink" title="组件快捷键"></a>组件快捷键</h2><ul>
+<li>设置组合键的同时可以设置自定义事件，组合键按下时，触发该自定义事件</li>
+<li>若没有设置自定义事件，则组合键行为与click行为一致<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//设置组件的自定义组合键</span></span><br><span class="line"><span class="title function_">keyboardShortcut</span>(<span class="attr">value</span>: <span class="built_in">string</span> | <span class="title class_">FunctionKey</span>, <span class="attr">keys</span>: <span class="title class_">Array</span>&lt;<span class="title class_">ModifierKey</span>&gt;, action?: <span class="function">() =&gt;</span> <span class="built_in">void</span>): T</span><br></pre></td></tr></table></figure>
+系统已存在的按键事件<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>获焦组件</th>
+<th>用途</th>
+<th>事件处理类别</th>
+</tr>
+</thead>
+</table>
+</li>
+</ul>
+<p>方向键、Shift + 方向键  | 输入框组件 | 移动光标  | 输入法<br>方向键、Shift + 方向键 | 通用组件  | 系统处于走焦状态时，用于方向走焦 | 系统按键<br>TAB、Shift + TAB  | 通用组件  | 触发进入走焦状态&#x2F;走焦 | 系统按键</p>
+<h2 id="自定义事件分发"><a href="#自定义事件分发" class="headerlink" title="自定义事件分发"></a>自定义事件分发</h2><ul>
+<li>ArkUI在处理触屏事件时，会在触屏事件触发前进行按压点和组件区域的触摸测试，来收集需要响应触屏事件的组件，再基于触摸测试结果分发相应的触屏事件</li>
+<li>可以通过onChildTouchTest决定如何让子节点去做触摸测试，影响子组件的触摸测试，最终影响后续的触屏事件分发<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//当前组件可通过设置回调来自定义子节点如何去做触摸测试</span></span><br><span class="line"><span class="title function_">onChildTouchTest</span>(<span class="attr">event</span>: <span class="function">(<span class="params"><span class="attr">value</span>: <span class="title class_">Array</span>&lt;<span class="title class_">TouchTestInfo</span>&gt;</span>) =&gt;</span> <span class="title class_">TouchResult</span>): T</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="自定义事件拦截"><a href="#自定义事件拦截" class="headerlink" title="自定义事件拦截"></a>自定义事件拦截</h2><ul>
+<li>为组件提供自定义的事件拦截能力</li>
+<li>可根据事件在控件上按下时发生的位置，输入源等事件信息决定控件上的HitTestMode属性<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title function_">onTouchIntercept</span>(<span class="attr">callback</span>: <span class="title class_">Callback</span>&lt;<span class="title class_">TouchEvent</span>, <span class="title class_">HitTestMode</span>&gt;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>Harmony路由</title>
@@ -1228,6 +1258,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Harmony编年史</title>
+    <url>/posts/88b0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony小技巧(2)——组件</title>
+    <url>/posts/60c4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="使用开源组件"><a href="#使用开源组件" class="headerlink" title="使用开源组件"></a>使用开源组件</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//安装</span></span><br><span class="line">ohpm install lite_chart</span><br><span class="line"><span class="comment">//引用</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">LiteChart</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;lite_chart&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="aspectRatio-m-n"><a href="#aspectRatio-m-n" class="headerlink" title="aspectRatio(m&#x2F;n)"></a>aspectRatio(m&#x2F;n)</h2><p>m&#x2F;n为宽高比</p>
+<h2 id="布局调整"><a href="#布局调整" class="headerlink" title="布局调整"></a>布局调整</h2><h3 id="layoutWeight-n"><a href="#layoutWeight-n" class="headerlink" title="layoutWeight(n)"></a>layoutWeight(n)</h3><p>n为占据的份额。可用于底部，这样底部上方的内容不会把底部挤掉</p>
+<h3 id="margin"><a href="#margin" class="headerlink" title=".margin({})"></a>.margin({})</h3><h3 id="padding"><a href="#padding" class="headerlink" title=".padding({})"></a>.padding({})</h3><h2 id="stateStyles"><a href="#stateStyles" class="headerlink" title="stateStyles"></a>stateStyles</h2><p>里面只能使用通用属性</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">stateStyles</span>(&#123;</span><br><span class="line">	<span class="attr">normal</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">130</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">130</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">pressed</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>((<span class="number">180</span>))</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">180</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	 <span class="attr">disabled</span>:&#123;</span><br><span class="line">		.<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Green</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">selected</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	focused    :&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="zIndex-n"><a href="#zIndex-n" class="headerlink" title=".zIndex(n)"></a>.zIndex(n)</h2><p>在父容器中的层级，n越高层级越高</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Harmony小技巧(3)——快捷键</title>
     <url>/posts/ae08/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="生成代码"><a href="#生成代码" class="headerlink" title="生成代码"></a>生成代码</h1><table>
@@ -1302,19 +1353,6 @@
       <tags>
         <tag>鸿蒙</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Harmony小技巧(2)——组件</title>
-    <url>/posts/60c4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="使用开源组件"><a href="#使用开源组件" class="headerlink" title="使用开源组件"></a>使用开源组件</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//安装</span></span><br><span class="line">ohpm install lite_chart</span><br><span class="line"><span class="comment">//引用</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">LiteChart</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;lite_chart&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="aspectRatio-m-n"><a href="#aspectRatio-m-n" class="headerlink" title="aspectRatio(m&#x2F;n)"></a>aspectRatio(m&#x2F;n)</h2><p>m&#x2F;n为宽高比</p>
-<h2 id="布局调整"><a href="#布局调整" class="headerlink" title="布局调整"></a>布局调整</h2><h3 id="layoutWeight-n"><a href="#layoutWeight-n" class="headerlink" title="layoutWeight(n)"></a>layoutWeight(n)</h3><p>n为占据的份额。可用于底部，这样底部上方的内容不会把底部挤掉</p>
-<h3 id="margin"><a href="#margin" class="headerlink" title=".margin({})"></a>.margin({})</h3><h3 id="padding"><a href="#padding" class="headerlink" title=".padding({})"></a>.padding({})</h3><h2 id="stateStyles"><a href="#stateStyles" class="headerlink" title="stateStyles"></a>stateStyles</h2><p>里面只能使用通用属性</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">stateStyles</span>(&#123;</span><br><span class="line">	<span class="attr">normal</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">130</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">130</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">pressed</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>((<span class="number">180</span>))</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">180</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	 <span class="attr">disabled</span>:&#123;</span><br><span class="line">		.<span class="title function_">backgroundColor</span>(<span class="title class_">Color</span>.<span class="property">Green</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">selected</span>:&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;,</span><br><span class="line">	focused    :&#123;</span><br><span class="line">		.<span class="title function_">width</span>(<span class="number">280</span>)</span><br><span class="line">		.<span class="title function_">height</span>(<span class="number">280</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="zIndex-n"><a href="#zIndex-n" class="headerlink" title=".zIndex(n)"></a>.zIndex(n)</h2><p>在父容器中的层级，n越高层级越高</p>
-]]></content>
   </entry>
   <entry>
     <title>Harmony小技巧(4)——命令与按键</title>
@@ -1501,6 +1539,14 @@
       </tags>
   </entry>
   <entry>
+    <title>文学批评概论</title>
+    <url>/posts/4ca/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>文学批评</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown示例</title>
     <url>/posts/ed04/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!-- 标题 -->
@@ -1579,11 +1625,34 @@
       </tags>
   </entry>
   <entry>
-    <title>文学批评概论</title>
-    <url>/posts/4ca/</url>
+    <title>正则表达式</title>
+    <url>/posts/b5e3/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
       <tags>
-        <tag>文学批评</tag>
+        <tag>Regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客所用插件记录</title>
+    <url>/posts/1495/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Harmony网络相关</title>
+    <url>/posts/cf3a/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="申请网络权限"><a href="#申请网络权限" class="headerlink" title="申请网络权限"></a>申请网络权限</h2><p>src&#x2F;main&#x2F;resources&#x2F;module.json5中的module添加”requestPermissions”: [{“name”: “ohos.permission.INTERNET”<br>    }],</p>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; promptAction &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.ArkUI&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">BaseRespData</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;../models/BaseRespData&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型，让调用者决定是什么类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> requestHttp&lt;T&gt;(<span class="attr">url</span>:<span class="built_in">string</span>,<span class="attr">method</span>:http.<span class="property">RequestMethod</span>=http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,data?:<span class="built_in">object</span>):<span class="title class_">Promise</span>&lt;T&gt;&#123;</span><br><span class="line">  <span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">options</span>:http.<span class="property">HttpRequestOptions</span>=&#123;</span><br><span class="line">    <span class="attr">header</span>:&#123;&#125;,</span><br><span class="line">    <span class="attr">method</span>:method,</span><br><span class="line">    <span class="attr">extraData</span>:data,</span><br><span class="line">    <span class="attr">readTimeout</span>:<span class="number">10</span>*<span class="number">1000</span>,</span><br><span class="line">    <span class="attr">connectTimeout</span>:<span class="number">10</span>*<span class="number">1000</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> httpResult = <span class="keyword">await</span> httpRequest.<span class="title function_">request</span>(url,options)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;???:&#x27;</span>+httpResult.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (httpResult.<span class="property">responseCode</span> === <span class="number">401</span>) &#123;</span><br><span class="line">      promptAction.<span class="title function_">showToast</span>(&#123;<span class="attr">message</span>:<span class="string">&quot;Token已过期&quot;</span>&#125;)</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>((<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(httpResult))))</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(httpResult.<span class="property">responseCode</span> === <span class="number">404</span>)&#123;</span><br><span class="line">      promptAction.<span class="title function_">showToast</span>((&#123;<span class="attr">message</span>:<span class="string">&quot;请求地址错误&quot;</span>&#125;))</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(httpResult)))</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> result = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(httpResult.<span class="property">result</span>.<span class="title function_">toString</span>()) <span class="keyword">as</span> <span class="title class_">BaseRespData</span>&lt;T&gt;</span><br><span class="line">      <span class="keyword">if</span>(result.<span class="property">code</span> === <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> result.<span class="property">data</span></span><br><span class="line">      &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        promptAction.<span class="title function_">showToast</span>(&#123;<span class="attr">message</span>:<span class="string">&quot;业务执行失败&quot;</span>+result.<span class="property">msg</span>&#125;)</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;业务执行失败&quot;</span>)+result.<span class="property">msg</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;网络请求错误&quot;</span>+<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(err))</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;网络请求错误&quot;</span>+<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(err)))</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    httpRequest.<span class="title function_">destroy</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>鸿蒙</tag>
       </tags>
   </entry>
   <entry>
@@ -1623,29 +1692,6 @@
 <h2 id="组件内容填充"><a href="#组件内容填充" class="headerlink" title="组件内容填充"></a>组件内容填充</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 事件独占</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 <h2 id="鼠标光标"><a href="#鼠标光标" class="headerlink" title="鼠标光标"></a>鼠标光标</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string">## 特效绘制合并</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="title class_">Ts</span></span><br></pre></td></tr></table></figure>
 ]]></content>
-      <tags>
-        <tag>鸿蒙</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客所用插件记录</title>
-    <url>/posts/1495/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Harmony网络相关</title>
-    <url>/posts/cf3a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Get方式"><a href="#Get方式" class="headerlink" title="Get方式"></a>Get方式</h1><h2 id="根据JSON内容设置接口"><a href="#根据JSON内容设置接口" class="headerlink" title="根据JSON内容设置接口"></a>根据JSON内容设置接口</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//如果是数组，则用data:Data[] = []</span></span><br><span class="line"><span class="comment">//如果是具体类型，则用dataModule:DataModule = new DataModule</span></span><br><span class="line"><span class="title class_">Interface</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:sonType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DataModule</span> <span class="keyword">implements</span> <span class="title class_">Data</span>&#123;</span><br><span class="line">    <span class="attr">data1</span>:<span class="title class_">CommonType</span></span><br><span class="line">    <span class="attr">data2</span>:specialType</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="attr">info</span>:<span class="title class_">Data</span></span>)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data1</span> = info.<span class="property">data1</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">data2</span> = info.<span class="property">data2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">specialType</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="meta">@State</span> <span class="attr">dataList</span>:<span class="title class_">DataModule</span>[] = [</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">DataModule</span>(&#123;<span class="attr">data1</span>:xx,<span class="attr">data2</span>:yy&#125;),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"><span class="comment">//创建http</span></span><br><span class="line"><span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line"><span class="comment">//请求</span></span><br><span class="line"><span class="comment">//含method,header</span></span><br><span class="line">httpRequest.<span class="title function_">request</span>(url,&#123;</span><br><span class="line">  <span class="attr">method</span>:http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,</span><br><span class="line">  <span class="attr">header</span>:&#123;</span><br><span class="line">    <span class="attr">cookie</span>:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">agent</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">info</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">result</span> = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(info.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//Json.stringify()</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">xxx</span>?.<span class="property">yyy</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="申请网络权限"><a href="#申请网络权限" class="headerlink" title="申请网络权限"></a>申请网络权限</h2><p>src&#x2F;main&#x2F;resources&#x2F;module.json5中的module添加”requestPermissions”: [{“name”: “ohos.permission.INTERNET”<br>    }],</p>
-<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; http &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.NetworkKit&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; promptAction &#125; <span class="keyword">from</span> <span class="string">&#x27;@kit.ArkUI&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">BaseRespData</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;../models/BaseRespData&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型，让调用者决定是什么类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="keyword">function</span> requestHttp&lt;T&gt;(<span class="attr">url</span>:<span class="built_in">string</span>,<span class="attr">method</span>:http.<span class="property">RequestMethod</span>=http.<span class="property">RequestMethod</span>.<span class="property">GET</span>,data?:<span class="built_in">object</span>):<span class="title class_">Promise</span>&lt;T&gt;&#123;</span><br><span class="line">  <span class="keyword">let</span> httpRequest = http.<span class="title function_">createHttp</span>()</span><br><span class="line">  <span class="keyword">let</span> <span class="attr">options</span>:http.<span class="property">HttpRequestOptions</span>=&#123;</span><br><span class="line">    <span class="attr">header</span>:&#123;&#125;,</span><br><span class="line">    <span class="attr">method</span>:method,</span><br><span class="line">    <span class="attr">extraData</span>:data,</span><br><span class="line">    <span class="attr">readTimeout</span>:<span class="number">10</span>*<span class="number">1000</span>,</span><br><span class="line">    <span class="attr">connectTimeout</span>:<span class="number">10</span>*<span class="number">1000</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> httpResult = <span class="keyword">await</span> httpRequest.<span class="title function_">request</span>(url,options)</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;???:&#x27;</span>+httpResult.<span class="property">result</span>.<span class="title function_">toString</span>())</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (httpResult.<span class="property">responseCode</span> === <span class="number">401</span>) &#123;</span><br><span class="line">      promptAction.<span class="title function_">showToast</span>(&#123;<span class="attr">message</span>:<span class="string">&quot;Token已过期&quot;</span>&#125;)</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>((<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(httpResult))))</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(httpResult.<span class="property">responseCode</span> === <span class="number">404</span>)&#123;</span><br><span class="line">      promptAction.<span class="title function_">showToast</span>((&#123;<span class="attr">message</span>:<span class="string">&quot;请求地址错误&quot;</span>&#125;))</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(httpResult)))</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> result = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(httpResult.<span class="property">result</span>.<span class="title function_">toString</span>()) <span class="keyword">as</span> <span class="title class_">BaseRespData</span>&lt;T&gt;</span><br><span class="line">      <span class="keyword">if</span>(result.<span class="property">code</span> === <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> result.<span class="property">data</span></span><br><span class="line">      &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        promptAction.<span class="title function_">showToast</span>(&#123;<span class="attr">message</span>:<span class="string">&quot;业务执行失败&quot;</span>+result.<span class="property">msg</span>&#125;)</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;业务执行失败&quot;</span>)+result.<span class="property">msg</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;网络请求错误&quot;</span>+<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(err))</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&quot;网络请求错误&quot;</span>+<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(err)))</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    httpRequest.<span class="title function_">destroy</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>鸿蒙</tag>
       </tags>
@@ -1701,25 +1747,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Harmony小技巧(1)——语法</title>
     <url>/posts/ca8a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><h2 id="值传递与引用字面量传递"><a href="#值传递与引用字面量传递" class="headerlink" title="值传递与引用字面量传递"></a>值传递与引用字面量传递</h2><h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//father</span></span><br><span class="line"><span class="title function_">myComponent</span>(<span class="variable language_">this</span>.<span class="property">params</span>)</span><br><span class="line"><span class="comment">//son</span></span><br><span class="line"><span class="meta">@Builder</span> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">myComponent</span>(<span class="params">params</span>)&#123;</span><br><span class="line">	params</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1740,6 +1767,25 @@
       <tags>
         <tag>鸿蒙</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://ghchart.rshah.org/kcsx"></p>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Harmony国际化</title>
