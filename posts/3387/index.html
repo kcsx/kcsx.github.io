@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>代码规范(2)——重构 | kaiyu's blog</title><meta name="author" content="kaiyu"><meta name="copyright" content="kaiyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="何时 事不过三，三则重构 当我需要理解其工作原理时，对其进行重构才会有价值 重写比重构容易  重构的时机(1)——见机行事大部分重构应该是不起眼的、见机行事的。重构不是与编程割裂的行为 预备性重构 重构的最佳时机就在添加新功能之前  帮助理解的重构*  捡垃圾式重构 不想从眼下正要完成的任务上跑题太多，但我也不想把垃圾留在原地，给将来的修改增加麻烦 如果我发现的垃圾很容易重构，我会马上重构它；如果">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>代码规范(2)——重构 | kaiyu's blog</title><meta name="author" content="kaiyu"><meta name="copyright" content="kaiyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="何时  事不过三，三则重构 当我需要理解其工作原理时，对其进行重构才会有价值 重写比重构容易  重构的时机(1)——见机行事 大部分重构应该是不起眼的、见机行事的。重构不是与编程割裂的行为 预备性重构  重构的最佳时机就在添加新功能之前  帮助理解的重构    捡垃圾式重构  不想从眼下正要完成的任务上跑题太多，但我也不想把垃圾留在原地，给将来的修改增加麻烦 如果我发现的垃圾很容易重构，我会马上重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码规范(2)——重构">
 <meta property="og:url" content="https://kcsx.github.io/posts/3387/index.html">
 <meta property="og:site_name" content="kaiyu&#39;s blog">
-<meta property="og:description" content="何时 事不过三，三则重构 当我需要理解其工作原理时，对其进行重构才会有价值 重写比重构容易  重构的时机(1)——见机行事大部分重构应该是不起眼的、见机行事的。重构不是与编程割裂的行为 预备性重构 重构的最佳时机就在添加新功能之前  帮助理解的重构*  捡垃圾式重构 不想从眼下正要完成的任务上跑题太多，但我也不想把垃圾留在原地，给将来的修改增加麻烦 如果我发现的垃圾很容易重构，我会马上重构它；如果">
+<meta property="og:description" content="何时  事不过三，三则重构 当我需要理解其工作原理时，对其进行重构才会有价值 重写比重构容易  重构的时机(1)——见机行事 大部分重构应该是不起眼的、见机行事的。重构不是与编程割裂的行为 预备性重构  重构的最佳时机就在添加新功能之前  帮助理解的重构    捡垃圾式重构  不想从眼下正要完成的任务上跑题太多，但我也不想把垃圾留在原地，给将来的修改增加麻烦 如果我发现的垃圾很容易重构，我会马上重">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kcsx.github.io/img/avatar.jpg">
 <meta property="article:published_time" content="2024-10-20T01:52:41.000Z">
-<meta property="article:modified_time" content="2024-10-20T04:12:53.335Z">
+<meta property="article:modified_time" content="2024-10-20T08:13:11.457Z">
 <meta property="article:author" content="kaiyu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://kcsx.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://kcsx.github.io/posts/3387/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
@@ -55,7 +55,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2024-10-20 12:12:53'
+  postUpdate: '2024-10-20 16:13:11'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -177,26 +177,37 @@
     document.addEventListener('pjax:send', () => { preloader.initLoading() })
     document.addEventListener('pjax:complete', () => { preloader.endLoading() })
   }
-})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/memo/"><i class="fa-fw fas fa-pen"></i><span> 备忘录</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg1.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="kaiyu's blog"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">kaiyu's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/memo/"><i class="fa-fw fas fa-pen"></i><span> 备忘录</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">代码规范(2)——重构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-20T01:52:41.000Z" title="发表于 2024-10-20 09:52:41">2024-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-20T04:12:53.335Z" title="更新于 2024-10-20 12:12:53">2024-10-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="代码规范(2)——重构"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="何时"><a href="#何时" class="headerlink" title="何时"></a>何时</h1><ul>
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/memo/"><i class="fa-fw fas fa-pen"></i><span> 备忘录</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/bg1.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="kaiyu's blog"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">kaiyu's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/memo/"><i class="fa-fw fas fa-pen"></i><span> 备忘录</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">代码规范(2)——重构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-20T01:52:41.000Z" title="发表于 2024-10-20 09:52:41">2024-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-20T08:13:11.457Z" title="更新于 2024-10-20 16:13:11">2024-10-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="代码规范(2)——重构"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1>何时</h1>
+<ul>
 <li>事不过三，三则重构</li>
 <li>当我需要理解其工作原理时，对其进行重构才会有价值</li>
 <li>重写比重构容易</li>
 </ul>
-<h1 id="重构的时机-1-——见机行事"><a href="#重构的时机-1-——见机行事" class="headerlink" title="重构的时机(1)——见机行事"></a>重构的时机(1)——见机行事</h1><p>大部分重构应该是不起眼的、见机行事的。重构不是与编程割裂的行为</p>
-<h2 id="预备性重构"><a href="#预备性重构" class="headerlink" title="预备性重构"></a>预备性重构</h2><ul>
+<h1>重构的时机(1)——见机行事</h1>
+<p>大部分重构应该是不起眼的、见机行事的。重构不是与编程割裂的行为</p>
+<h2 id="预备性重构">预备性重构</h2>
+<ul>
 <li>重构的最佳时机就在添加新功能之前</li>
 </ul>
-<h2 id="帮助理解的重构"><a href="#帮助理解的重构" class="headerlink" title="帮助理解的重构"></a>帮助理解的重构</h2><p>* </p>
-<h2 id="捡垃圾式重构"><a href="#捡垃圾式重构" class="headerlink" title="捡垃圾式重构"></a>捡垃圾式重构</h2><ul>
+<h2 id="帮助理解的重构">帮助理解的重构</h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="捡垃圾式重构">捡垃圾式重构</h2>
+<ul>
 <li>不想从眼下正要完成的任务上跑题太多，但我也不想把垃圾留在原地，给将来的修改增加麻烦</li>
 <li>如果我发现的垃圾很容易重构，我会马上重构它；如果重构需要花一些精力，我可能会拿一张便笺纸把它记下来，完成当下的任务再回来重构它。</li>
 </ul>
-<h1 id="重构的时机-2-——长期重构"><a href="#重构的时机-2-——长期重构" class="headerlink" title="重构的时机(2)——长期重构"></a>重构的时机(2)——长期重构</h1><ul>
+<h1>重构的时机(2)——长期重构</h1>
+<ul>
 <li>每当有人靠近“重构区”的代码，就把它朝想要改进的方向推动一点</li>
 <li>每次小改动之后，整个系统仍然照常工作</li>
 </ul>
-<h1 id="重构方法"><a href="#重构方法" class="headerlink" title="重构方法"></a>重构方法</h1><h2 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h2><p>重构之前，先保证一组可靠的测试用例（有自我检验的能力）</p>
-<h2 id="重构清单"><a href="#重构清单" class="headerlink" title="重构清单"></a>重构清单</h2><ol>
+<h1>重构方法</h1>
+<h2 id="测试用例">测试用例</h2>
+<p>重构之前，先保证一组可靠的测试用例（有自我检验的能力）</p>
+<h2 id="重构清单">重构清单</h2>
+<ol>
 <li>函数</li>
 </ol>
 <table>
@@ -206,7 +217,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>提炼</td>
 <td>过长的函数，或者一段需要注释才能理解的代码，将其中一段代码提取到一个独立函数中，并让函数名称解释该函数的用途</td>
 </tr>
@@ -286,7 +298,8 @@
 <td>以测试取代异常</td>
 <td>1.面对调用者可以预先检查的条件，调用者应该先检查该条件<br>2.不要通过捕获异常去处理可以预见的逻辑。不要滥用异常，异常应该只用于异常的、罕见的行为</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="2">
 <li>对象</li>
 </ol>
@@ -297,7 +310,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>搬移</td>
 <td>1.函数：如果一个函数与另一个类的交流比所在类更多，应该考虑将该函数搬移到另一个类。如果一个类有太多行为，或一个类与另一个类有太多合作而形成高度耦合，就应该考虑是否可以通过搬移函数进行重构<br>2.字段：如果一个类中的字段，被另一个类更多地用到，应该考虑将该字段搬移到另一个类中</td>
 </tr>
@@ -325,7 +339,8 @@
 <td>引入本地扩展</td>
 <td>需要在客户类建立大量的外部函数，则应该考虑将这些函数组织到新的类中，该新类应该是源类的子类，即本地扩展</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="3">
 <li>数据</li>
 </ol>
@@ -336,9 +351,10 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>自封装字段</td>
-<td>1.在一个类中，可以直接访问<br>2.如果为了在子类中改变获取数据的方式（如延迟获取）等，则可以通过取值函数&#x2F;设置函数访问</td>
+<td>1.在一个类中，可以直接访问<br>2.如果为了在子类中改变获取数据的方式（如延迟获取）等，则可以通过取值函数/设置函数访问</td>
 </tr>
 <tr>
 <td>以对象取代数据值</td>
@@ -362,7 +378,7 @@
 </tr>
 <tr>
 <td>封装集合</td>
-<td>1.一个函数返回一个集合，建议返回该集合的一个只读副本<br>2.不要提供对集合的设值（setter）函数，应该提供给集合添加&#x2F;删除元素的函数</td>
+<td>1.一个函数返回一个集合，建议返回该集合的一个只读副本<br>2.不要提供对集合的设值（setter）函数，应该提供给集合添加/删除元素的函数</td>
 </tr>
 <tr>
 <td>以类取代类型码</td>
@@ -372,7 +388,8 @@
 <td>以字段取代子类</td>
 <td>各个子类的唯一差别是返回常量值的函数上，建议在父类中添加表示该常量值的字段，并通过函数返回，然后移除所有的子类</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="3">
 <li>简化条件表达式</li>
 </ol>
@@ -383,7 +400,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>分解条件表达式</td>
 <td>一个复杂的条件表达式(if-else)，将每部分都提炼成单独的函数</td>
 </tr>
@@ -415,7 +433,8 @@
 <td>引入断言</td>
 <td>1.对程序状态做出某种假设，以断言明确表明这种假设。断言应该总是为真，如果它失败，表明程序员犯了错误，应该抛出异常<br>2.只用于检查一定必须为真的条件，而不是用于检查你认为应该为真的条件<br>3. 生产环境的代码应该将断言全部都删掉</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol start="4">
 <li>概括关系</li>
 </ol>
@@ -426,7 +445,8 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>字段上移</td>
 <td>两个子类有相同的字段，将该字段移到超类中去</td>
 </tr>
@@ -470,25 +490,34 @@
 <td>以继承取代委托</td>
 <td>某个类使用了委托类中的所有函数，需要编写所有简单的委托函数，建议将委托改为继承</td>
 </tr>
-</tbody></table>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ul>
-<li><p>把意图和实现分开</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="built_in">void</span> <span class="title function_">printOwing</span>(<span class="params">double amount</span>) &#123;</span><br><span class="line">     <span class="title function_">printBanner</span>();</span><br><span class="line">     <span class="title function_">printDetails</span>(amount);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">void</span> <span class="title function_">printDetails</span> (double amount) &#123;</span><br><span class="line">     <span class="title class_">System</span>.<span class="property">out</span>.<span class="property">println</span> (<span class="string">&quot;name:&quot;</span> + _name);</span><br><span class="line">     <span class="title class_">System</span>.<span class="property">out</span>.<span class="property">println</span> (<span class="string">&quot;amount&quot;</span> + amount);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>用一个良好命名的临时变量来解释对应条件子句的意义，使语义更加清晰</p>
+</tbody>
+</table>
+<h2 id="示例">示例</h2>
+<ul>
+<li>把意图和实现分开</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="built_in">void</span> <span class="title function_">printOwing</span>(<span class="params">double amount</span>) &#123;</span><br><span class="line">     <span class="title function_">printBanner</span>();</span><br><span class="line">     <span class="title function_">printDetails</span>(amount);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">void</span> <span class="title function_">printDetails</span> (double amount) &#123;</span><br><span class="line">     <span class="title class_">System</span>.<span class="property">out</span>.<span class="property">println</span> (<span class="string">&quot;name:&quot;</span> + _name);</span><br><span class="line">     <span class="title class_">System</span>.<span class="property">out</span>.<span class="property">println</span> (<span class="string">&quot;amount&quot;</span> + amount);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用一个良好命名的临时变量来解释对应条件子句的意义，使语义更加清晰</li>
+</ul>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line">final <span class="built_in">boolean</span> isMacOs     = platform.<span class="title function_">toUpperCase</span>().<span class="title function_">indexOf</span>(<span class="string">&quot;MAC&quot;</span>) &gt; -<span class="number">1</span>;</span><br><span class="line">  final <span class="built_in">boolean</span> isIEBrowser = browser.<span class="title function_">toUpperCase</span>().<span class="title function_">indexOf</span>(<span class="string">&quot;IE&quot;</span>)  &gt; -<span class="number">1</span>;</span><br><span class="line">  final <span class="built_in">boolean</span> wasResized  = resize &gt; <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (isMacOs &amp;&amp; isIEBrowser &amp;&amp; <span class="title function_">wasInitialized</span>() &amp;&amp; wasResized) &#123;</span><br><span class="line">      <span class="comment">// do something</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>以管道(filter+map)取代循环</p>
+<ul>
+<li>以管道(filter+map)取代循环</li>
+</ul>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> names = input</span><br><span class="line">    .<span class="title function_">filter</span>(<span class="function"><span class="params">i</span> =&gt;</span> i.<span class="property">job</span> === <span class="string">&quot;programer&quot;</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function"><span class="params">i</span> =&gt;</span> i.<span class="property">name</span>)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>合理的封装。能够帮助我们隐藏细节并且，能够更好的应对变化，当我们发现我们的类太大而不容易理解的时候，可以考虑使用提炼类的方法</p>
 </li>
-<li><p>合理的封装。能够帮助我们隐藏细节并且，能够更好的应对变化，当我们发现我们的类太大而不容易理解的时候，可以考虑使用提炼类的方法</p>
-</li>
-<li><p>分解条件式： 把一段 「复杂的条件逻辑」 分解成多个独立的函数</p>
-<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//原代码</span></span><br><span class="line"><span class="keyword">if</span> (date.<span class="property">before</span> (<span class="variable constant_">SUMMER_START</span>) || date.<span class="title function_">after</span>(<span class="variable constant_">SUMMER_END</span>))</span><br><span class="line">         charge = quantity * _winterRate + _winterServiceCharge;</span><br><span class="line">     <span class="keyword">else</span> charge = quantity * _summerRate;</span><br><span class="line"><span class="comment">//分解</span></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_">notSummer</span>(date))</span><br><span class="line">         charge = <span class="title function_">winterCharge</span>(quantity);</span><br><span class="line">     <span class="keyword">else</span> charge = <span class="title function_">summerCharge</span> (quantity);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>以卫语句(guard clauses，给某一条分支以特别的重视)取代嵌套条件式</p>
+<li>
+<p>分解条件式： 把一段 「复杂的条件逻辑」 分解成多个独立的函数</p>
 </li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://kcsx.github.io">kaiyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://kcsx.github.io/posts/3387/">https://kcsx.github.io/posts/3387/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://kcsx.github.io" target="_blank">kaiyu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/ef6c/" title="代码规范(3)——坏代码示例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">代码规范(3)——坏代码示例</div></div></a></div><div class="next-post pull-right"><a href="/posts/365c/" title="代码规范(1)——编写"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">代码规范(1)——编写</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kaiyu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kcsx"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kcsx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1865400033@e.gzhu.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%95%E6%97%B6"><span class="toc-number">1.</span> <span class="toc-text">何时</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E7%9A%84%E6%97%B6%E6%9C%BA-1-%E2%80%94%E2%80%94%E8%A7%81%E6%9C%BA%E8%A1%8C%E4%BA%8B"><span class="toc-number">2.</span> <span class="toc-text">重构的时机(1)——见机行事</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E6%80%A7%E9%87%8D%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">预备性重构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E7%90%86%E8%A7%A3%E7%9A%84%E9%87%8D%E6%9E%84"><span class="toc-number">2.2.</span> <span class="toc-text">帮助理解的重构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A1%E5%9E%83%E5%9C%BE%E5%BC%8F%E9%87%8D%E6%9E%84"><span class="toc-number">2.3.</span> <span class="toc-text">捡垃圾式重构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E7%9A%84%E6%97%B6%E6%9C%BA-2-%E2%80%94%E2%80%94%E9%95%BF%E6%9C%9F%E9%87%8D%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">重构的时机(2)——长期重构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">重构方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-number">4.1.</span> <span class="toc-text">测试用例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E6%B8%85%E5%8D%95"><span class="toc-number">4.2.</span> <span class="toc-text">重构清单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">4.3.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/fb2/" title="Harmony进阶(1)——Worker线程">Harmony进阶(1)——Worker线程</a><time datetime="2024-10-20T08:11:29.000Z" title="发表于 2024-10-20 16:11:29">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/ef6c/" title="代码规范(3)——坏代码示例">代码规范(3)——坏代码示例</a><time datetime="2024-10-20T02:01:13.000Z" title="发表于 2024-10-20 10:01:13">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/3387/" title="代码规范(2)——重构">代码规范(2)——重构</a><time datetime="2024-10-20T01:52:41.000Z" title="发表于 2024-10-20 09:52:41">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/365c/" title="代码规范(1)——编写">代码规范(1)——编写</a><time datetime="2024-10-20T01:00:24.000Z" title="发表于 2024-10-20 09:00:24">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/c09f/" title="Harmony通用组件开发集锦(1)">Harmony通用组件开发集锦(1)</a><time datetime="2024-10-18T02:15:05.000Z" title="发表于 2024-10-18 10:15:05">2024-10-18</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By kaiyu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">//原代码</span></span><br><span class="line"><span class="keyword">if</span> (date.<span class="property">before</span> (<span class="variable constant_">SUMMER_START</span>) || date.<span class="title function_">after</span>(<span class="variable constant_">SUMMER_END</span>))</span><br><span class="line">         charge = quantity * _winterRate + _winterServiceCharge;</span><br><span class="line">     <span class="keyword">else</span> charge = quantity * _summerRate;</span><br><span class="line"><span class="comment">//分解</span></span><br><span class="line"><span class="keyword">if</span> (<span class="title function_">notSummer</span>(date))</span><br><span class="line">         charge = <span class="title function_">winterCharge</span>(quantity);</span><br><span class="line">     <span class="keyword">else</span> charge = <span class="title function_">summerCharge</span> (quantity);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以卫语句(guard clauses，给某一条分支以特别的重视)取代嵌套条件式</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://kcsx.github.io">kaiyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://kcsx.github.io/posts/3387/">https://kcsx.github.io/posts/3387/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://kcsx.github.io" target="_blank">kaiyu's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/ef6c/" title="代码规范(3)——坏代码示例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">代码规范(3)——坏代码示例</div></div></a></div><div class="next-post pull-right"><a href="/posts/365c/" title="代码规范(1)——编写"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">代码规范(1)——编写</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kaiyu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kcsx"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kcsx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1865400033@e.gzhu.edu.cn" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">何时</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">重构的时机(1)——见机行事</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E6%80%A7%E9%87%8D%E6%9E%84"><span class="toc-number">2.1.</span> <span class="toc-text">预备性重构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E7%90%86%E8%A7%A3%E7%9A%84%E9%87%8D%E6%9E%84"><span class="toc-number">2.2.</span> <span class="toc-text">帮助理解的重构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A1%E5%9E%83%E5%9C%BE%E5%BC%8F%E9%87%8D%E6%9E%84"><span class="toc-number">2.3.</span> <span class="toc-text">捡垃圾式重构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">重构的时机(2)——长期重构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">重构方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-number">4.1.</span> <span class="toc-text">测试用例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E6%B8%85%E5%8D%95"><span class="toc-number">4.2.</span> <span class="toc-text">重构清单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">4.3.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/1586/" title="Harmony线程(1)——概述">Harmony线程(1)——概述</a><time datetime="2024-10-20T08:32:37.000Z" title="发表于 2024-10-20 16:32:37">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/636d/" title="Harmony线程(3)——Taskpool">Harmony线程(3)——Taskpool</a><time datetime="2024-10-20T08:21:49.000Z" title="发表于 2024-10-20 16:21:49">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/fb2/" title="Harmony线程(2)——Worker">Harmony线程(2)——Worker</a><time datetime="2024-10-20T08:11:29.000Z" title="发表于 2024-10-20 16:11:29">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/ef6c/" title="代码规范(3)——坏代码示例">代码规范(3)——坏代码示例</a><time datetime="2024-10-20T02:01:13.000Z" title="发表于 2024-10-20 10:01:13">2024-10-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/3387/" title="代码规范(2)——重构">代码规范(2)——重构</a><time datetime="2024-10-20T01:52:41.000Z" title="发表于 2024-10-20 09:52:41">2024-10-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2024 By kaiyu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
   const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
   if ($mermaid.length === 0) return
   const runMermaid = () => {
